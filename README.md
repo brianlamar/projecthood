@@ -29,8 +29,14 @@ css/styles.css          Design system (brand colors, typography, components)
 js/main.js              Mobile nav + external link safety + active nav
 img/                    Logo + acronym marks
 _build.py               Regenerates all pages from shared HEAD / FOOTER
-HOW_TO_OPEN.md          Team-facing guide for reviewing the prototype locally
 ```
+
+## Documentation
+
+- **[TEAM_REVIEW.md](TEAM_REVIEW.md)** — QA instructions for the current team review pass (preview URL, page list, feedback format)
+- **[SITEMAP.md](SITEMAP.md)** — Page-by-page purpose, audience, primary CTA, integrations, photo slots, content owners
+- **[CONTENT_UPDATES.md](CONTENT_UPDATES.md)** — Plain-English guide for non-technical staff to update content after launch
+- **[LAUNCH_RUNBOOK.md](LAUNCH_RUNBOOK.md)** — Cutover-day procedure: DNS, redirects, analytics, SEO, accessibility, rollback
 
 ## Editing
 
@@ -46,7 +52,7 @@ External by design — not self-hosted on this site:
 - **Walk Across America** — routes to Tiltify (`tiltify.com/project-hood/walk-across-america-2025`)
 - **Program intake** — Apricot
 - **Volunteer / Contact / Partner / Event RSVPs** — Google Forms → Google Sheet
-- **Events calendar** — pulled from Project H.O.O.D. Google Calendar
+- **Events calendar** — ⚠️ currently hardcoded HTML (Google Calendar embed not yet implemented — see QA_FINDINGS.md §3 for options)
 - **Newsletter** — NetworkForGood embed
 
 ## Brand

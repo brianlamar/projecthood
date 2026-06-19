@@ -112,13 +112,13 @@ FOOTER = """
     <div class="footer-bottom">
       <div>
         © 2026 Project H.O.O.D. · 6620 S. King Drive, Chicago IL 60637 · EIN 46-1449998<br>
-        <a href="#">Privacy</a> · <a href="#">Financials &amp; 990s</a> · <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a> · <a href="about.html">Financials &amp; 990s</a> · <a href="contact.html">Contact</a>
       </div>
       <div class="social-row">
-        <a href="#" aria-label="Instagram">IG</a>
-        <a href="#" aria-label="Facebook">FB</a>
-        <a href="#" aria-label="LinkedIn">IN</a>
-        <a href="#" aria-label="YouTube">YT</a>
+        <a href="https://www.instagram.com/projecthood1/" aria-label="Instagram">IG</a>
+        <a href="https://www.facebook.com/ProjectHood1/" aria-label="Facebook">FB</a>
+        <a href="https://www.linkedin.com/company/project-h-o-o-d" aria-label="LinkedIn">IN</a>
+        <a href="https://www.youtube.com/@projecthood8919" aria-label="YouTube">YT</a>
       </div>
     </div>
   </div>
@@ -403,7 +403,7 @@ about_body = f"""
     </div>
     <div>
       <ul style="list-style:none;padding:0;">
-        <li style="padding:14px 0;border-bottom:1px solid var(--line);"><strong>2024 Form 990</strong> · <a href="#">Download PDF</a></li>
+        <li style="padding:14px 0;border-bottom:1px solid var(--line);"><strong>2024 Form 990</strong> · <a href="docs/ph-990-2024.pdf" target="_blank" rel="noopener">Download PDF</a></li>
         <li style="padding:14px 0;border-bottom:1px solid var(--line);"><strong>2023 Form 990</strong> · <a href="#">Download PDF</a></li>
         <li style="padding:14px 0;border-bottom:1px solid var(--line);"><strong>2024 Annual Report</strong> · <a href="#">Download PDF</a></li>
         <li style="padding:14px 0;"><strong>Audited financials</strong> · <a href="#">Download PDF</a></li>
@@ -860,10 +860,14 @@ gi_body = f"""
       <p>Community dinners, fundraisers, workshops, and LEO Center milestones. Live-synced from our Google Calendar.</p>
       <a class="btn btn-primary" href="events.html" style="margin-top:12px;">See all events →</a>
     </div>
-    <div>
-      <div style="background:var(--white);padding:16px;border-left:4px solid var(--red);"><div style="font-family:var(--font-display);font-weight:700;font-size:13px;color:var(--red);letter-spacing:.1em;">MAY 14 · 6PM</div><h4 style="margin:4px 0 0;">Community Dinner</h4><p style="font-size:13px;color:var(--muted);margin:4px 0 0;">New Beginnings Church · free &amp; open.</p></div>
-      <div style="background:var(--white);padding:16px;border-left:4px solid var(--green);margin-top:8px;"><div style="font-family:var(--font-display);font-weight:700;font-size:13px;color:var(--green);letter-spacing:.1em;">JUN 06 · 9AM</div><h4 style="margin:4px 0 0;">Workforce Training Cohort Kickoff</h4><p style="font-size:13px;color:var(--muted);margin:4px 0 0;">LEO Center temp space.</p></div>
-      <div style="background:var(--white);padding:16px;border-left:4px solid var(--blue);margin-top:8px;"><div style="font-family:var(--font-display);font-weight:700;font-size:13px;color:var(--blue);letter-spacing:.1em;">JUL 18 · 1PM</div><h4 style="margin:4px 0 0;">Youth Esports Summer Tournament</h4><p style="font-size:13px;color:var(--muted);margin:4px 0 0;">Registration required.</p></div>
+    <div style="border:1px solid var(--line);overflow:hidden;">
+      <iframe
+        src="https://calendar.google.com/calendar/embed?src=c_aaab49ab274191a67fd34d3ec23430823e39f8a684eb5358c53ccfc765269ec6%40group.calendar.google.com&ctz=America%2FChicago&showTitle=0&showNav=0&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA"
+        style="border:0;width:100%;min-height:260px;display:block;"
+        frameborder="0"
+        scrolling="no"
+        title="Upcoming events">
+      </iframe>
     </div>
   </div>
 </section>
@@ -978,8 +982,7 @@ volunteer_body = f"""
         <p style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:var(--muted);">Google Form embed · on real site</p>
         <h3 style="margin:10px 0;">Project H.O.O.D. Volunteer Signup</h3>
         <p style="font-size:14px;">Name, email, phone, areas of interest, availability, background-check consent — responses go directly to our volunteer coordinator's Google Sheet.</p>
-        <a class="btn btn-primary" href="#" style="margin-top:12px;">Open signup form</a>
-        <p style="font-size:12px;color:var(--muted);margin-top:10px;font-style:italic;">On the live site this will embed as an iframe. For now this is a placeholder.</p>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfulIcBaCRzjDaNXuMuV-fgo_LxqOoXNQG8FU7ibIOuI_6-FA/viewform" style="margin-top:12px;">Volunteer signup form →</a>
       </div>
     </div>
   </div>
@@ -999,7 +1002,7 @@ events_body = f"""
   <div class="wrap">
     <div class="eyebrow">Events</div>
     <h1>On the <span style="background:var(--red);color:var(--white);padding:2px 10px;transform:rotate(-1.5deg);display:inline-block;">calendar.</span></h1>
-    <p class="lead" style="opacity:1;color:var(--ink);">Community dinners, fundraisers, workshops, and LEO Center milestones. Pulled live from the Project H.O.O.D. Google Calendar — when staff updates the calendar, this page updates within a minute.</p>
+    <p class="lead" style="opacity:1;color:var(--ink);">Community dinners, fundraisers, workshops, and LEO Center milestones. Live from the Project H.O.O.D. Google Calendar — when staff adds or updates an event, it appears here automatically.</p>
   </div>
 </section>
 
@@ -1008,7 +1011,10 @@ events_body = f"""
     <span style="color:var(--red);border-bottom:2px solid var(--red);padding-bottom:4px;">Upcoming</span>
     <span style="color:var(--muted);">Recurring</span>
     <span style="color:var(--muted);">Past events</span>
-    <span style="margin-left:auto;font-family:var(--font-serif);text-transform:none;letter-spacing:0;font-size:12.5px;color:var(--muted);font-style:italic;">🗓 Subscribe · .ics / Google / Apple</span>
+    <div style="margin-left:auto;display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
+      <a href="https://calendar.google.com/calendar/ical/c_aaab49ab274191a67fd34d3ec23430823e39f8a684eb5358c53ccfc765269ec6%40group.calendar.google.com/public/basic.ics" style="font-family:var(--font-serif);text-transform:none;letter-spacing:0;font-size:12.5px;color:var(--muted);font-style:italic;">🗓 Subscribe (.ics / Apple)</a>
+      <a href="https://calendar.google.com/calendar/r?cid=c_aaab49ab274191a67fd34d3ec23430823e39f8a684eb5358c53ccfc765269ec6@group.calendar.google.com" style="font-family:var(--font-serif);text-transform:none;letter-spacing:0;font-size:12.5px;color:var(--muted);font-style:italic;">+ Add to Google Calendar</a>
+    </div>
   </div>
 </section>
 
@@ -1022,19 +1028,21 @@ events_body = f"""
         <h2 style="color:var(--white);">Back to School Giveaway</h2>
         <p style="opacity:.88;">Free backpacks, school supplies, haircuts, and family meals for 500+ Woodlawn families.</p>
         <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
-          <a class="btn btn-yellow" href="#">RSVP</a>
+          <a class="btn btn-yellow" href="https://docs.google.com/forms/d/e/1FAIpQLSfulIcBaCRzjDaNXuMuV-fgo_LxqOoXNQG8FU7ibIOuI_6-FA/viewform">RSVP</a>
           <a class="btn btn-outline-light" href="volunteer.html">Volunteer for this</a>
         </div>
       </div>
     </div>
 
-    <div class="grid-3" style="margin-top:var(--sp-4);">
-      <div style="background:var(--bg);padding:18px;border-left:4px solid var(--red);"><div style="font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.1em;color:var(--red);">MAY 14 · 6PM</div><h4 style="margin:6px 0;">Community Dinner</h4><p style="font-size:13.5px;">New Beginnings Church · free &amp; open.</p><a href="#" style="font-size:13px;">RSVP →</a></div>
-      <div style="background:var(--bg);padding:18px;border-left:4px solid var(--green);"><div style="font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.1em;color:var(--green);">JUN 06 · 9AM</div><h4 style="margin:6px 0;">Workforce Cohort Kickoff</h4><p style="font-size:13.5px;">LEO Center temp space.</p><a href="#" style="font-size:13px;">Details →</a></div>
-      <div style="background:var(--bg);padding:18px;border-left:4px solid var(--blue);"><div style="font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.1em;color:var(--blue);">JUL 18 · 1PM</div><h4 style="margin:6px 0;">Youth Esports Tournament</h4><p style="font-size:13.5px;">Registration required.</p><a href="#" style="font-size:13px;">Register →</a></div>
-      <div style="background:var(--bg);padding:18px;border-left:4px solid var(--purple);"><div style="font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.1em;color:var(--purple);">SEP 12 · 6PM</div><h4 style="margin:6px 0;">Re-entry Resource Night</h4><p style="font-size:13.5px;">For returning citizens &amp; families.</p><a href="#" style="font-size:13px;">RSVP →</a></div>
-      <div style="background:var(--bg);padding:18px;border-left:4px solid #8a6d00;"><div style="font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.1em;color:#8a6d00;">OCT 04 · 10AM</div><h4 style="margin:6px 0;">Harvest Food Drive</h4><p style="font-size:13.5px;">Fall pantry stock-up.</p><a href="#" style="font-size:13px;">Volunteer →</a></div>
-      <div style="background:var(--bg);padding:18px;border-left:4px solid var(--black);"><div style="font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.1em;color:var(--black);">DEC 12 · 7PM</div><h4 style="margin:6px 0;">LEO Center Dedication Gala</h4><p style="font-size:13.5px;">Black-tie fundraiser · by invitation.</p><a href="contact.html" style="font-size:13px;">Request invite →</a></div>
+    <!-- Live Google Calendar embed -->
+    <div style="margin-top:var(--sp-4);border:1px solid var(--line);overflow:hidden;">
+      <iframe
+        src="https://calendar.google.com/calendar/embed?src=c_aaab49ab274191a67fd34d3ec23430823e39f8a684eb5358c53ccfc765269ec6%40group.calendar.google.com&ctz=America%2FChicago&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA"
+        style="border:0;width:100%;min-height:520px;display:block;"
+        frameborder="0"
+        scrolling="no"
+        title="Project H.O.O.D. upcoming events">
+      </iframe>
     </div>
   </div>
 </section>
@@ -1081,7 +1089,7 @@ partner_body = f"""
         <p style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:var(--muted);">Google Form embed · on real site</p>
         <h3 style="margin:10px 0;">Partner Inquiry Form</h3>
         <p style="font-size:14px;">Org name, contact, type of partnership, what you bring, what you need. Routes to our development team.</p>
-        <a class="btn btn-primary" href="#" style="margin-top:12px;">Open inquiry form</a>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeSqdS_4Cyd4gdWyvAuJEGF3zR4MFqKsiOPDDRUKUsBMEDNKQ/viewform" style="margin-top:12px;">Partner inquiry form →</a>
       </div>
     </div>
   </div>
@@ -1199,7 +1207,7 @@ contact_body = f"""
         <p style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:var(--muted);">Google Form embed · on real site</p>
         <h3 style="margin:10px 0;">Contact form</h3>
         <p style="font-size:14px;">Name, email, topic dropdown, message. Routes to the right inbox based on topic.</p>
-        <a class="btn btn-primary" href="#" style="margin-top:12px;">Open contact form</a>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSezt7dj_hycF7Y45m-Dcls6-52SCGS2sd-NkMDogWDhh_dIkQ/viewform" style="margin-top:12px;">Contact form →</a>
       </div>
     </div>
   </div>
@@ -1208,6 +1216,73 @@ contact_body = f"""
 <section class="section bg-offwhite">
   <div class="wrap">
     <div class="img-ph" style="min-height:320px;">MAP · 6620 S. King Drive, Chicago</div>
+  </div>
+</section>
+"""
+
+# -------- PRIVACY POLICY --------
+privacy_body = """
+<section class="hero bg-black">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--yellow);">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p class="lead" style="opacity:.85;">Project H.O.O.D. is committed to protecting your personal information. This policy explains what we collect, why, and how you can reach us with questions.</p>
+    <p style="font-size:13px;opacity:.6;margin-top:8px;">Last updated: June 2026</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap" style="max-width:var(--w-read);">
+
+    <h2>Who we are</h2>
+    <p>Project H.O.O.D. (Helping Others Obtain Destiny) is a 501(c)(3) nonprofit organization located at 6620 S. King Drive, Chicago, IL 60637. EIN 46-1449998. You can reach us at <a href="mailto:info@projecthood.org">info@projecthood.org</a>.</p>
+
+    <h2 style="margin-top:var(--sp-3);">What information we collect</h2>
+    <p>We only collect information you choose to give us. Depending on how you interact with this site, that may include:</p>
+    <ul>
+      <li><strong>Contact information</strong> (name, email, phone) — when you fill out a volunteer signup, partner inquiry, contact, or event RSVP form</li>
+      <li><strong>Program intake information</strong> — when you apply to a Project H.O.O.D. program through our Apricot intake portal (operated by Social Solutions)</li>
+      <li><strong>Donation information</strong> — when you give through NetworkForGood or Tiltify; those platforms handle payment processing and their own privacy policies apply</li>
+      <li><strong>Newsletter subscription</strong> — email address, if you sign up for our monthly updates through NetworkForGood</li>
+      <li><strong>Usage data</strong> — pages visited, time on site, referral source, and similar analytics data collected automatically via Google Analytics 4. This data is anonymized and aggregated — we cannot identify individual visitors from it.</li>
+    </ul>
+
+    <h2 style="margin-top:var(--sp-3);">How we use your information</h2>
+    <ul>
+      <li>To respond to your inquiry or match you to a volunteer opportunity</li>
+      <li>To process or acknowledge donations</li>
+      <li>To send our monthly newsletter, if you subscribed</li>
+      <li>To improve the website (via anonymized analytics)</li>
+      <li>To fulfill program services, if you applied to a program</li>
+    </ul>
+    <p>We do not sell, rent, or trade your personal information. We do not use it for advertising. We will not share it with third parties except as described below.</p>
+
+    <h2 style="margin-top:var(--sp-3);">Third-party services</h2>
+    <p>This site uses the following external services. Each has its own privacy policy:</p>
+    <ul>
+      <li><strong>Google Forms &amp; Google Analytics 4</strong> — form responses and site analytics (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>)</li>
+      <li><strong>Google Calendar</strong> — public event calendar embedded on this site</li>
+      <li><strong>NetworkForGood</strong> — donation processing and newsletter (<a href="https://www.networkforgood.com/about/privacy/" target="_blank" rel="noopener noreferrer">NetworkForGood Privacy Policy</a>)</li>
+      <li><strong>Tiltify</strong> — Walk Across America peer-to-peer fundraising (<a href="https://info.tiltify.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer">Tiltify Privacy Policy</a>)</li>
+      <li><strong>Social Solutions Apricot</strong> — program intake and case management</li>
+    </ul>
+    <p>When you click a link to any of these services, you leave projecthood.org and their privacy policies apply.</p>
+
+    <h2 style="margin-top:var(--sp-3);">Cookies</h2>
+    <p>Google Analytics uses cookies to distinguish repeat visitors and track sessions. No personally identifiable information is stored in these cookies. You can opt out using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a>.</p>
+
+    <h2 style="margin-top:var(--sp-3);">Data retention</h2>
+    <p>Form responses are stored in Google Sheets accessible only to Project H.O.O.D. staff. We retain responses as long as they are operationally relevant. You may request deletion at any time.</p>
+
+    <h2 style="margin-top:var(--sp-3);">Your rights</h2>
+    <p>You may request to view, correct, or delete any personal information we hold about you. To make a request, email <a href="mailto:info@projecthood.org">info@projecthood.org</a> with "Privacy Request" in the subject line. We will respond within 30 days.</p>
+
+    <h2 style="margin-top:var(--sp-3);">Changes to this policy</h2>
+    <p>If we make material changes to this policy, we will update the "Last updated" date at the top of this page. We will not retroactively reduce your rights without explicit notice.</p>
+
+    <h2 style="margin-top:var(--sp-3);">Contact</h2>
+    <p>Questions about this policy? Email <a href="mailto:info@projecthood.org">info@projecthood.org</a> or write to us at 6620 S. King Drive, Chicago, IL 60637.</p>
+
   </div>
 </section>
 """
@@ -1247,6 +1322,7 @@ pages = [
     ("partner.html",     "Partner with us",              "Partner with Project H.O.O.D. — corporate, employer, foundation, church partnerships.",                                                 "a_gi",           partner_body),
     ("news.html",        "News",                         "Program milestones, LEO Center progress, stories from the block, press mentions.",                                                    "a_news",         news_body),
     ("contact.html",     "Contact",                      "Talk to us — press, partnership, participant, or general inquiry.",                                                                    None,             contact_body),
+    ("privacy.html",     "Privacy Policy",               "Project H.O.O.D. privacy policy — what we collect, how we use it, and your rights.",                                               None,             privacy_body),
     ("404.html",         "Page not found",               "This page moved or never existed — here's where to go next.",                                                                          None,             notfound_body),
 ]
 
