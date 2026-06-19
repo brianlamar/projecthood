@@ -168,7 +168,7 @@ def write_page(filename, title, meta, active, body):
 # -------- HOME --------
 home_body = f"""
 <!-- HERO — WALK WITH US -->
-<section class="hero bg-blue">
+<section class="hero bg-black">
   <div class="wrap">
     <div class="hero-split">
       <div>
@@ -756,7 +756,7 @@ leo_body = f"""
 
 # -------- CAMPAIGNS (WAA) --------
 campaigns_body = f"""
-<section class="hero bg-blue">
+<section class="hero bg-black">
   <div class="wrap">
     <div class="hero-split">
       <div>
@@ -768,7 +768,7 @@ campaigns_body = f"""
           <a class="btn btn-outline-light" href="https://tiltify.com/project-hood/walk-across-america-2025">Start a team</a>
         </div>
       </div>
-      <img src="img/campaign-walk-poster.png" alt="Walk With Us! — The Movement" style="width:100%;border-radius:8px;display:block;max-height:420px;object-fit:cover;">
+      <img src="img/campaign-walk-poster.png" alt="Walk With Us! — The Movement" style="width:100%;border-radius:8px;display:block;">
     </div>
   </div>
 </section>
