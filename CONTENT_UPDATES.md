@@ -63,18 +63,44 @@ If that feels complicated, just write the post in a Google Doc, send it to Brian
 
 ## Updating events
 
-**The events page pulls live from Google Calendar — you don't need to touch the website at all.**
+**Events are managed on Eventbrite — you don't need to touch the website at all.**
 
-To add, edit, or remove an event:
-1. Open Google Calendar and find the **Project H.O.O.D. public calendar**
-2. Add or edit the event there — title, date, time, location, description
-3. The website updates automatically within a few minutes
+### One-time setup (Brian does this once)
+1. Create a free organization account at [eventbrite.com](https://www.eventbrite.com)
+2. Set up the **Project H.O.O.D.** organization profile
+3. Invite team members: go to **Manage organization → Team** and add people by email
+4. Assign roles: Owner (Brian), Admin (comms lead), or Manager (program coordinators)
 
-That's it. No GitHub required for events.
+### Posting an event (any team member with access)
+1. Go to [eventbrite.com](https://www.eventbrite.com) and sign in under Project H.O.O.D.
+2. Click **Create event**
+3. Upload your event flyer as the **Event image** — this becomes the card photo on the website
+4. Fill in: title, date, time, location, description
+5. Set ticket type to **Free** (or paid if applicable)
+6. Click **Publish** — the event appears on projecthood.org automatically
 
-**Who owns this:** Whoever manages the Google Calendar (comms or events lead). Make sure you have edit access to the shared calendar — ask Brian if you don't.
+That's it. No GitHub, no code, no Brian needed.
 
-**For event RSVPs:** create a Google Form for the specific event and paste the link in the event description inside Google Calendar. That way it shows up right there in the calendar embed on the site.
+### Sharing an event
+- Copy the event URL from Eventbrite and paste it anywhere (texts, Instagram, GroupMe, email)
+- Or use the **Share** button on the events page — it copies the link to your clipboard
+- Eventbrite automatically emails confirmation and reminders to everyone who RSVPs
+
+### Downloading / sharing a flyer
+- Upload the flyer PDF to `docs/events/` in the GitHub repo (same way you upload photos — see "Adding a photo" above)
+- Brian can add a "Download flyer" link to the event card on the site
+
+### Adding an event card to the website (if not using Eventbrite widget yet)
+Until the Eventbrite collection widget is embedded, event cards are managed directly in `events.html`:
+1. Open `events.html` on GitHub
+2. Find the comment `═══ EVENT CARD — copy this entire block`
+3. Copy one of the existing `<div class="card"...>` blocks
+4. Paste it above the existing cards (so the newest appears first)
+5. Update: date text, title, location, the `href` in the RSVP button (your Eventbrite event URL), and the `data-url` in the Share button (same URL)
+6. For the flyer image: upload it to `img/events/` in the GitHub repo, then replace `<div class="img-ph"...>` with `<img src="img/events/YOUR-FILENAME.jpg" alt="[Event name] flyer" style="width:100%;display:block;">`
+7. Commit with a title like "Add event: [Event name]"
+
+**Who owns this:** Comms/events lead. Make sure you have Eventbrite access — ask Brian at brian@projecthood.org.
 
 ---
 
@@ -181,9 +207,10 @@ These are **not** edited on the website. They live in external tools:
 | Donation page look / donor amounts | NetworkForGood admin |
 | Walk Across America campaign | Tiltify admin |
 | Volunteer form questions | Google Forms |
-| Event RSVP form | Google Forms |
-| Events calendar | Google Calendar |
+| Events — post, edit, cancel | Eventbrite admin |
+| Event RSVPs + confirmations | Eventbrite (automatic) |
 | Program intake forms | Apricot |
+| Re-Entry intake form | Google Forms |
 
 The website just links to these — so changes you make in those tools show up automatically.
 
@@ -211,6 +238,7 @@ The worst case is about 60 seconds of weirdness on the site. Low stakes.
 | LEO Center campaign | `leo-center.html` |
 | Walk Across America | `campaigns.html` |
 | Donate / Volunteer / Partner hub | `get-involved.html` |
+| Events (card text, RSVP links) | `events.html` — or just use Eventbrite |
 | News / press | `news.html` |
 | Job openings | `jobs.html` |
 | Contact info, office address | `contact.html` |

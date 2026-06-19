@@ -20,7 +20,7 @@ campaigns.html          Walk Across America (WAA)
 get-involved.html       Give / Volunteer / Partner hub
 donate.html             Donate (routes to NetworkForGood)
 volunteer.html          Volunteer (Google Form)
-events.html             Events (driven by Google Calendar)
+events.html             Events (Eventbrite widget + manual cards)
 partner.html            Partner inquiries
 news.html               News / stories
 contact.html            Contact
@@ -51,8 +51,8 @@ External by design — not self-hosted on this site:
 - **Donate** — routes to NetworkForGood (`projecthood.networkforgood.com`)
 - **Walk Across America** — routes to Tiltify (`tiltify.com/project-hood/walk-across-america-2025`)
 - **Program intake** — Apricot
-- **Volunteer / Contact / Partner / Event RSVPs** — Google Forms → Google Sheet
-- **Events calendar** — ⚠️ currently hardcoded HTML (Google Calendar embed not yet implemented — see QA_FINDINGS.md §3 for options)
+- **Volunteer / Contact / Partner** — Google Forms → Google Sheet
+- **Events** — Eventbrite organization account (team-managed; RSVP, flyer upload, sharing built in). Widget embed slot in `events_body`; manual card fallback active until org is set up. See `CONTENT_UPDATES.md` → "Updating events."
 - **Newsletter** — NetworkForGood embed
 
 ## Brand
