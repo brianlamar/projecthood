@@ -92,6 +92,7 @@ FOOTER = """
         <h5>Learn More</h5>
         <ul>
           <li><a href="about.html">About</a></li>
+          <li><a href="exec-director.html">Executive Director</a></li>
           <li><a href="programs.html">Programs</a></li>
           <li><a href="impact.html">Impact</a></li>
           <li><a href="leo-center.html">LEO Center</a></li>
@@ -188,12 +189,27 @@ home_body = f"""
   </div>
 </section>
 
+<!-- BRICK CAMPAIGN -->
+<section class="section bg-red" style="padding-top:var(--sp-3);padding-bottom:var(--sp-3);">
+  <div class="wrap" style="display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap;justify-content:space-between;">
+    <div style="flex:1;min-width:260px;">
+      <div class="eyebrow" style="color:var(--yellow);">Buy a Brick</div>
+      <h2 style="color:#fff;margin:6px 0 10px;">Help us lay the foundation.</h2>
+      <p style="color:rgba(255,255,255,.9);font-size:var(--fs-lead);margin:0;">Every brick you buy goes toward the LEO Center — a permanent home for youth, families, and opportunity on Chicago's South Side. Leave your name. Leave your legacy.</p>
+    </div>
+    <div style="flex-shrink:0;display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+      <a class="btn btn-yellow" href="https://projecthood.networkforgood.com/projects/301372-2026-brick-by-brick-campaign">Buy a Brick</a>
+      <a class="btn btn-outline-light" href="leo-center.html">About LEO</a>
+    </div>
+  </div>
+</section>
+
 <!-- WHO WE ARE -->
 <section class="section bg-offwhite">
   <div class="wrap grid-2" style="align-items:center;">
     <div>
       <div class="eyebrow">Woodlawn, Chicago</div>
-      <h2>Five programs. One neighborhood. A decade of showing up.</h2>
+      <h2>Five Pillars. One neighborhood. A decade of showing up.</h2>
       <p style="font-size:var(--fs-lead);">Project H.O.O.D. invests directly on the block — in workforce training, violence prevention, mental health, education, and economic growth. No national overhead, no middle layer.</p>
       <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
         <a class="btn btn-primary" href="impact.html">See our impact</a>
@@ -225,7 +241,7 @@ home_body = f"""
 <section class="section">
   <div class="wrap">
     <div class="eyebrow">What we do</div>
-    <h2>Five programs, one strategy.</h2>
+    <h2>Five Pillars, one strategy.</h2>
     <div class="grid-3" style="margin-top:var(--sp-3);">
       <div class="prog-card pg-green">
         <span class="tag tag-green">Violence Prevention</span>
@@ -331,7 +347,7 @@ about_body = f"""
     <div>
       <div class="eyebrow">Our mission</div>
       <h2>A decade of showing up.</h2>
-      <p>Project H.O.O.D. (Helping Others Obtain Destiny) exists to create sustainable change in Woodlawn and the broader South Side of Chicago. We operate five interlocking programs — violence prevention, workforce development, education, mental health, and economic growth — because no one of these alone is enough.</p>
+      <p>Project H.O.O.D. (Helping Others Obtain Destiny) exists to create sustainable change in Woodlawn and the broader South Side of Chicago. We operate across five interconnected pillars — violence prevention, workforce development, education, mental health, and economic growth — because no one of these alone is enough.</p>
       <p>We believe that the people closest to the problems are closest to the solutions. Everything we do is built with the neighborhood, not for it.</p>
     </div>
     <div class="img-ph" style="min-height:340px;">MISSION PHOTO · community or founder</div>
@@ -378,6 +394,23 @@ about_body = f"""
   </div>
 </section>
 
+<section class="section bg-offwhite">
+  <div class="wrap grid-2" style="align-items:center;gap:var(--sp-4);">
+    <div class="img-ph" style="min-height:340px;font-size:13px;">
+      PHOTO · Desmond "Dez" Marshall<br>
+      <span style="opacity:.6;">Save to img/desmond-marshall.jpg</span>
+    </div>
+    <div>
+      <div class="eyebrow">Executive Director</div>
+      <h2>Desmond "Dez" Marshall</h2>
+      <p style="font-size:var(--fs-lead);">Dez joined Project H.O.O.D. as a volunteer and never left. Today he leads a staff of 83+ across multiple divisions, has raised more than $44M in two years, and oversees programs that serve 15,000+ people annually throughout Chicagoland.</p>
+      <div style="margin-top:24px;">
+        <a class="btn btn-primary" href="exec-director.html">Meet Dez →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="wrap">
     <div class="eyebrow">Team</div>
@@ -417,7 +450,7 @@ programs_body = f"""
 <section class="hero bg-red">
   <div class="wrap">
     <div class="eyebrow" style="color:var(--yellow);">Programs</div>
-    <h1>Five programs. One <span class="hl-yellow">strategy.</span></h1>
+    <h1>Five Pillars. One <span class="hl-yellow">strategy.</span></h1>
     <p class="lead">Violence prevention, workforce development, education, mental health, and economic growth — interlocking, not siloed. You can't fix one without touching the others.</p>
   </div>
 </section>
@@ -706,11 +739,28 @@ leo_body = f"""
   </div>
 </section>
 
+<section class="section bg-offwhite">
+  <div class="wrap" style="max-width:900px;">
+    <div class="eyebrow" style="text-align:center;">The vision</div>
+    <h2 style="text-align:center;margin-bottom:var(--sp-3);">See what we're building.</h2>
+    <div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.18);">
+      <iframe
+        src="https://www.youtube.com/embed/NHNPy5tFCiw"
+        title="LEO Center — Leadership &amp; Economic Opportunity Center"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="position:absolute;top:0;left:0;width:100%;height:100%;">
+      </iframe>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="wrap grid-2">
     <div>
       <div class="eyebrow">What it is</div>
-      <h2>One building, five programs, one neighborhood.</h2>
+      <h2>One building, five pillars, one neighborhood.</h2>
       <p>The LEO Center brings every Project H.O.O.D. program under one roof: workforce training classrooms, mental health counseling suites, esports arena, economic growth incubator, outreach team offices, community kitchen, and a 400-seat multipurpose hall.</p>
       <p>It's being built on land owned by Project H.O.O.D., directly on S. King Drive — a deliberate statement that serious investment belongs on the South Side.</p>
     </div>
@@ -1318,6 +1368,87 @@ privacy_body = """
 </section>
 """
 
+# -------- EXECUTIVE DIRECTOR --------
+exec_director_body = f"""
+<section class="hero bg-black">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--yellow);">Leadership</div>
+    <h1>Meet Our <span class="hl-yellow">Executive Director</span></h1>
+    <p class="lead">Desmond "Dez" Marshall leads the team, the strategy, and the relationships that make Project H.O.O.D. run.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="grid-2" style="align-items:start;gap:var(--sp-4);">
+      <div>
+        <!-- TODO: Save Dez's photo to img/desmond-marshall.jpg
+             Source: https://www.projecthood.org/desmondmarshall -->
+        <div class="img-ph" style="min-height:480px;font-size:13px;line-height:1.6;">
+          PHOTO · Desmond "Dez" Marshall<br>
+          <span style="opacity:.6;">Save to img/desmond-marshall.jpg</span>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">Executive Director</div>
+        <h2 style="margin-bottom:6px;">Desmond "Dez" Marshall</h2>
+        <p style="font-size:14px;color:var(--muted);margin-bottom:var(--sp-3);">B.S., Hampton University · Broadcast Journalism &amp; Marketing</p>
+        <p><strong>Desmond "Dez" Marshall</strong> is an accomplished and visionary leader who serves as Executive Director of Project H.O.O.D., a nonprofit dedicated to empowering underserved communities through education, economic development, and holistic support services.</p>
+        <p>A proud graduate of Hampton University, Dez holds a Bachelor of Science degree in Broadcast Journalism and Marketing. His professional journey began at Burger King Corporation in Miami, where he entered the recent college graduate program. His talent and drive quickly propelled him into a leadership role overseeing sales, marketing, and operations for more than 40 locations across Upstate New York.</p>
+        <p>Dez later returned to his hometown of Chicago, traveling nationwide in a sales role securing advertising partnerships for a small media outlet. After four and a half years in corporate sales, Dez felt a deeper calling to serve his community — and that calling led him to volunteer with Project H.O.O.D., where he discovered his true purpose.</p>
+        <p>Since joining Project H.O.O.D., Dez has transformed the organization from a grassroots initiative into a thriving enterprise. Under his leadership, the team has grown from just three employees to over 83 staff members across multiple divisions. He successfully led a capital campaign that raised more than $44 million in financial and in-kind donations in just two years.</p>
+        <p>Dez's strategic mindset, dedication to community impact, and talent for building powerful partnerships have helped Project H.O.O.D. touch the lives of over 15,000 individuals annually throughout the Chicagoland area.</p>
+        <p>Desmond is married to his lovely wife, <strong>Skye D. Marshall</strong>, and together they have two children: a daughter, <strong>Sunni</strong>, and a son, <strong>Desmond II</strong>.</p>
+        <div style="margin-top:var(--sp-3);display:flex;gap:12px;flex-wrap:wrap;">
+          <a class="btn btn-primary" href="about.html">About Project H.O.O.D.</a>
+          <a class="btn btn-outline" href="contact.html">Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-offwhite">
+  <div class="wrap">
+    <div class="eyebrow" style="text-align:center;">By the numbers</div>
+    <div class="stat-grid" style="margin-top:var(--sp-3);">
+      <div class="stat accent-green"><div class="v">83+</div><div class="l">staff members led</div></div>
+      <div class="stat accent-red"><div class="v">$44M+</div><div class="l">raised in two years</div></div>
+      <div class="stat"><div class="v">15,000+</div><div class="l">individuals served annually</div></div>
+      <div class="stat accent-green"><div class="v">3 → 83</div><div class="l">team growth under Dez</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap" style="max-width:900px;">
+    <div class="eyebrow" style="text-align:center;">Hear from Dez</div>
+    <h2 style="text-align:center;margin-bottom:var(--sp-3);">A deeper look at the leadership.</h2>
+    <div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.18);">
+      <iframe
+        src="https://www.youtube.com/embed/EqQJP6ZLiSo"
+        title="Desmond Marshall — Executive Director, Project H.O.O.D."
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="position:absolute;top:0;left:0;width:100%;height:100%;">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="wrap">
+    <h2>Move the work forward.</h2>
+    <p style="max-width:560px;margin:0 auto var(--sp-3);opacity:.95;">Give to the mission Dez is building — or get involved directly.</p>
+    <div class="btn-group">
+      <a class="btn btn-yellow" href="https://projecthood.networkforgood.com/">Donate</a>
+      <a class="btn btn-outline-light" href="get-involved.html">Volunteer</a>
+    </div>
+  </div>
+</section>
+"""
+
 # -------- 404 --------
 notfound_body = f"""
 <section class="hero bg-yellow" style="color:var(--black);text-align:center;padding:var(--sp-6) 0;">
@@ -1341,7 +1472,8 @@ notfound_body = f"""
 pages = [
     ("index.html",       "Home",                         "Project H.O.O.D. — a community-rooted nonprofit investing in Chicago's South Side through violence prevention, workforce development, mental health, education, and economic growth.", None,            home_body),
     ("about.html",       "About",                        "Project H.O.O.D. was founded by Pastor Corey B. Brooks in 2012. A decade of showing up in Woodlawn.",                                   "a_about",        about_body),
-    ("programs.html",    "Programs",                     "Five programs, one neighborhood. Violence prevention, workforce development, education, mental health, and economic growth.",         "a_programs",     programs_body),
+    ("exec-director.html", "Executive Director",         "Meet Desmond 'Dez' Marshall — Executive Director of Project H.O.O.D. Led the team from 3 to 83 staff, raised $44M+, serves 15,000+ annually.", "a_about",    exec_director_body),
+    ("programs.html",    "Programs",                     "Five Pillars, one neighborhood. Violence prevention, workforce development, education, mental health, and economic growth.",         "a_programs",     programs_body),
     ("program.html",     "Violence Prevention",          "Violence Prevention at Project H.O.O.D. — credible messengers and conflict mediators embedded in Woodlawn.",                          "a_programs",     program_body),
     ("impact.html",      "Impact",                       "2025 impact — 15,000+ served, 1,048 job placements, 2M+ lbs of food distributed, 70% LEO Center funded.",                             "a_impact",       impact_body),
     ("leo-center.html",  "LEO Center",                   "The Leadership and Economic Opportunity Center — 70% funded, a 90,000 sq ft community hub on S. King Drive.",                        "a_leo",          leo_body),
