@@ -36,6 +36,8 @@ _build.py               Regenerates all pages from shared HEAD / FOOTER
 - **[TEAM_REVIEW.md](TEAM_REVIEW.md)** — QA instructions for the current team review pass (preview URL, page list, feedback format)
 - **[SITEMAP.md](SITEMAP.md)** — Page-by-page purpose, audience, primary CTA, integrations, photo slots, content owners
 - **[CONTENT_UPDATES.md](CONTENT_UPDATES.md)** — Plain-English guide for non-technical staff to update content after launch
+- **[UPDATING_WITH_CLAUDE.md](UPDATING_WITH_CLAUDE.md)** — How maintainers update the site using Claude (setup + workflow + publish steps)
+- **[CLAUDE.md](CLAUDE.md)** — Operating instructions Claude reads automatically (branch model, brand tokens, build rules)
 - **[LAUNCH_RUNBOOK.md](LAUNCH_RUNBOOK.md)** — Cutover-day procedure: DNS, redirects, analytics, SEO, accessibility, rollback
 
 ## Editing
