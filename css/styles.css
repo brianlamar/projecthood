@@ -21,6 +21,7 @@
   --muted:    #6f6f71;
   --line:     #d7d8d4;
   --bg:       #f6f5f1;
+  --gold:     #8a6d00;   /* darkened brand-yellow — accessible text/accents on light */
 
   /* Typography */
   --font-display: 'Oswald', 'Arial Narrow', sans-serif; /* Akkordeon substitute */
@@ -270,7 +271,7 @@ p  { margin: 0 0 var(--sp-3); }
 .tag-red { color: var(--red); border-color: var(--red); }
 .tag-blue { color: var(--blue); border-color: var(--blue); }
 .tag-purple { color: var(--purple); border-color: var(--purple); }
-.tag-yellow { color: #8a6d00; border-color: var(--yellow); background: var(--yellow); }
+.tag-yellow { color: var(--gold); border-color: var(--yellow); background: var(--yellow); }
 .tag-black { color: var(--ink); border-color: var(--ink); }
 
 /* ---- 10. COMPONENT — PROGRESS BAR ----------------------------- */
@@ -313,7 +314,16 @@ p  { margin: 0 0 var(--sp-3); }
 .prog-card.pg-green { border-left-color: var(--green); }
 .prog-card.pg-blue  { border-left-color: var(--blue); }
 .prog-card.pg-purple { border-left-color: var(--purple); }
-.prog-card.pg-yellow { border-left-color: #8a6d00; }
+.prog-card.pg-yellow { border-left-color: var(--gold); }
+
+/* ---- Responsive 16:9 video embed --------------------------------- */
+.video-frame {
+  position: relative; width: 100%; padding-bottom: 56.25%; height: 0;
+  overflow: hidden; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,.18);
+}
+.video-frame iframe {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+}
 
 /* ---- 12. HERO variants ---------------------------------------- */
 .hero {
