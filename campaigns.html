@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
+  <meta name="robots" content="index,follow">
   <title>Walk With Us! · Project H.O.O.D.</title>
   <meta name="description" content="Walk With Us! — a nationwide movement to raise $25M for youth, families, and the LEO Center. Give, walk, or start a team on Tiltify.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,14 +15,19 @@
   <meta property="og:description" content="Walk With Us! — a nationwide movement to raise $25M for youth, families, and the LEO Center. Give, walk, or start a team on Tiltify.">
   <meta property="og:image" content="img/social-icon.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <!-- Google Analytics 4 — replace YOUR_GA4_ID with your Measurement ID (format: G-XXXXXXXXXX)
+       Get it at: analytics.google.com → Admin → Data Streams → your stream → Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR_GA4_ID');
+  </script>
 </head>
 <body>
 
 <a class="skip-link" href="#main">Skip to main content</a>
-
-<div class="preview-banner">
-  <strong>PREVIEW BUILD</strong> &nbsp;·&nbsp; clickable prototype · brand + IA · content placeholders pending review
-</div>
 
 <header class="site-header">
   <div class="nav">
@@ -81,7 +86,7 @@
       <p>In 2025, Pastor Brooks walked from Chicago to New York — 900+ miles — to put the South Side on the map and raise the final dollars for the LEO Center. That walk is over. The movement isn't.</p>
       <p>Walk With Us! invites communities across America to keep carrying the mission forward: walks, church activations, volunteer days, and prayer gatherings — everywhere people are ready to step up.</p>
     </div>
-    <div class="img-ph" style="min-height:340px;">ROUTE MAP · Chicago → NYC</div>
+    <div class="img-ph" style="min-height:340px;background-image:url('img/campaigns-route-map.jpg');background-size:cover;background-position:center top;">ROUTE MAP · Chicago → NYC<br><span style="font-size:11px;opacity:.5;">→ img/campaigns-route-map.jpg</span></div>
   </div>
 </section>
 

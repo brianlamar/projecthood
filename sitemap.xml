@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://projecthood.org/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://projecthood.org/about.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://projecthood.org/exec-director.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://projecthood.org/programs.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://projecthood.org/violence-prevention.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://projecthood.org/workforce-development.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://projecthood.org/health-wellness.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://projecthood.org/youth-programming.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://projecthood.org/reentry-services.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://projecthood.org/impact.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://projecthood.org/leo-center.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://projecthood.org/campaigns.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://projecthood.org/events.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://projecthood.org/get-involved.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://projecthood.org/donate.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://projecthood.org/volunteer.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://projecthood.org/partner.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://projecthood.org/news.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://projecthood.org/contact.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://projecthood.org/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
+  <meta name="robots" content="index,follow">
   <title>Violence Prevention · Project H.O.O.D.</title>
   <meta name="description" content="Creating safer communities in Woodlawn — credible messengers, conflict mediation, and hospital-based intervention.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,14 +15,19 @@
   <meta property="og:description" content="Creating safer communities in Woodlawn — credible messengers, conflict mediation, and hospital-based intervention.">
   <meta property="og:image" content="img/social-icon.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <!-- Google Analytics 4 — replace YOUR_GA4_ID with your Measurement ID (format: G-XXXXXXXXXX)
+       Get it at: analytics.google.com → Admin → Data Streams → your stream → Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR_GA4_ID');
+  </script>
 </head>
 <body>
 
 <a class="skip-link" href="#main">Skip to main content</a>
-
-<div class="preview-banner">
-  <strong>PREVIEW BUILD</strong> &nbsp;·&nbsp; clickable prototype · brand + IA · content placeholders pending review
-</div>
 
 <header class="site-header">
   <div class="nav">
@@ -69,7 +74,7 @@
         <li>Community events promoting unity and connection</li>
       </ul>
     </div>
-    <div class="img-ph" style="min-height:380px;">PHOTO · outreach team / community event</div>
+    <div class="img-ph" style="min-height:380px;background-image:url('img/programs-violence-prevention.jpg');background-size:cover;background-position:center top;">PHOTO · outreach team / community event<br><span style="font-size:11px;opacity:.5;">→ img/programs-violence-prevention.jpg</span></div>
   </div>
 </section>
 
@@ -89,19 +94,6 @@
         <li style="padding:8px 0;border-bottom:1px solid var(--line);">Office of Violence Prevention, City of Chicago</li>
         <li style="padding:8px 0;">New Beginnings Church of Chicago</li>
       </ul>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap" style="max-width:900px;">
-    <div class="eyebrow" style="text-align:center;color:var(--green);">Watch</div>
-    <h2 style="text-align:center;margin-bottom:var(--sp-3);">See the work in action.</h2>
-    <div class="video-frame">
-      <iframe src="https://www.youtube.com/embed/9YGXVJOQchc?si=H6fcWDpE5sL-eEWs"
-        title="Project H.O.O.D. Violence Prevention"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   </div>
 </section>

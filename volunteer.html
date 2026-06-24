@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
+  <meta name="robots" content="index,follow">
   <title>Volunteer · Project H.O.O.D.</title>
   <meta name="description" content="Volunteer with Project H.O.O.D. — sign up and we'll match you to an opportunity.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,14 +15,19 @@
   <meta property="og:description" content="Volunteer with Project H.O.O.D. — sign up and we'll match you to an opportunity.">
   <meta property="og:image" content="img/social-icon.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <!-- Google Analytics 4 — replace YOUR_GA4_ID with your Measurement ID (format: G-XXXXXXXXXX)
+       Get it at: analytics.google.com → Admin → Data Streams → your stream → Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR_GA4_ID');
+  </script>
 </head>
 <body>
 
 <a class="skip-link" href="#main">Skip to main content</a>
-
-<div class="preview-banner">
-  <strong>PREVIEW BUILD</strong> &nbsp;·&nbsp; clickable prototype · brand + IA · content placeholders pending review
-</div>
 
 <header class="site-header">
   <div class="nav">

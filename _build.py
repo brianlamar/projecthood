@@ -22,7 +22,7 @@ HEAD = """<!DOCTYPE html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
+  <meta name="robots" content="index,follow">
   <title>{title} · Project H.O.O.D.</title>
   <meta name="description" content="{meta}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,14 +34,19 @@ HEAD = """<!DOCTYPE html>
   <meta property="og:description" content="{meta}">
   <meta property="og:image" content="img/social-icon.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <!-- Google Analytics 4 — replace YOUR_GA4_ID with your Measurement ID (format: G-XXXXXXXXXX)
+       Get it at: analytics.google.com → Admin → Data Streams → your stream → Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', 'YOUR_GA4_ID');
+  </script>
 </head>
 <body>
 
 <a class="skip-link" href="#main">Skip to main content</a>
-
-<div class="preview-banner">
-  <strong>PREVIEW BUILD</strong> &nbsp;·&nbsp; clickable prototype · brand + IA · content placeholders pending review
-</div>
 
 <header class="site-header">
   <div class="nav">
@@ -216,7 +221,7 @@ home_body = f"""
         <a class="btn btn-outline-light" href="about.html">About us</a>
       </div>
     </div>
-    <div class="img-ph" style="min-height:300px;">PHOTO · neighborhood / staff / programs</div>
+    <div class="img-ph" style="min-height:300px;background-image:url('img/home-community.jpg');background-size:cover;background-position:center top;">PHOTO · neighborhood / staff / programs<br><span style="font-size:11px;opacity:.5;">→ img/home-community.jpg</span></div>
   </div>
 </section>
 
@@ -287,7 +292,7 @@ home_body = f"""
 <section class="section bg-black">
   <div class="wrap">
     <div class="grid-2">
-      <div class="img-ph dark" style="min-height:300px;">LEO CENTER RENDERING</div>
+      <div class="img-ph dark" style="min-height:300px;background-image:url('img/leo-center-rendering.jpg');background-size:cover;background-position:center top;">LEO CENTER RENDERING<br><span style="font-size:11px;opacity:.5;">→ img/leo-center-rendering.jpg</span></div>
       <div>
         <div class="eyebrow" style="color:var(--yellow);">Capital Campaign</div>
         <h2>A home for everything we do.</h2>
@@ -350,7 +355,7 @@ about_body = f"""
       <p>Project H.O.O.D. (Helping Others Obtain Destiny) exists to create sustainable change in Woodlawn and the broader South Side of Chicago. We operate across five interconnected pillars — violence prevention, workforce development, health &amp; wellness, youth programming, and re-entry services — because no one of these alone is enough.</p>
       <p>We believe that the people closest to the problems are closest to the solutions. Everything we do is built with the neighborhood, not for it.</p>
     </div>
-    <div class="img-ph" style="min-height:340px;">MISSION PHOTO · community or founder</div>
+    <div class="img-ph" style="min-height:340px;background-image:url('img/about-mission.jpg');background-size:cover;background-position:center top;">MISSION PHOTO · community or founder<br><span style="font-size:11px;opacity:.5;">→ img/about-mission.jpg</span></div>
   </div>
 </section>
 
@@ -381,7 +386,7 @@ about_body = f"""
 
 <section class="section bg-black">
   <div class="wrap grid-2">
-    <div class="img-ph dark" style="min-height:320px;">FOUNDER PORTRAIT · Pastor Brooks</div>
+    <div class="img-ph dark" style="min-height:320px;background-image:url('img/about-pastor-brooks.jpg');background-size:cover;background-position:center top;">FOUNDER PORTRAIT · Pastor Brooks<br><span style="font-size:11px;opacity:.5;">→ img/about-pastor-brooks.jpg</span></div>
     <div>
       <div class="eyebrow" style="color:var(--yellow);">Founder</div>
       <h2 style="color:var(--white);">Pastor Corey B. Brooks</h2>
@@ -396,9 +401,9 @@ about_body = f"""
 
 <section class="section bg-offwhite">
   <div class="wrap grid-2" style="align-items:center;gap:var(--sp-4);">
-    <div class="img-ph" style="min-height:340px;font-size:13px;">
+    <div class="img-ph" style="min-height:340px;font-size:13px;background-image:url('img/desmond-marshall.jpg');background-size:cover;background-position:center top;">
       PHOTO · Desmond "Dez" Marshall<br>
-      <span style="opacity:.6;">Save to img/desmond-marshall.jpg</span>
+      <span style="font-size:11px;opacity:.5;">→ img/desmond-marshall.jpg</span>
     </div>
     <div>
       <div class="eyebrow">Executive Director</div>
@@ -599,7 +604,7 @@ violence_prevention_body = f"""
         <li>Community events promoting unity and connection</li>
       </ul>
     </div>
-    <div class="img-ph" style="min-height:380px;">PHOTO · outreach team / community event</div>
+    <div class="img-ph" style="min-height:380px;background-image:url('img/programs-violence-prevention.jpg');background-size:cover;background-position:center top;">PHOTO · outreach team / community event<br><span style="font-size:11px;opacity:.5;">→ img/programs-violence-prevention.jpg</span></div>
   </div>
 </section>
 
@@ -680,7 +685,7 @@ workforce_development_body = f"""
         <a class="btn btn-primary" href="https://www.projecthood.org/construction-cohort" target="_blank" rel="noopener">Pre-Apprenticeship Construction cohort →</a>
       </div>
     </div>
-    <div class="img-ph" style="min-height:380px;">PHOTO · job training / construction cohort</div>
+    <div class="img-ph" style="min-height:380px;background-image:url('img/programs-workforce.jpg');background-size:cover;background-position:center top;">PHOTO · job training / construction cohort<br><span style="font-size:11px;opacity:.5;">→ img/programs-workforce.jpg</span></div>
   </div>
 </section>
 
@@ -754,7 +759,7 @@ health_wellness_body = f"""
         <li>Referral network to ongoing care providers</li>
       </ul>
     </div>
-    <div class="img-ph" style="min-height:380px;">PHOTO · health clinic / wellness event</div>
+    <div class="img-ph" style="min-height:380px;background-image:url('img/programs-health-wellness.jpg');background-size:cover;background-position:center top;">PHOTO · health clinic / wellness event<br><span style="font-size:11px;opacity:.5;">→ img/programs-health-wellness.jpg</span></div>
   </div>
 </section>
 
@@ -859,7 +864,7 @@ youth_programming_body = f"""
         <li>Summer internship placement</li>
       </ul>
     </div>
-    <div class="img-ph" style="min-height:380px;">PHOTO · esports arena / youth programming</div>
+    <div class="img-ph" style="min-height:380px;background-image:url('img/programs-youth.jpg');background-size:cover;background-position:center top;">PHOTO · esports arena / youth programming<br><span style="font-size:11px;opacity:.5;">→ img/programs-youth.jpg</span></div>
   </div>
 </section>
 
@@ -933,7 +938,7 @@ reentry_services_body = f"""
         <li>Connection to community resources and referrals</li>
       </ul>
     </div>
-    <div class="img-ph" style="min-height:380px;">PHOTO · re-entry services / staff</div>
+    <div class="img-ph" style="min-height:380px;background-image:url('img/programs-reentry.jpg');background-size:cover;background-position:center top;">PHOTO · re-entry services / staff<br><span style="font-size:11px;opacity:.5;">→ img/programs-reentry.jpg</span></div>
   </div>
 </section>
 
@@ -1087,7 +1092,7 @@ leo_body = f"""
           <a class="btn btn-outline-light" href="campaigns.html">Walk Across America</a>
         </div>
       </div>
-      <div class="img-ph dark" style="min-height:340px;">LEO CENTER RENDERING / SITE PHOTO</div>
+      <div class="img-ph dark" style="min-height:340px;background-image:url('img/leo-center-rendering.jpg');background-size:cover;background-position:center top;">LEO CENTER RENDERING / SITE PHOTO<br><span style="font-size:11px;opacity:.5;">→ img/leo-center-rendering.jpg</span></div>
     </div>
   </div>
 </section>
@@ -1129,7 +1134,7 @@ leo_body = f"""
       <p>The LEO Center brings every Project H.O.O.D. pillar under one roof: workforce training classrooms, health &amp; wellness counseling suites, esports arena, re-entry services hub, outreach team offices, community kitchen, and a 400-seat multipurpose hall.</p>
       <p>It's being built on land owned by Project H.O.O.D., directly on S. King Drive — a deliberate statement that serious investment belongs on the South Side.</p>
     </div>
-    <div class="img-ph" style="min-height:360px;">FLOOR PLAN OR RENDERING</div>
+    <div class="img-ph" style="min-height:360px;background-image:url('img/leo-center-floorplan.jpg');background-size:cover;background-position:center top;">FLOOR PLAN OR RENDERING<br><span style="font-size:11px;opacity:.5;">→ img/leo-center-floorplan.jpg</span></div>
   </div>
 </section>
 
@@ -1206,7 +1211,7 @@ campaigns_body = f"""
       <p>In 2025, Pastor Brooks walked from Chicago to New York — 900+ miles — to put the South Side on the map and raise the final dollars for the LEO Center. That walk is over. The movement isn't.</p>
       <p>Walk With Us! invites communities across America to keep carrying the mission forward: walks, church activations, volunteer days, and prayer gatherings — everywhere people are ready to step up.</p>
     </div>
-    <div class="img-ph" style="min-height:340px;">ROUTE MAP · Chicago → NYC</div>
+    <div class="img-ph" style="min-height:340px;background-image:url('img/campaigns-route-map.jpg');background-size:cover;background-position:center top;">ROUTE MAP · Chicago → NYC<br><span style="font-size:11px;opacity:.5;">→ img/campaigns-route-map.jpg</span></div>
   </div>
 </section>
 
@@ -1812,9 +1817,9 @@ exec_director_body = f"""
       <div>
         <!-- TODO: Save Dez's photo to img/desmond-marshall.jpg
              Source: https://www.projecthood.org/desmondmarshall -->
-        <div class="img-ph" style="min-height:480px;font-size:13px;line-height:1.6;">
+        <div class="img-ph" style="min-height:480px;font-size:13px;line-height:1.6;background-image:url('img/desmond-marshall.jpg');background-size:cover;background-position:center top;">
           PHOTO · Desmond "Dez" Marshall<br>
-          <span style="opacity:.6;">Save to img/desmond-marshall.jpg</span>
+          <span style="font-size:11px;opacity:.5;">→ img/desmond-marshall.jpg</span>
         </div>
       </div>
       <div>
@@ -1879,6 +1884,38 @@ exec_director_body = f"""
 
 # -------- 404 --------
 notfound_body = f"""
+<!-- Squarespace → new URL redirect map
+     When someone hits an old Squarespace URL, redirect them to the correct new page.
+     To add a redirect: add a new entry to the redirects object below. -->
+<script>
+(function() {{
+  var redirects = {{
+    '/about-us':          'about.html',
+    '/about-us/':         'about.html',
+    '/our-programs':      'programs.html',
+    '/our-programs/':     'programs.html',
+    '/violence-prevention': 'violence-prevention.html',
+    '/the-leo-center':    'leo-center.html',
+    '/the-leo-center/':   'leo-center.html',
+    '/walk-across-america': 'campaigns.html',
+    '/get-involved-1':    'get-involved.html',
+    '/donate-now':        'donate.html',
+    '/donate-now/':       'donate.html',
+    '/volunteer-1':       'volunteer.html',
+    '/events-1':          'events.html',
+    '/partner-with-us':   'partner.html',
+    '/partner-with-us/':  'partner.html',
+    '/news-1':            'news.html',
+    '/news-1/':           'news.html',
+    '/contact-us':        'contact.html',
+    '/contact-us/':       'contact.html'
+  }};
+  var path = window.location.pathname.replace(/\\/+$/, '') || '/';
+  var dest = redirects[path];
+  if (dest) {{ window.location.replace(dest); }}
+}})();
+</script>
+
 <section class="hero bg-yellow" style="color:var(--black);text-align:center;padding:var(--sp-6) 0;">
   <div class="wrap">
     <div class="eyebrow">404</div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
+  <meta name="robots" content="index,follow">
   <title>News · Project H.O.O.D.</title>
   <meta name="description" content="Program milestones, LEO Center progress, stories from the block, press mentions.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,14 +15,19 @@
   <meta property="og:description" content="Program milestones, LEO Center progress, stories from the block, press mentions.">
   <meta property="og:image" content="img/social-icon.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <!-- Google Analytics 4 — replace YOUR_GA4_ID with your Measurement ID (format: G-XXXXXXXXXX)
+       Get it at: analytics.google.com → Admin → Data Streams → your stream → Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR_GA4_ID');
+  </script>
 </head>
 <body>
 
 <a class="skip-link" href="#main">Skip to main content</a>
-
-<div class="preview-banner">
-  <strong>PREVIEW BUILD</strong> &nbsp;·&nbsp; clickable prototype · brand + IA · content placeholders pending review
-</div>
 
 <header class="site-header">
   <div class="nav">
@@ -81,7 +86,7 @@
         <p>520 sessions delivered, 0 cost to participants. How we funded it, what we're expanding for 2026.</p>
         <a href="#" style="margin-top:auto;">Read →</a>
       </div>
-      <div class="card card-accent" style="border-top-color:var(--gold);">
+      <div class="card card-accent" style="border-top-color:#8a6d00;">
         <div class="eyebrow">Nov 30, 2025 · WAA</div>
         <h3>Pastor Brooks finishes the walk. The work doesn't stop.</h3>
         <p>900+ miles, $8M raised on the route. What's next for Walk Across America 2026.</p>
