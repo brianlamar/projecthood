@@ -2185,7 +2185,7 @@ volunteer_body = f"""
         <p style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:var(--muted);">Google Form embed · on real site</p>
         <h3 style="margin:10px 0;">Project H.O.O.D. Volunteer Signup</h3>
         <p style="font-size:14px;">Name, email, phone, areas of interest, availability, background-check consent — responses go directly to our volunteer coordinator's Google Sheet.</p>
-        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfulIcBaCRzjDaNXuMuV-fgo_LxqOoXNQG8FU7ibIOuI_6-FA/viewform" style="margin-top:12px;">Volunteer signup form →</a>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfSJM9VCqgcNPJN8ji3-3-W41BHlyoTtLrlWzqFu4LvgoxDow/viewform" style="margin-top:12px;">Volunteer signup form →</a>
       </div>
     </div>
   </div>
@@ -2378,7 +2378,7 @@ partner_body = f"""
         <p style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:var(--muted);">Google Form embed · on real site</p>
         <h3 style="margin:10px 0;">Partner Inquiry Form</h3>
         <p style="font-size:14px;">Org name, contact, type of partnership, what you bring, what you need. Routes to our development team.</p>
-        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeSqdS_4Cyd4gdWyvAuJEGF3zR4MFqKsiOPDDRUKUsBMEDNKQ/viewform" style="margin-top:12px;">Partner inquiry form →</a>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSd7KybYr4o6lRtz49HpgBuxmC-tiPPqwO_VKDQlQ_OvQzdrYg/viewform" style="margin-top:12px;">Partner inquiry form →</a>
       </div>
     </div>
   </div>
@@ -2512,7 +2512,7 @@ contact_body = f"""
         <div style="padding:10px 14px;background:var(--offwhite);border-left:3px solid var(--yellow);border-radius:0 4px 4px 0;font-size:14px;">💛 <strong>Events &amp; partnerships</strong></div>
         <div style="padding:10px 14px;background:var(--offwhite);border-left:3px solid var(--purple);border-radius:0 4px 4px 0;font-size:14px;">💜 <strong>Connect with our programs</strong></div>
       </div>
-      <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSezt7dj_hycF7Y45m-Dcls6-52SCGS2sd-NkMDogWDhh_dIkQ/viewform" style="width:100%;text-align:center;">Send a message →</a>
+      <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScXh7YTveg_BRJLetB7Tclr0MFGhi_QDetgc-iPCCJZ1Narww/viewform" style="width:100%;text-align:center;">Send a message →</a>
     </div>
   </div>
 </section>
