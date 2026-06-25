@@ -387,7 +387,6 @@ home_body = f"""
   <p style="color:rgba(255,255,255,.55);font-size:clamp(16px,2.5vw,20px);margin:28px auto 0;max-width:560px;font-family:var(--font-serif);font-style:italic;">When is the last time you helped somebody?</p>
   <div style="margin-top:40px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
     <a class="btn btn-yellow" href="https://projecthood.networkforgood.com/" style="font-size:clamp(15px,2vw,17px);padding:14px 28px;">Help somebody today →</a>
-    <button onclick="if(navigator.share){{navigator.share({{title:'Project H.O.O.D.',text:'When is the last time you helped somebody? @projecthood is doing it every day on Chicago's South Side.',url:window.location.origin}})}}else{{navigator.clipboard.writeText(window.location.origin).then(()=>alert('Link copied — share it.'));}}" style="background:transparent;border:2px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;padding:14px 28px;font-size:clamp(15px,2vw,17px);cursor:pointer;font-family:var(--font-body);font-weight:600;letter-spacing:.04em;">Share this →</button>
   </div>
 </section>
 
