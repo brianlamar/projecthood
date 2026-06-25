@@ -328,7 +328,7 @@ home_body = f"""
     <div class="stat-grid" style="margin-top:var(--sp-3);">
       <div class="stat accent-green"><div class="v">15,000+</div><div class="l">neighbors served — not cases, people</div></div>
       <div class="stat"><div class="v">2M+ lbs</div><div class="l">food on the table</div></div>
-      <div class="stat accent-red"><div class="v">1,048</div><div class="l">careers launched, not just jobs filled</div></div>
+      <div class="stat accent-red"><div class="v">$19/hr</div><div class="l">average starting wage for job placements</div></div>
       <div class="stat"><div class="v">70%</div><div class="l">of the LEO Center funded — $10.5M to go</div></div>
     </div>
     <p style="margin-top:var(--sp-3);font-size:14px;color:var(--muted);"><a href="impact.html">See the full impact report →</a></p>
@@ -350,7 +350,7 @@ home_body = f"""
       <div class="prog-card">
         <span class="tag tag-red">Workforce Development</span>
         <h3 style="margin-top:10px;">Careers, not jobs.</h3>
-        <p style="font-family:var(--font-serif);">Training, certifications, and placement in construction, tech, and skilled trades. 1,048 placements in 2025.</p>
+        <p style="font-family:var(--font-serif);">Training, certifications, and placement in construction, tech, and skilled trades — with an average starting wage of $19/hr.</p>
         <a href="programs.html" style="margin-top:auto;">Read more →</a>
       </div>
       <div class="prog-card pg-blue">
@@ -481,7 +481,7 @@ about_body = f"""
       </div>
       <div>
         <h3>2025 · Walk Across America</h3>
-        <p>Pastor Brooks walks 900+ miles from Chicago to New York to raise the final $35M and spotlight what's possible. 15,000+ served this year. 1,048 job placements. 2M+ lbs of food distributed.</p>
+        <p>Pastor Brooks walks 900+ miles from Chicago to New York to raise the final $35M and spotlight what's possible. 15,000+ served this year. 2M+ lbs of food distributed. $19/hr average starting wage for job placements.</p>
       </div>
     </div>
   </div>
@@ -826,7 +826,7 @@ workforce_development_body = f"""
     <div class="eyebrow" style="color:var(--yellow);">2025 Impact</div>
     <h2 style="color:var(--white);">The numbers.</h2>
     <div class="stat-grid" style="margin-top:var(--sp-3);">
-      <div class="stat"><div class="v">1,048</div><div class="l">job placements in 2025</div></div>
+      <div class="stat"><div class="v">$19/hr</div><div class="l">average starting wage</div></div>
       <div class="stat"><div class="v">$19/hr</div><div class="l">average starting wage</div></div>
       <div class="stat"><div class="v">72%</div><div class="l">retained at 6 months</div></div>
       <div class="stat"><div class="v">Multiple</div><div class="l">trades + industries served</div></div>
@@ -1115,7 +1115,7 @@ impact_body = f"""
     <div class="stat-grid" style="margin-top:var(--sp-3);">
       <div class="stat accent-green"><div class="v">15,000+</div><div class="l">community members served</div></div>
       <div class="stat"><div class="v">2,000,000+ lbs</div><div class="l">food distributed</div></div>
-      <div class="stat accent-red"><div class="v">1,048</div><div class="l">job placements</div></div>
+      <div class="stat accent-red"><div class="v">$19/hr</div><div class="l">average starting wage for placements</div></div>
       <div class="stat"><div class="v">70%</div><div class="l">LEO Center capital campaign funded</div></div>
       <div class="stat accent-blue"><div class="v">140+</div><div class="l">violence incidents mediated</div></div>
       <div class="stat"><div class="v">380</div><div class="l">youth in education programs</div></div>
@@ -1137,7 +1137,7 @@ impact_body = f"""
       </div>
       <div class="prog-card">
         <span class="tag tag-red">Workforce Development</span>
-        <h3>1,048 placements · 72% retained at 6 months</h3>
+        <h3>Job placements · 72% retained at 6 months</h3>
         <p>Construction trades, tech, and logistics. $19/hr average starting wage. 72% still employed with the same employer six months out.</p>
       </div>
       <div class="prog-card pg-blue">
@@ -2170,7 +2170,7 @@ news_body = f"""
     <div class="grid-2">
       <div class="card card-accent" style="border-top-color:var(--green);">
         <div class="eyebrow">Feb 28, 2026 · Workforce</div>
-        <h3>1,048 placements: what the 2025 cohort taught us.</h3>
+        <h3>What the 2025 workforce cohort taught us.</h3>
         <p>What worked, what didn't, and what we're changing for the 2026 cohort. A candid look at retention, wages, and employer relationships.</p>
         <a href="#" style="margin-top:auto;">Read →</a>
       </div>
@@ -2467,11 +2467,11 @@ pages = [
     ("exec-director.html", "Executive Director",         "Meet Desmond 'Dez' Marshall — Executive Director of Project H.O.O.D. Led the team from 3 to 83 staff, raised $44M+, serves 15,000+ annually.", "a_about",    exec_director_body),
     ("programs.html",    "Programs",                     "Five Pillars, one neighborhood. Violence prevention, workforce development, health & wellness, youth programming, and re-entry services.",         "a_programs",     programs_body),
     ("violence-prevention.html",   "Violence Prevention",    "Creating safer communities in Woodlawn — credible messengers, conflict mediation, and hospital-based intervention.",           "a_programs",     violence_prevention_body),
-    ("workforce-development.html", "Workforce Development",  "Job training, placement, and career development on Chicago's South Side. 1,048 placements in 2025. $19/hr average wage.",          "a_programs",     workforce_development_body),
+    ("workforce-development.html", "Workforce Development",  "Job training, placement, and career development on Chicago's South Side. $19/hr average starting wage.",          "a_programs",     workforce_development_body),
     ("health-wellness.html",       "Health & Wellness",      "Free medical care, counseling, and wellness programs for South Side residents — including the Southside Free Clinic (SSFC).",     "a_programs",     health_wellness_body),
     ("youth-programming.html",     "Youth Programming",      "Entrepreneurship training, mentorship, and after-school enrichment — 380 youth enrolled, 94% attendance, 42 summer internships in 2025.", "a_programs",     youth_programming_body),
     ("reentry-services.html",      "Re-Entry Services",      "Second chances, real support — job readiness, housing, counseling, and mentorship for individuals returning from incarceration.",  "a_programs",     reentry_services_body),
-    ("impact.html",      "Impact",                       "2025 impact — 15,000+ served, 1,048 job placements, 2M+ lbs of food distributed, 70% LEO Center funded.",                             "a_impact",       impact_body),
+    ("impact.html",      "Impact",                       "2025 impact — 15,000+ served, 2M+ lbs of food distributed, $19/hr average starting wage, 70% LEO Center funded.",                             "a_impact",       impact_body),
     ("first-look.html",   "The First Look",               "The First Look \u2014 Project H.O.O.D. donor day. Give, share, and be part of this moment.",                                              "a_gi",           first_look_body),
     ("leo-center.html",  "LEO Center",                   "The Leadership and Economic Opportunity Center — 70% funded, a 90,000 sq ft community hub on S. King Drive.",                        "a_leo",          leo_body),
     ("campaigns.html",   "Walk With Us!",                "Walk With Us! — a nationwide movement to raise $25M for youth, families, and the LEO Center. Give, walk, or start a team on Tiltify.",  "a_campaigns",    campaigns_body),
