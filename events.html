@@ -65,44 +65,40 @@
     <span style="color:var(--red);border-bottom:2px solid var(--red);padding-bottom:4px;">Upcoming</span>
     <span style="color:var(--muted);">Past events</span>
     <div style="margin-left:auto;">
-      <a href="https://www.eventbrite.com/o/project-hood" target="_blank" rel="noopener" style="font-family:var(--font-serif);text-transform:none;letter-spacing:0;font-size:12.5px;color:var(--muted);font-style:italic;">View all on Eventbrite →</a>
+      <a href="https://www.eventbrite.com/o/project-hood-41178041593" target="_blank" rel="noopener" style="font-family:var(--font-serif);text-transform:none;letter-spacing:0;font-size:12.5px;color:var(--muted);font-style:italic;">View all on Eventbrite →</a>
     </div>
   </div>
 </section>
 
-<!-- EVENT CARDS — one block per event; copy/paste to add more -->
+<!-- EVENT CARDS — auto-populated from Eventbrite API when EVENTBRITE_TOKEN is set;
+     otherwise uses the hardcoded cards below. See _build.py header for setup. -->
 <section class="section">
   <div class="wrap">
 
-    <!-- ═══ EVENT CARD — copy this entire block to add an event ═══
-         Update: date text, title, location, RSVP href (Eventbrite event URL),
-         share data-url (same Eventbrite URL), and replace img-ph with:
-           <img src="img/events/YOUR-FLYER.jpg" alt="[Event name] flyer">
-         ═══ -->
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;">
 
       <div class="card" style="padding:0;overflow:hidden;">
-        <div class="img-ph" style="min-height:220px;background:var(--blue);">FLYER · save to img/events/</div>
+        <div class="img-ph" style="min-height:220px;background:var(--green);">FLYER · save to img/events/</div>
         <div style="padding:16px 18px 18px;">
-          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Sat, Jun 28 · 10:00 AM</div>
-          <h4 style="margin:0 0 6px;">Youth Employment Workshop</h4>
-          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">6622 S. Cottage Grove Ave · Free</p>
+          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Thu, Jun 25 · 10:00 AM – 1:00 PM</div>
+          <h4 style="margin:0 0 6px;">Community Job Fair &amp; Resource Fair</h4>
+          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">Woodlawn · Free</p>
           <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
-            <a class="btn btn-primary" href="https://www.eventbrite.com" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
-            <button class="ph-share-btn" data-title="Youth Employment Workshop" data-url="https://www.eventbrite.com" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
+            <a class="btn btn-primary" href="https://www.eventbrite.com/o/project-hood-41178041593" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
+            <button class="ph-share-btn" data-title="Community Job Fair &amp; Resource Fair" data-url="https://www.eventbrite.com/o/project-hood-41178041593" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
           </div>
         </div>
       </div>
 
       <div class="card" style="padding:0;overflow:hidden;">
-        <div class="img-ph" style="min-height:220px;background:var(--purple);">FLYER · save to img/events/</div>
+        <div class="img-ph" style="min-height:220px;background:var(--blue);">FLYER · save to img/events/</div>
         <div style="padding:16px 18px 18px;">
-          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Sun, Jul 6 · 12:00 PM</div>
-          <h4 style="margin:0 0 6px;">Community Health Fair</h4>
-          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">6620 S. King Dr. · Free</p>
+          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Sun, Jun 28 · 10:00 AM – 3:00 PM</div>
+          <h4 style="margin:0 0 6px;">Community Day 2026</h4>
+          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">6620 S King Dr · Free</p>
           <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
-            <a class="btn btn-primary" href="https://www.eventbrite.com" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
-            <button class="ph-share-btn" data-title="Community Health Fair" data-url="https://www.eventbrite.com" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
+            <a class="btn btn-primary" href="https://www.eventbrite.com/e/community-day-2026-tickets-1992501020188" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
+            <button class="ph-share-btn" data-title="Community Day 2026" data-url="https://www.eventbrite.com/e/community-day-2026-tickets-1992501020188" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
           </div>
         </div>
       </div>
@@ -110,12 +106,25 @@
       <div class="card" style="padding:0;overflow:hidden;">
         <div class="img-ph" style="min-height:220px;background:var(--red);">FLYER · save to img/events/</div>
         <div style="padding:16px 18px 18px;">
-          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Sat, Jul 12 · 1:00 PM</div>
-          <h4 style="margin:0 0 6px;">Peace in the Park</h4>
-          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">Bessemer Park · Free</p>
+          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Wed, Jul 1 · 4:00 PM – 7:00 PM</div>
+          <h4 style="margin:0 0 6px;">Christmas in July</h4>
+          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">West 66th Street · Free</p>
           <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
-            <a class="btn btn-primary" href="https://www.eventbrite.com" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
-            <button class="ph-share-btn" data-title="Peace in the Park" data-url="https://www.eventbrite.com" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
+            <a class="btn btn-primary" href="https://www.eventbrite.com/e/christmas-in-july-tickets-1992501767423" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
+            <button class="ph-share-btn" data-title="Christmas in July" data-url="https://www.eventbrite.com/e/christmas-in-july-tickets-1992501767423" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div class="img-ph" style="min-height:220px;background:var(--purple);">FLYER · save to img/events/</div>
+        <div style="padding:16px 18px 18px;">
+          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Fri, Aug 7 · 4:00 PM</div>
+          <h4 style="margin:0 0 6px;">Trunk Party 2026</h4>
+          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">6620 S King Dr · Free</p>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+            <a class="btn btn-primary" href="https://www.eventbrite.com/e/trunk-party-2026-tickets-1992502132515" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
+            <button class="ph-share-btn" data-title="Trunk Party 2026" data-url="https://www.eventbrite.com/e/trunk-party-2026-tickets-1992502132515" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
           </div>
         </div>
       </div>
@@ -222,7 +231,7 @@
 
     <div class="footer-bottom">
       <div>
-        © 2026 Project H.O.O.D. · 6620 S. King Drive, Chicago IL 60637 · EIN 46-1449998<br>
+        © 2026 Project H.O.O.D. · 6620 S. King Drive, Chicago IL 60637 · EIN 45-3964886<br>
         <a href="privacy.html">Privacy</a> · <a href="about.html">Financials &amp; 990s</a> · <a href="contact.html">Contact</a>
       </div>
       <div class="social-row">
