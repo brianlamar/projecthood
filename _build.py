@@ -495,8 +495,8 @@ about_body = f"""
       <h2 style="color:var(--white);">Pastor Corey B. Brooks</h2>
       <p style="font-size:var(--fs-lead);opacity:.9;">Pastor, entrepreneur, and community organizer. Founder of Project H.O.O.D. and senior pastor of New Beginnings Church of Chicago. Walked across America in 2025 to fund the LEO Center. Known for meeting kids on the corner before asking them to come to church.</p>
       <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;">
-        <a class="btn btn-yellow" href="#">Read Pastor Brooks' letter</a>
-        <a class="btn btn-outline-light" href="#">Book Pastor Brooks</a>
+        <a class="btn btn-yellow" href="letter.html">Read Pastor Brooks' letter</a>
+        <a class="btn btn-outline-light" href="#book">Book Pastor Brooks</a>
       </div>
     </div>
   </div>
@@ -520,6 +520,86 @@ about_body = f"""
 </section>
 
 
+<section class="section" id="book">
+  <div class="wrap">
+    <div style="max-width:640px;margin:0 auto;text-align:center;">
+      <div class="eyebrow" style="color:var(--red);">Speaking &amp; appearances</div>
+      <h2>Book Pastor Brooks</h2>
+      <p style="font-size:var(--fs-lead);color:var(--muted);">Pastor Brooks speaks on community transformation, faith-driven leadership, entrepreneurship, and what it takes to stay — in a neighborhood, in a mission, in the work. Tell us about your event and we'll follow up within two business days.</p>
+    </div>
+    <form name="book-pastor-brooks" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="max-width:640px;margin:var(--sp-3) auto 0;display:flex;flex-direction:column;gap:16px;">
+      <input type="hidden" name="form-name" value="book-pastor-brooks">
+      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">First Name <span style="color:var(--red);">*</span></label>
+          <input type="text" name="first_name" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Last Name <span style="color:var(--red);">*</span></label>
+          <input type="text" name="last_name" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Email <span style="color:var(--red);">*</span></label>
+          <input type="email" name="email" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Phone</label>
+          <input type="tel" name="phone" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+        </div>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Organization / Title</label>
+        <input type="text" name="organization" placeholder="e.g. First Baptist Church, Chicago; or City of Chicago" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Event Type <span style="color:var(--red);">*</span></label>
+          <select name="event_type" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;background:var(--white);">
+            <option value="">Select one</option>
+            <option>Speaking engagement</option>
+            <option>Church / congregation visit</option>
+            <option>Conference or summit</option>
+            <option>Media / interview</option>
+            <option>Community event</option>
+            <option>Fundraiser / gala</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Expected Audience Size</label>
+          <select name="audience_size" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;background:var(--white);">
+            <option value="">Select one</option>
+            <option>Under 50</option>
+            <option>50–200</option>
+            <option>200–500</option>
+            <option>500–1,000</option>
+            <option>Over 1,000</option>
+          </select>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Preferred Date / Timeframe</label>
+          <input type="text" name="event_date" placeholder="e.g. August 2026 or Sept 12–14" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Event Location</label>
+          <input type="text" name="event_location" placeholder="City, State" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+        </div>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Tell us about the event <span style="color:var(--red);">*</span></label>
+        <textarea name="event_description" required rows="4" placeholder="What would you like Pastor Brooks to speak about? Any specific themes, format, or context we should know?" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;resize:vertical;"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="font-size:16px;padding:14px 28px;width:100%;margin-top:4px;">Submit booking inquiry →</button>
+      <p style="font-size:13px;color:var(--muted);text-align:center;margin-top:-8px;">We respond within two business days. For urgent requests, call <a href="tel:7733548483" style="color:var(--green);">773.354.8483</a>.</p>
+    </form>
+  </div>
+</section>
+
 <section class="section bg-offwhite">
   <div class="wrap grid-2">
     <div>
@@ -534,6 +614,66 @@ about_body = f"""
         <li style="padding:14px 0;border-bottom:1px solid var(--line);"><strong>2024 Annual Report</strong> · <a href="#">Download PDF</a></li>
         <li style="padding:14px 0;"><strong>Audited financials</strong> · <a href="#">Download PDF</a></li>
       </ul>
+    </div>
+  </div>
+</section>
+"""
+
+# -------- LETTER FROM PASTOR BROOKS --------
+letter_body = """
+<section class="hero bg-black">
+  <div class="wrap" style="max-width:var(--w-read);">
+    <div class="eyebrow" style="color:var(--yellow);">A message from our founder</div>
+    <h1 style="font-size:clamp(28px,5vw,52px);line-height:1.15;">A letter from<br>Pastor Corey Brooks</h1>
+    <p style="font-size:14px;opacity:.55;margin-top:8px;">Founder &amp; CEO, Project H.O.O.D. &middot; Senior Pastor, New Beginnings Church of Chicago</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap" style="max-width:var(--w-read);">
+    <div style="font-family:var(--font-serif);font-size:clamp(16px,2vw,20px);line-height:1.8;color:var(--ink);">
+
+      <p>When I moved onto the rooftop of an abandoned motel on Chicago's South Side in 2011, people thought I was crazy.</p>
+
+      <p>Maybe I was. But I had made a promise — to the young people I was burying every week, to the families who were losing sons and brothers to streets that offered no other options, to a neighborhood that the rest of the world had decided to write off. I was going to stay until something changed.</p>
+
+      <p>That something is Project H.O.O.D.</p>
+
+      <p><strong>Helping Others Obtain Destiny</strong> started with a vision and not much else. No building. No budget. Just the belief that Woodlawn — our neighborhood, <em>your</em> neighborhood — deserved the same investment as any other community in this city. That the people here had gifts, drive, and potential that nobody was being asked to tap.</p>
+
+      <p>Fifteen years later, I watch young men walk out of our workforce program and into jobs that pay a living wage. I watch women who came through our re-entry program open businesses on the same blocks where they once felt trapped. I watch kids who had no safe place to go after school become mentors for the kids coming up behind them. And I watch our new LEO Center — the Leadership and Economic Opportunities Center — rise up as proof that Woodlawn isn't being left behind. We are building forward.</p>
+
+      <p style="font-size:clamp(20px,3vw,28px);font-weight:700;line-height:1.4;color:var(--black);border-left:4px solid var(--yellow);padding-left:20px;margin:40px 0;">None of this happens without you.</p>
+
+      <p>When you give to Project H.O.O.D., you aren't writing a check to an organization. You are investing directly in a person. A young man in our violence interruption program who needed someone to call him at 2 a.m. instead of letting him make a decision he couldn't take back. A mother getting her first apartment after re-entry because we helped her get documents, references, and a second chance. A teenager who learned to code, to lead, to believe that his life could look different than what he'd been handed.</p>
+
+      <p><strong>Every dollar stays here. In Woodlawn. On the block.</strong></p>
+
+      <p>We don't have a national overhead. We don't have layers between your gift and the people it reaches. We have a community — and the people in it are counting on us to keep showing up.</p>
+
+      <p>I am asking you to show up with us.</p>
+
+      <p>Give what you can. Give monthly if you're able. Tell someone else about us. Come to an event. Volunteer. Partner with us. However you choose to be part of this work, I promise you this: we will be faithful stewards of what you invest.</p>
+
+      <p>Woodlawn is not a charity case. It is a community in motion. And with your support, there is no limit to what we build next.</p>
+
+      <div style="margin-top:48px;padding-top:32px;border-top:1px solid var(--line);">
+        <p style="margin:0;font-family:var(--font-display);font-size:clamp(22px,3vw,32px);font-weight:700;line-height:1.2;">In faith and service,</p>
+        <p style="margin:8px 0 0;font-size:18px;font-weight:600;">Pastor Corey Brooks</p>
+        <p style="margin:4px 0 0;font-size:14px;color:var(--muted);">Founder &amp; CEO, Project H.O.O.D.<br>6620 S. King Drive &middot; Chicago, IL 60637<br>EIN 45-3964886 &middot; All gifts are tax-deductible</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="wrap">
+    <h2>Give. Volunteer. <span class="hl-yellow">Tell somebody.</span></h2>
+    <div class="btn-group">
+      <a class="btn btn-yellow" href="https://projecthood.networkforgood.com/" target="_blank" rel="noopener">Give to Project H.O.O.D. →</a>
+      <a class="btn btn-outline-light" href="ways-to-give.html">All ways to give</a>
+      <a class="btn btn-outline-light" href="get-involved.html">Get involved</a>
     </div>
   </div>
 </section>
@@ -2529,6 +2669,7 @@ notfound_body = f"""
 pages = [
     ("index.html",       "Home",                         "Project H.O.O.D. — a community-rooted nonprofit investing in Chicago's South Side through violence prevention, workforce development, health & wellness, youth programming, and re-entry services.", None,            home_body),
     ("about.html",       "About",                        "Project H.O.O.D. was founded by Pastor Corey B. Brooks in 2012. A decade of showing up in Woodlawn.",                                   "a_about",        about_body),
+    ("letter.html",      "A Letter from Pastor Brooks",  "A personal message from Project H.O.O.D. founder Pastor Corey Brooks — why he started this work and why he's still here.",                 "a_about",        letter_body),
     ("exec-director.html", "Executive Director",         "Meet Desmond 'Dez' Marshall — Executive Director of Project H.O.O.D. Led the team from 3 to 83 staff, raised $44M+, serves 15,000+ annually.", "a_about",    exec_director_body),
     ("programs.html",    "Programs",                     "Five Pillars, one neighborhood. Violence prevention, workforce development, health & wellness, youth programming, and re-entry services.",         "a_programs",     programs_body),
     ("violence-prevention.html",   "Violence Prevention",    "Creating safer communities in Woodlawn — credible messengers, conflict mediation, and hospital-based intervention.",           "a_programs",     violence_prevention_body),

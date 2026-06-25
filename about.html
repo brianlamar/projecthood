@@ -115,8 +115,8 @@
       <h2 style="color:var(--white);">Pastor Corey B. Brooks</h2>
       <p style="font-size:var(--fs-lead);opacity:.9;">Pastor, entrepreneur, and community organizer. Founder of Project H.O.O.D. and senior pastor of New Beginnings Church of Chicago. Walked across America in 2025 to fund the LEO Center. Known for meeting kids on the corner before asking them to come to church.</p>
       <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;">
-        <a class="btn btn-yellow" href="#">Read Pastor Brooks' letter</a>
-        <a class="btn btn-outline-light" href="#">Book Pastor Brooks</a>
+        <a class="btn btn-yellow" href="letter.html">Read Pastor Brooks' letter</a>
+        <a class="btn btn-outline-light" href="#book">Book Pastor Brooks</a>
       </div>
     </div>
   </div>
@@ -139,6 +139,86 @@
   </div>
 </section>
 
+
+<section class="section" id="book">
+  <div class="wrap">
+    <div style="max-width:640px;margin:0 auto;text-align:center;">
+      <div class="eyebrow" style="color:var(--red);">Speaking &amp; appearances</div>
+      <h2>Book Pastor Brooks</h2>
+      <p style="font-size:var(--fs-lead);color:var(--muted);">Pastor Brooks speaks on community transformation, faith-driven leadership, entrepreneurship, and what it takes to stay — in a neighborhood, in a mission, in the work. Tell us about your event and we'll follow up within two business days.</p>
+    </div>
+    <form name="book-pastor-brooks" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="max-width:640px;margin:var(--sp-3) auto 0;display:flex;flex-direction:column;gap:16px;">
+      <input type="hidden" name="form-name" value="book-pastor-brooks">
+      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">First Name <span style="color:var(--red);">*</span></label>
+          <input type="text" name="first_name" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Last Name <span style="color:var(--red);">*</span></label>
+          <input type="text" name="last_name" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Email <span style="color:var(--red);">*</span></label>
+          <input type="email" name="email" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Phone</label>
+          <input type="tel" name="phone" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+        </div>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Organization / Title</label>
+        <input type="text" name="organization" placeholder="e.g. First Baptist Church, Chicago; or City of Chicago" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Event Type <span style="color:var(--red);">*</span></label>
+          <select name="event_type" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;background:var(--white);">
+            <option value="">Select one</option>
+            <option>Speaking engagement</option>
+            <option>Church / congregation visit</option>
+            <option>Conference or summit</option>
+            <option>Media / interview</option>
+            <option>Community event</option>
+            <option>Fundraiser / gala</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Expected Audience Size</label>
+          <select name="audience_size" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;background:var(--white);">
+            <option value="">Select one</option>
+            <option>Under 50</option>
+            <option>50–200</option>
+            <option>200–500</option>
+            <option>500–1,000</option>
+            <option>Over 1,000</option>
+          </select>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Preferred Date / Timeframe</label>
+          <input type="text" name="event_date" placeholder="e.g. August 2026 or Sept 12–14" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Event Location</label>
+          <input type="text" name="event_location" placeholder="City, State" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+        </div>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Tell us about the event <span style="color:var(--red);">*</span></label>
+        <textarea name="event_description" required rows="4" placeholder="What would you like Pastor Brooks to speak about? Any specific themes, format, or context we should know?" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;resize:vertical;"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="font-size:16px;padding:14px 28px;width:100%;margin-top:4px;">Submit booking inquiry →</button>
+      <p style="font-size:13px;color:var(--muted);text-align:center;margin-top:-8px;">We respond within two business days. For urgent requests, call <a href="tel:7733548483" style="color:var(--green);">773.354.8483</a>.</p>
+    </form>
+  </div>
+</section>
 
 <section class="section bg-offwhite">
   <div class="wrap grid-2">
