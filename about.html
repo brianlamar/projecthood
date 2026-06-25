@@ -147,76 +147,11 @@
       <h2>Book Pastor Brooks</h2>
       <p style="font-size:var(--fs-lead);color:var(--muted);">Pastor Brooks speaks on community transformation, faith-driven leadership, entrepreneurship, and what it takes to stay — in a neighborhood, in a mission, in the work. Tell us about your event and we'll follow up within two business days.</p>
     </div>
-    <form name="book-pastor-brooks" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="max-width:640px;margin:var(--sp-3) auto 0;display:flex;flex-direction:column;gap:16px;">
-      <input type="hidden" name="form-name" value="book-pastor-brooks">
-      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">First Name <span style="color:var(--red);">*</span></label>
-          <input type="text" name="first_name" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-        </div>
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Last Name <span style="color:var(--red);">*</span></label>
-          <input type="text" name="last_name" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Email <span style="color:var(--red);">*</span></label>
-          <input type="email" name="email" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-        </div>
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Phone</label>
-          <input type="tel" name="phone" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-        </div>
-      </div>
-      <div>
-        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Organization / Title</label>
-        <input type="text" name="organization" placeholder="e.g. First Baptist Church, Chicago; or City of Chicago" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Event Type <span style="color:var(--red);">*</span></label>
-          <select name="event_type" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;background:var(--white);">
-            <option value="">Select one</option>
-            <option>Speaking engagement</option>
-            <option>Church / congregation visit</option>
-            <option>Conference or summit</option>
-            <option>Media / interview</option>
-            <option>Community event</option>
-            <option>Fundraiser / gala</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Expected Audience Size</label>
-          <select name="audience_size" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;background:var(--white);">
-            <option value="">Select one</option>
-            <option>Under 50</option>
-            <option>50–200</option>
-            <option>200–500</option>
-            <option>500–1,000</option>
-            <option>Over 1,000</option>
-          </select>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Preferred Date / Timeframe</label>
-          <input type="text" name="event_date" placeholder="e.g. August 2026 or Sept 12–14" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-        </div>
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Event Location</label>
-          <input type="text" name="event_location" placeholder="City, State" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-        </div>
-      </div>
-      <div>
-        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Tell us about the event <span style="color:var(--red);">*</span></label>
-        <textarea name="event_description" required rows="4" placeholder="What would you like Pastor Brooks to speak about? Any specific themes, format, or context we should know?" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;resize:vertical;"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary" style="font-size:16px;padding:14px 28px;width:100%;margin-top:4px;">Submit booking inquiry →</button>
-      <p style="font-size:13px;color:var(--muted);text-align:center;margin-top:-8px;">We respond within two business days. For urgent requests, call <a href="tel:7733548483" style="color:var(--green);">773.354.8483</a>.</p>
-    </form>
+    <!-- GOOGLE FORM LINK — run create_ph_forms.gs → createAllForms() → copy "Booking Inquiries" URL → replace href below -->
+    <div style="max-width:640px;margin:var(--sp-3) auto 0;text-align:center;">
+      <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/BOOKING_FORM_ID/viewform" target="_blank" rel="noopener" style="font-size:17px;padding:16px 40px;display:inline-block;">Submit a booking inquiry →</a>
+      <p style="font-size:13px;color:var(--muted);margin-top:14px;">We respond within two business days. For urgent requests, call <a href="tel:7733548483" style="color:var(--green);">773.354.8483</a>.</p>
+    </div>
   </div>
 </section>
 
@@ -225,14 +160,24 @@
     <div>
       <div class="eyebrow" style="color:var(--green);">Stewardship</div>
       <h2>Stewardship, on paper.</h2>
-      <p>Project H.O.O.D. is a 501(c)(3) public charity. 990s, audited financials, and annual reports are all public.</p>
+      <p>Project H.O.O.D. is a 501(c)(3) public charity (EIN 45-3964886). 990s and annual reports are public record. We are independently rated by Charity Navigator and listed on Candid (GuideStar).</p>
     </div>
     <div>
       <ul style="list-style:none;padding:0;">
         <li style="padding:14px 0;border-bottom:1px solid var(--line);"><strong>2024 Form 990</strong> · <a href="docs/ph-990-2024.pdf" target="_blank" rel="noopener">Download PDF</a></li>
         <li style="padding:14px 0;border-bottom:1px solid var(--line);"><strong>2023 Form 990</strong> · <a href="#">Download PDF</a></li>
         <li style="padding:14px 0;border-bottom:1px solid var(--line);"><strong>2024 Annual Report</strong> · <a href="#">Download PDF</a></li>
-        <li style="padding:14px 0;"><strong>Audited financials</strong> · <a href="#">Download PDF</a></li>
+        <li style="padding:14px 0;border-bottom:1px solid var(--line);">
+          <a href="https://www.charitynavigator.org/ein/453964886" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;">
+            <img src="https://www.charitynavigator.org/assets/images/cn-four-star-seal.svg" alt="Charity Navigator 4-Star Rated" style="height:52px;width:auto;" onerror="this.style.display='none'">
+            <span style="color:var(--text);"><strong>Charity Navigator</strong> · 4-Star Rating · 95/100</span>
+          </a>
+        </li>
+        <li style="padding:14px 0;">
+          <a href="https://www.candid.org/profile/5193117" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);">
+            <strong>Candid (GuideStar)</strong> · View our nonprofit profile →
+          </a>
+        </li>
       </ul>
     </div>
   </div>

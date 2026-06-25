@@ -527,76 +527,11 @@ about_body = f"""
       <h2>Book Pastor Brooks</h2>
       <p style="font-size:var(--fs-lead);color:var(--muted);">Pastor Brooks speaks on community transformation, faith-driven leadership, entrepreneurship, and what it takes to stay — in a neighborhood, in a mission, in the work. Tell us about your event and we'll follow up within two business days.</p>
     </div>
-    <form name="book-pastor-brooks" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="max-width:640px;margin:var(--sp-3) auto 0;display:flex;flex-direction:column;gap:16px;">
-      <input type="hidden" name="form-name" value="book-pastor-brooks">
-      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">First Name <span style="color:var(--red);">*</span></label>
-          <input type="text" name="first_name" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-        </div>
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Last Name <span style="color:var(--red);">*</span></label>
-          <input type="text" name="last_name" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Email <span style="color:var(--red);">*</span></label>
-          <input type="email" name="email" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-        </div>
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Phone</label>
-          <input type="tel" name="phone" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-        </div>
-      </div>
-      <div>
-        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Organization / Title</label>
-        <input type="text" name="organization" placeholder="e.g. First Baptist Church, Chicago; or City of Chicago" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Event Type <span style="color:var(--red);">*</span></label>
-          <select name="event_type" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;background:var(--white);">
-            <option value="">Select one</option>
-            <option>Speaking engagement</option>
-            <option>Church / congregation visit</option>
-            <option>Conference or summit</option>
-            <option>Media / interview</option>
-            <option>Community event</option>
-            <option>Fundraiser / gala</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Expected Audience Size</label>
-          <select name="audience_size" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;background:var(--white);">
-            <option value="">Select one</option>
-            <option>Under 50</option>
-            <option>50–200</option>
-            <option>200–500</option>
-            <option>500–1,000</option>
-            <option>Over 1,000</option>
-          </select>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Preferred Date / Timeframe</label>
-          <input type="text" name="event_date" placeholder="e.g. August 2026 or Sept 12–14" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-        </div>
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Event Location</label>
-          <input type="text" name="event_location" placeholder="City, State" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-        </div>
-      </div>
-      <div>
-        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Tell us about the event <span style="color:var(--red);">*</span></label>
-        <textarea name="event_description" required rows="4" placeholder="What would you like Pastor Brooks to speak about? Any specific themes, format, or context we should know?" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;resize:vertical;"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary" style="font-size:16px;padding:14px 28px;width:100%;margin-top:4px;">Submit booking inquiry →</button>
-      <p style="font-size:13px;color:var(--muted);text-align:center;margin-top:-8px;">We respond within two business days. For urgent requests, call <a href="tel:7733548483" style="color:var(--green);">773.354.8483</a>.</p>
-    </form>
+    <!-- GOOGLE FORM LINK — run create_ph_forms.gs → createAllForms() → copy "Booking Inquiries" URL → replace href below -->
+    <div style="max-width:640px;margin:var(--sp-3) auto 0;text-align:center;">
+      <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/BOOKING_FORM_ID/viewform" target="_blank" rel="noopener" style="font-size:17px;padding:16px 40px;display:inline-block;">Submit a booking inquiry →</a>
+      <p style="font-size:13px;color:var(--muted);margin-top:14px;">We respond within two business days. For urgent requests, call <a href="tel:7733548483" style="color:var(--green);">773.354.8483</a>.</p>
+    </div>
   </div>
 </section>
 
@@ -605,14 +540,24 @@ about_body = f"""
     <div>
       <div class="eyebrow" style="color:var(--green);">Stewardship</div>
       <h2>Stewardship, on paper.</h2>
-      <p>Project H.O.O.D. is a 501(c)(3) public charity. 990s, audited financials, and annual reports are all public.</p>
+      <p>Project H.O.O.D. is a 501(c)(3) public charity (EIN 45-3964886). 990s and annual reports are public record. We are independently rated by Charity Navigator and listed on Candid (GuideStar).</p>
     </div>
     <div>
       <ul style="list-style:none;padding:0;">
         <li style="padding:14px 0;border-bottom:1px solid var(--line);"><strong>2024 Form 990</strong> · <a href="docs/ph-990-2024.pdf" target="_blank" rel="noopener">Download PDF</a></li>
         <li style="padding:14px 0;border-bottom:1px solid var(--line);"><strong>2023 Form 990</strong> · <a href="#">Download PDF</a></li>
         <li style="padding:14px 0;border-bottom:1px solid var(--line);"><strong>2024 Annual Report</strong> · <a href="#">Download PDF</a></li>
-        <li style="padding:14px 0;"><strong>Audited financials</strong> · <a href="#">Download PDF</a></li>
+        <li style="padding:14px 0;border-bottom:1px solid var(--line);">
+          <a href="https://www.charitynavigator.org/ein/453964886" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;">
+            <img src="https://www.charitynavigator.org/assets/images/cn-four-star-seal.svg" alt="Charity Navigator 4-Star Rated" style="height:52px;width:auto;" onerror="this.style.display='none'">
+            <span style="color:var(--text);"><strong>Charity Navigator</strong> · 4-Star Rating · 95/100</span>
+          </a>
+        </li>
+        <li style="padding:14px 0;">
+          <a href="https://www.candid.org/profile/5193117" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);">
+            <strong>Candid (GuideStar)</strong> · View our nonprofit profile →
+          </a>
+        </li>
       </ul>
     </div>
   </div>
@@ -849,8 +794,8 @@ violence_prevention_body = f"""
     </div>
     <div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.15);">
       <iframe
-        src="https://www.youtube.com/embed/lcz6K_F53Fo"
-        title="Project H.O.O.D. Summer Camp — Youth Programming"
+        src="https://www.youtube.com/embed/rsXtXPvaziY"
+        title="Project H.O.O.D. credited with reducing violent crime in Woodlawn — CBS Chicago"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
@@ -1570,58 +1515,11 @@ campaigns_body = f"""
       <h2>Sign up to Walk With Us!</h2>
       <p style="font-size:var(--fs-lead);color:var(--muted);">Tell us you're in — and we'll get you your Walk With Us! gear and keep you connected to the campaign.</p>
     </div>
-    <form name="walk-with-us" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="max-width:640px;margin:var(--sp-3) auto 0;display:flex;flex-direction:column;gap:16px;">
-      <input type="hidden" name="form-name" value="walk-with-us">
-      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">First Name <span style="color:var(--red);">*</span></label>
-          <input type="text" name="first_name" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-        </div>
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Last Name <span style="color:var(--red);">*</span></label>
-          <input type="text" name="last_name" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-        </div>
-      </div>
-      <div>
-        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Organization / Job Title</label>
-        <input type="text" name="job_title" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-      </div>
-      <div>
-        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Address <span style="color:var(--red);">*</span></label>
-        <input type="text" name="address" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Phone</label>
-          <input type="tel" name="phone" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-        </div>
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Email</label>
-          <input type="email" name="email" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Walk Amount Commitment <span style="color:var(--red);">*</span></label>
-          <input type="text" name="walk_commitment" placeholder="e.g. $250" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
-        </div>
-        <div>
-          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">T-Shirt Size</label>
-          <select name="tshirt_size" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;background:var(--white);">
-            <option value="">Select a size</option>
-            <option>Small</option>
-            <option>Medium</option>
-            <option>Large</option>
-            <option>XL</option>
-            <option>XXL</option>
-            <option>XXXL</option>
-            <option>XXXXL</option>
-          </select>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-yellow" style="font-size:16px;padding:14px 28px;width:100%;margin-top:4px;">Count me in →</button>
-    </form>
+    <!-- GOOGLE FORM LINK — run create_ph_forms.gs → createAllForms() → copy "Walk With Us!" URL → replace href below -->
+    <div style="max-width:640px;margin:var(--sp-3) auto 0;text-align:center;">
+      <a class="btn btn-yellow" href="https://docs.google.com/forms/d/e/WALK_WITH_US_FORM_ID/viewform" target="_blank" rel="noopener" style="font-size:17px;padding:16px 40px;display:inline-block;">Count me in →</a>
+      <p style="font-size:13px;color:var(--muted);margin-top:14px;">Opens a short Google Form — takes 60 seconds.</p>
+    </div>
   </div>
 </section>
 
@@ -2165,11 +2063,13 @@ volunteer_body = f"""
 # Hardcoded event cards — used when EVENTBRITE_TOKEN is not set
 _hardcoded_cards = """
       <div class="card" style="padding:0;overflow:hidden;">
-        <div class="img-ph" style="min-height:220px;background:var(--green);">FLYER · save to img/events/</div>
+        <div style="min-height:220px;background:var(--green);display:flex;flex-direction:column;justify-content:flex-end;padding:20px 22px;position:relative;">
+          <div style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,.18);border-radius:4px;padding:4px 10px;font-size:11px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.1em;">Free</div>
+          <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">Thu, Jun 25 · 10 AM – 1 PM</div>
+          <div style="font-size:20px;font-weight:800;color:#fff;font-family:var(--font-display);line-height:1.15;">Community Job Fair &amp; Resource Fair</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.75);margin-top:6px;">Woodlawn</div>
+        </div>
         <div style="padding:16px 18px 18px;">
-          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Thu, Jun 25 · 10:00 AM – 1:00 PM</div>
-          <h4 style="margin:0 0 6px;">Community Job Fair &amp; Resource Fair</h4>
-          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">Woodlawn · Free</p>
           <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
             <a class="btn btn-primary" href="https://www.eventbrite.com/o/project-hood-41178041593" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
             <button class="ph-share-btn" data-title="Community Job Fair &amp; Resource Fair" data-url="https://www.eventbrite.com/o/project-hood-41178041593" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
@@ -2178,11 +2078,13 @@ _hardcoded_cards = """
       </div>
 
       <div class="card" style="padding:0;overflow:hidden;">
-        <div class="img-ph" style="min-height:220px;background:var(--blue);">FLYER · save to img/events/</div>
+        <div style="min-height:220px;background:var(--blue);display:flex;flex-direction:column;justify-content:flex-end;padding:20px 22px;position:relative;">
+          <div style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,.18);border-radius:4px;padding:4px 10px;font-size:11px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.1em;">Free</div>
+          <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">Sun, Jun 28 · 10 AM – 3 PM</div>
+          <div style="font-size:20px;font-weight:800;color:#fff;font-family:var(--font-display);line-height:1.15;">Community Day 2026</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.75);margin-top:6px;">6620 S. King Dr.</div>
+        </div>
         <div style="padding:16px 18px 18px;">
-          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Sun, Jun 28 · 10:00 AM – 3:00 PM</div>
-          <h4 style="margin:0 0 6px;">Community Day 2026</h4>
-          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">6620 S King Dr · Free</p>
           <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
             <a class="btn btn-primary" href="https://www.eventbrite.com/e/community-day-2026-tickets-1992501020188" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
             <button class="ph-share-btn" data-title="Community Day 2026" data-url="https://www.eventbrite.com/e/community-day-2026-tickets-1992501020188" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
@@ -2191,11 +2093,13 @@ _hardcoded_cards = """
       </div>
 
       <div class="card" style="padding:0;overflow:hidden;">
-        <div class="img-ph" style="min-height:220px;background:var(--red);">FLYER · save to img/events/</div>
+        <div style="min-height:220px;background:var(--red);display:flex;flex-direction:column;justify-content:flex-end;padding:20px 22px;position:relative;">
+          <div style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,.18);border-radius:4px;padding:4px 10px;font-size:11px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.1em;">Free</div>
+          <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">Wed, Jul 1 · 4 – 7 PM</div>
+          <div style="font-size:20px;font-weight:800;color:#fff;font-family:var(--font-display);line-height:1.15;">Christmas in July</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.75);margin-top:6px;">West 66th Street</div>
+        </div>
         <div style="padding:16px 18px 18px;">
-          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Wed, Jul 1 · 4:00 PM – 7:00 PM</div>
-          <h4 style="margin:0 0 6px;">Christmas in July</h4>
-          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">West 66th Street · Free</p>
           <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
             <a class="btn btn-primary" href="https://www.eventbrite.com/e/christmas-in-july-tickets-1992501767423" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
             <button class="ph-share-btn" data-title="Christmas in July" data-url="https://www.eventbrite.com/e/christmas-in-july-tickets-1992501767423" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
@@ -2204,11 +2108,13 @@ _hardcoded_cards = """
       </div>
 
       <div class="card" style="padding:0;overflow:hidden;">
-        <div class="img-ph" style="min-height:220px;background:var(--purple);">FLYER · save to img/events/</div>
+        <div style="min-height:220px;background:#5B2D8E;display:flex;flex-direction:column;justify-content:flex-end;padding:20px 22px;position:relative;">
+          <div style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,.18);border-radius:4px;padding:4px 10px;font-size:11px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.1em;">Free</div>
+          <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">Fri, Aug 7 · 4 PM</div>
+          <div style="font-size:20px;font-weight:800;color:#fff;font-family:var(--font-display);line-height:1.15;">Trunk Party 2026</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.75);margin-top:6px;">6620 S. King Dr.</div>
+        </div>
         <div style="padding:16px 18px 18px;">
-          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Fri, Aug 7 · 4:00 PM</div>
-          <h4 style="margin:0 0 6px;">Trunk Party 2026</h4>
-          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">6620 S King Dr · Free</p>
           <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
             <a class="btn btn-primary" href="https://www.eventbrite.com/e/trunk-party-2026-tickets-1992502132515" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
             <button class="ph-share-btn" data-title="Trunk Party 2026" data-url="https://www.eventbrite.com/e/trunk-party-2026-tickets-1992502132515" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
@@ -2369,45 +2275,57 @@ news_body = f"""
 
 <section class="section">
   <div class="wrap">
+    <div class="eyebrow" style="margin-bottom:var(--sp-2);">In the press</div>
     <div class="grid-2">
       <div class="card card-accent" style="border-top-color:var(--green);">
-        <div class="eyebrow">Feb 28, 2026 · Workforce</div>
-        <h3>What the 2025 workforce cohort taught us.</h3>
-        <p>What worked, what didn't, and what we're changing for the 2026 cohort. A candid look at retention, wages, and employer relationships.</p>
-        <a href="#" style="margin-top:auto;">Read →</a>
-      </div>
-      <div class="card card-accent" style="border-top-color:var(--red);">
-        <div class="eyebrow">Feb 12, 2026 · LEO Center</div>
-        <h3>70% funded. Here's the plan for the final $10.5M.</h3>
-        <p>Board update on the capital campaign — named-gift opportunities, foundation matches, and what the completed building unlocks.</p>
-        <a href="#" style="margin-top:auto;">Read →</a>
+        <div class="eyebrow">CBS Chicago · Violence Prevention</div>
+        <h3>Project HOOD credited for Woodlawn violent crime drop.</h3>
+        <p>Homicides in Woodlawn are down roughly 35%. Pastor Brooks and his outreach team — credible messengers from the community — are why.</p>
+        <a href="https://www.cbsnews.com/chicago/news/violent-crime-woodlawn-project-hood/" target="_blank" rel="noopener" style="margin-top:auto;">Read on CBS Chicago →</a>
       </div>
       <div class="card card-accent" style="border-top-color:var(--blue);">
-        <div class="eyebrow">Jan 20, 2026 · Violence Prevention</div>
-        <h3>How we mediated 140+ incidents in 2025.</h3>
-        <p>Inside the outreach team — who they are, how the hospital-based intervention partnership works, and why the approach keeps spreading.</p>
-        <a href="#" style="margin-top:auto;">Read →</a>
+        <div class="eyebrow">ABC7 Chicago · Community</div>
+        <h3>1,000 Men Unity Gathering: violence-free zone on the South Side.</h3>
+        <p>Project HOOD convened more than 1,000 men to celebrate progress at the LEO Center and a growing violence-free zone in Woodlawn.</p>
+        <a href="https://abc7chicago.com/post/1000-men-unity-gathering-celebrates-progress-project-hood-center-violence-free-zone-south-side/19121177/" target="_blank" rel="noopener" style="margin-top:auto;">Read on ABC7 →</a>
       </div>
-      <div class="card card-accent" style="border-top-color:var(--purple);">
-        <div class="eyebrow">Dec 18, 2025 · Health &amp; Wellness</div>
-        <h3>Free counseling, no waitlist: the 2025 clinical report.</h3>
-        <p>520 sessions delivered, 0 cost to participants. How we funded it, what we're expanding for 2026.</p>
-        <a href="#" style="margin-top:auto;">Read →</a>
+      <div class="card card-accent" style="border-top-color:var(--red);">
+        <div class="eyebrow">WGN-TV · Milestone</div>
+        <h3>South Side nonprofit Project HOOD rings NYSE opening bell.</h3>
+        <p>Project HOOD traveled to New York City to ring the New York Stock Exchange opening bell — a national stage for a South Side mission.</p>
+        <a href="https://wgntv.com/news/chicago-news/project-hood-nyc-stock-exchange/" target="_blank" rel="noopener" style="margin-top:auto;">Read on WGN →</a>
+      </div>
+      <div class="card card-accent" style="border-top-color:#5B2D8E;">
+        <div class="eyebrow">Fox News · Policy</div>
+        <h3>Capitol Hill lawmakers visit Project H.O.O.D. — a "major step forward."</h3>
+        <p>Members of Congress came to Woodlawn to see Project HOOD's community-driven violence interruption model firsthand.</p>
+        <a href="https://www.foxnews.com/media/pastor-brooks-and-project-h-o-o-d-visited-by-capitol-hill-lawmakers-in-major-step-forward" target="_blank" rel="noopener" style="margin-top:auto;">Read on Fox News →</a>
       </div>
       <div class="card card-accent" style="border-top-color:#8a6d00;">
-        <div class="eyebrow">Nov 30, 2025 · WAA</div>
-        <h3>Pastor Brooks finishes the walk. The work doesn't stop.</h3>
-        <p>900+ miles, $8M raised on the route. What's next for Walk Across America 2026.</p>
-        <a href="#" style="margin-top:auto;">Read →</a>
+        <div class="eyebrow">CBS Chicago · LEO Center</div>
+        <h3>Project HOOD receives $8M donation toward new community center.</h3>
+        <p>A major gift accelerates the $45M Robert R. McCormick Leadership &amp; Economic Opportunity Center at 66th &amp; King Drive.</p>
+        <a href="https://www.cbsnews.com/chicago/news/project-hood-donation-community-center/" target="_blank" rel="noopener" style="margin-top:auto;">Read on CBS Chicago →</a>
       </div>
-      <div class="card card-accent">
-        <div class="eyebrow">Nov 6, 2025 · Press</div>
-        <h3>Chicago Tribune: "The block that refuses to be overlooked."</h3>
-        <p>Front-page feature on Project H.O.O.D.'s decade of work. Link to the full piece.</p>
-        <a href="#" style="margin-top:auto;">Read →</a>
+      <div class="card card-accent" style="border-top-color:var(--green);">
+        <div class="eyebrow">Building Up Chicago · May 2024</div>
+        <h3>First look inside the LEO Center construction in Woodlawn.</h3>
+        <p>A deep-dive site visit into the 85,000 sq ft building rising at King Drive — what's going in each floor, and what it means for the neighborhood.</p>
+        <a href="https://buildingupchicago.com/2024/05/02/robert-r-mccormick-leadership-economic-opportunity-center-construction/" target="_blank" rel="noopener" style="margin-top:auto;">Read on Building Up Chicago →</a>
+      </div>
+      <div class="card card-accent" style="border-top-color:var(--blue);">
+        <div class="eyebrow">CBS Chicago · Workforce</div>
+        <h3>LEO Center Offering Construction Training Program.</h3>
+        <p>Project HOOD's Pre-Apprenticeship Construction cohort gives Woodlawn residents a direct path from training to union-track careers.</p>
+        <a href="https://www.cbsnews.com/chicago/news/project-hood-construction-training-program/" target="_blank" rel="noopener" style="margin-top:auto;">Read on CBS Chicago →</a>
+      </div>
+      <div class="card card-accent" style="border-top-color:var(--red);">
+        <div class="eyebrow">Chicago Crusader · Walk Across America</div>
+        <h3>Pastor Corey Brooks walks across America for Project H.O.O.D.</h3>
+        <p>Coverage from Chicago's oldest Black-owned newspaper of the cross-country walk that raised millions for Woodlawn's LEO Center.</p>
+        <a href="https://chicagocrusader.com/pastor-corey-brooks-walks-across-america/" target="_blank" rel="noopener" style="margin-top:auto;">Read on Chicago Crusader →</a>
       </div>
     </div>
-    <p style="margin-top:var(--sp-4);font-size:13px;color:var(--muted);font-style:italic;">All posts are placeholder content for the preview. Real posts get added via the <code>/admin</code> panel once the site is live.</p>
   </div>
 </section>
 """
@@ -2461,7 +2379,11 @@ contact_body = f"""
 
 <section class="section bg-offwhite">
   <div class="wrap">
-    <div class="img-ph" style="min-height:320px;">MAP · 6620 S. King Drive, Chicago</div>
+    <iframe
+      src="https://maps.google.com/maps?q=6620+S+King+Dr,+Chicago,+IL+60637&z=16&output=embed"
+      width="100%" height="380" style="border:0;border-radius:8px;display:block;"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      title="Project H.O.O.D. — 6620 S. King Drive, Chicago, IL 60637"></iframe>
   </div>
 </section>
 """
