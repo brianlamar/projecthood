@@ -529,7 +529,7 @@ about_body = f"""
     </div>
     <!-- GOOGLE FORM LINK — run create_ph_forms.gs → createAllForms() → copy "Booking Inquiries" URL → replace href below -->
     <div style="max-width:640px;margin:var(--sp-3) auto 0;text-align:center;">
-      <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/BOOKING_FORM_ID/viewform" target="_blank" rel="noopener" style="font-size:17px;padding:16px 40px;display:inline-block;">Submit a booking inquiry →</a>
+      <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfFCudwdnRCOwYiK-mWnkWIBhg1jVO37uX2EZnXqPl3Yr38TQ/viewform" target="_blank" rel="noopener" style="font-size:17px;padding:16px 40px;display:inline-block;">Submit a booking inquiry →</a>
       <p style="font-size:13px;color:var(--muted);margin-top:14px;">We respond within two business days. For urgent requests, call <a href="tel:7733548483" style="color:var(--green);">773.354.8483</a>.</p>
     </div>
   </div>
@@ -1657,7 +1657,7 @@ campaigns_body = f"""
     </div>
     <!-- GOOGLE FORM LINK — run create_ph_forms.gs → createAllForms() → copy "Walk With Us!" URL → replace href below -->
     <div style="max-width:640px;margin:var(--sp-3) auto 0;text-align:center;">
-      <a class="btn btn-yellow" href="https://docs.google.com/forms/d/e/WALK_WITH_US_FORM_ID/viewform" target="_blank" rel="noopener" style="font-size:17px;padding:16px 40px;display:inline-block;">Count me in →</a>
+      <a class="btn btn-yellow" href="https://docs.google.com/forms/d/e/1FAIpQLSck9_hs4mHhfUNDnAWs3N2e0mqBx4VioqBHj3SzvXBXqRMUyA/viewform" target="_blank" rel="noopener" style="font-size:17px;padding:16px 40px;display:inline-block;">Count me in →</a>
       <p style="font-size:13px;color:var(--muted);margin-top:14px;">Opens a short Google Form — takes 60 seconds.</p>
     </div>
   </div>
