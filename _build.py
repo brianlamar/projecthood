@@ -397,17 +397,17 @@ home_body = f"""
     <div class="grid-2">
       <div class="img-ph dark" style="min-height:300px;background-image:url('img/leo-center-rendering.jpg');background-size:cover;background-position:center top;">LEO CENTER RENDERING<br><span style="font-size:11px;opacity:.5;">→ img/leo-center-rendering.jpg</span></div>
       <div>
-        <div class="eyebrow" style="color:var(--yellow);">Capital Campaign</div>
+        <div class="eyebrow" style="color:var(--yellow);">Opening Fall 2026 · Capital Campaign</div>
         <h2>A home for everything we do.</h2>
-        <p style="font-size:var(--fs-lead);opacity:.9;">The Leadership and Economic Opportunity Center is the physical home of Project H.O.O.D. — a gathering place, a training facility, and a symbol that investment belongs here too.</p>
+        <p style="font-size:var(--fs-lead);opacity:.9;">The Robert R. McCormick Leadership &amp; Economic Opportunity Center — 90,000 sq ft on S. King Drive, opening Fall 2026. The physical home of Project H.O.O.D. and a signal that investment belongs on the South Side.</p>
         <div style="margin-top:24px;">
           <div class="progress" style="background:#1a1718;border-color:var(--yellow);">
-            <div class="progress-fill" style="width:70%;">70% Funded</div>
+            <div class="progress-fill" style="width:70%;">70% Funded · $31.5M of $45M</div>
           </div>
         </div>
         <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
           <a class="btn btn-yellow" href="leo-center.html">Learn about LEO</a>
-          <a class="btn btn-outline-light" href="https://projecthood.networkforgood.com/">Fund the build</a>
+          <a class="btn btn-outline-light" href="https://projecthood.networkforgood.com/projects/301372-2026-brick-by-brick-campaign">Brick by Brick</a>
         </div>
       </div>
     </div>
@@ -1350,39 +1350,113 @@ function copyCaption(id,btn){var el=document.getElementById(id);var text=el?el.i
 
 # -------- LEO CENTER --------
 leo_body = f"""
+<!-- HERO -->
 <section class="hero bg-black">
   <div class="wrap">
     <div class="hero-split">
       <div>
-        <div class="eyebrow" style="color:var(--yellow);">LEO Center</div>
-        <h1>The Leadership &amp; <span class="hl-yellow">Economic</span> Opportunity Center.</h1>
-        <p class="lead">A 90,000 sq ft community hub on S. King Drive — the physical home of every Project H.O.O.D. program and a signal to Woodlawn that investment belongs here too.</p>
+        <div class="eyebrow" style="color:var(--yellow);letter-spacing:.12em;">Opening Fall 2026 · Woodlawn, Chicago</div>
+        <h1>The <span class="hl-yellow">LEO Center.</span> Built for the South Side.</h1>
+        <p class="lead">The Robert R. McCormick Leadership &amp; Economic Opportunity Center — 90,000 sq ft on S. King Drive, opening Fall 2026. Every Project H.O.O.D. program, one permanent address.</p>
         <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;">
-          <a class="btn btn-yellow" href="https://projecthood.networkforgood.com/">Fund the build</a>
-          <a class="btn btn-outline-light" href="campaigns.html">Walk Across America</a>
+          <a class="btn btn-yellow" href="https://projecthood.networkforgood.com/projects/301372-2026-brick-by-brick-campaign">Brick by Brick →</a>
+          <a class="btn btn-outline-light" href="https://projecthood.networkforgood.com/">Fund the build</a>
         </div>
       </div>
-      <div class="img-ph dark" style="min-height:340px;background-image:url('img/leo-center-rendering.jpg');background-size:cover;background-position:center top;">LEO CENTER RENDERING / SITE PHOTO<br><span style="font-size:11px;opacity:.5;">→ img/leo-center-rendering.jpg</span></div>
+      <div class="img-ph dark" style="min-height:340px;background-image:url('img/leo-center-rendering.jpg');background-size:cover;background-position:center top;">LEO CENTER RENDERING / CONSTRUCTION PHOTO<br><span style="font-size:11px;opacity:.5;">→ img/leo-center-rendering.jpg</span></div>
     </div>
   </div>
 </section>
 
-<section class="section bg-yellow">
+<!-- OPENING ANNOUNCEMENT BANNER -->
+<section style="background:var(--yellow);padding:28px 24px;text-align:center;">
+  <div style="max-width:800px;margin:0 auto;">
+    <p style="font-family:var(--font-display);font-size:clamp(18px,3vw,26px);font-weight:700;color:var(--black);letter-spacing:.04em;margin:0;">
+      🏗 Construction is underway — the LEO Center opens <strong>Fall 2026.</strong>
+    </p>
+    <p style="font-size:15px;color:var(--black);margin:8px 0 0;opacity:.75;">6620 S. Martin Luther King Dr, Chicago, IL 60637 · The heart of Woodlawn</p>
+  </div>
+</section>
+
+<!-- FUNDING PROGRESS -->
+<section class="section bg-offwhite">
   <div class="wrap" style="text-align:center;">
-    <div class="eyebrow">Capital campaign · 2022–2027</div>
-    <h2>70% funded. <span style="background:var(--black);color:var(--yellow);padding:2px 12px;">$10.5M to go.</span></h2>
-    <div style="max-width:720px;margin:var(--sp-3) auto 0;">
-      <div class="progress" style="height:54px;">
-        <div class="progress-fill" style="width:70%;font-size:18px;">$24.5M raised · 70% of $35M</div>
+    <div class="eyebrow">Capital Campaign · Robert R. McCormick Foundation Lead Gift</div>
+    <h2>$45M goal. <span style="background:var(--black);color:var(--yellow);padding:2px 12px;border-radius:2px;">Almost there.</span></h2>
+    <div style="max-width:760px;margin:var(--sp-3) auto 0;">
+      <div class="progress" style="height:56px;border-radius:4px;">
+        <div class="progress-fill" style="width:70%;font-size:17px;border-radius:4px 0 0 4px;">$31.5M raised · 70%</div>
+      </div>
+      <p style="font-size:14px;color:var(--muted);margin-top:10px;">$13.5M remaining · Every dollar goes directly to the build</p>
+    </div>
+    <div style="margin-top:var(--sp-3);display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a class="btn btn-primary" href="https://projecthood.networkforgood.com/">Give to the build</a>
+      <a class="btn btn-outline" href="https://projecthood.networkforgood.com/projects/301372-2026-brick-by-brick-campaign">Buy a brick</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONSTRUCTION TIMELINE -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--green);">Construction Progress</div>
+    <h2>From rooftop to ribbon cutting.</h2>
+    <p style="max-width:var(--w-read);font-size:var(--fs-lead);margin-bottom:var(--sp-3);">Pastor Brooks sat on a rooftop for 100 days in winter to raise the first dollars. Now steel is going up on King Drive. Here's where we stand.</p>
+    <div style="display:grid;gap:0;max-width:680px;">
+      <!-- Timeline item -->
+      <div style="display:flex;gap:20px;align-items:flex-start;padding-bottom:32px;position:relative;">
+        <div style="flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;font-weight:700;z-index:1;">✓</div>
+        <div style="position:absolute;left:22px;top:44px;width:2px;height:calc(100% - 12px);background:var(--line);"></div>
+        <div>
+          <div style="font-weight:700;font-size:13px;color:var(--green);text-transform:uppercase;letter-spacing:.06em;">2021 · Complete</div>
+          <h4 style="margin:4px 0 6px;">Rooftop Campaign</h4>
+          <p style="color:var(--muted);font-size:14px;margin:0;">Pastor Brooks camped on a Woodlawn rooftop for 100 days — raising awareness and the first major capital dollars. The city took notice.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:20px;align-items:flex-start;padding-bottom:32px;position:relative;">
+        <div style="flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;font-weight:700;z-index:1;">✓</div>
+        <div style="position:absolute;left:22px;top:44px;width:2px;height:calc(100% - 12px);background:var(--line);"></div>
+        <div>
+          <div style="font-weight:700;font-size:13px;color:var(--green);text-transform:uppercase;letter-spacing:.06em;">2022 · Complete</div>
+          <h4 style="margin:4px 0 6px;">Groundbreaking</h4>
+          <p style="color:var(--muted);font-size:14px;margin:0;">Official groundbreaking at 6620 S. King Drive. The Robert R. McCormick Foundation named the building. Land owned by Project H.O.O.D.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:20px;align-items:flex-start;padding-bottom:32px;position:relative;">
+        <div style="flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;font-weight:700;z-index:1;">✓</div>
+        <div style="position:absolute;left:22px;top:44px;width:2px;height:calc(100% - 12px);background:var(--line);"></div>
+        <div>
+          <div style="font-weight:700;font-size:13px;color:var(--green);text-transform:uppercase;letter-spacing:.06em;">2024–2025 · Complete</div>
+          <h4 style="margin:4px 0 6px;">Foundation &amp; Steel</h4>
+          <p style="color:var(--muted);font-size:14px;margin:0;">Foundation poured. Steel erected. Construction training crews — Project H.O.O.D. program graduates — worked the site. The walk from Chicago to New York raised final capital.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:20px;align-items:flex-start;padding-bottom:32px;position:relative;">
+        <div style="flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:20px;z-index:1;">🔨</div>
+        <div style="position:absolute;left:22px;top:44px;width:2px;height:calc(100% - 12px);background:var(--line);"></div>
+        <div>
+          <div style="font-weight:700;font-size:13px;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;">2026 · In Progress Now</div>
+          <h4 style="margin:4px 0 6px;">Interior Buildout</h4>
+          <p style="color:var(--muted);font-size:14px;margin:0;">Classrooms, health suites, community kitchen, multipurpose hall — every space being finished for fall opening. Final $13.5M is the last mile.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:20px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--black);border:2px solid var(--yellow);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--yellow);font-weight:700;z-index:1;">★</div>
+        <div>
+          <div style="font-weight:700;font-size:13px;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;">Fall 2026 · Target Opening</div>
+          <h4 style="margin:4px 0 6px;">Ribbon Cutting</h4>
+          <p style="color:var(--muted);font-size:14px;margin:0;">The LEO Center opens its doors to Woodlawn. Programming begins. The Walkway of Destiny carries the names of everyone who helped make it real.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- VIDEO -->
 <section class="section bg-offwhite">
   <div class="wrap" style="max-width:900px;">
-    <div class="eyebrow" style="text-align:center;">The vision</div>
-    <h2 style="text-align:center;margin-bottom:var(--sp-3);">See what we're building.</h2>
+    <div class="eyebrow" style="text-align:center;">See it</div>
+    <h2 style="text-align:center;margin-bottom:var(--sp-3);">Watch the LEO Center come to life.</h2>
     <div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.18);">
       <iframe
         src="https://www.youtube.com/embed/NHNPy5tFCiw"
@@ -1390,55 +1464,121 @@ leo_body = f"""
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
-        style="position:absolute;top:0;left:0;width:100%;height:100%;">
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:8px;">
       </iframe>
     </div>
   </div>
 </section>
 
+<!-- WHAT'S INSIDE -->
 <section class="section">
-  <div class="wrap grid-2">
+  <div class="wrap grid-2" style="align-items:center;gap:var(--sp-4);">
     <div>
       <div class="eyebrow">What it is</div>
-      <h2>One building, five pillars, one neighborhood.</h2>
-      <p>The LEO Center brings every Project H.O.O.D. pillar under one roof: workforce training classrooms, a youth enrichment hub, health and wellness suites, a business incubator, re-entry services, outreach team offices, a community kitchen, and a 400-seat multipurpose hall.</p>
+      <h2>One building. Five pillars. One neighborhood.</h2>
+      <p style="font-size:var(--fs-lead);">The LEO Center brings every Project H.O.O.D. program under one roof — workforce training classrooms, a youth enrichment hub, health and wellness suites, a business incubator, re-entry services, outreach team offices, a community kitchen, and a 400-seat multipurpose hall.</p>
       <p>It's being built on land owned by Project H.O.O.D., directly on S. King Drive — a deliberate statement that serious investment belongs on the South Side.</p>
     </div>
-    <div class="img-ph" style="min-height:360px;background-image:url('img/leo-center-floorplan.jpg');background-size:cover;background-position:center top;">FLOOR PLAN OR RENDERING<br><span style="font-size:11px;opacity:.5;">→ img/leo-center-floorplan.jpg</span></div>
+    <div class="img-ph" style="min-height:360px;background-image:url('img/leo-center-floorplan.jpg');background-size:cover;background-position:center;">FLOOR PLAN / RENDERING<br><span style="font-size:11px;opacity:.5;">→ img/leo-center-floorplan.jpg</span></div>
   </div>
 </section>
 
+<!-- 6 FEATURE CARDS -->
 <section class="section bg-offwhite">
   <div class="wrap">
     <div class="eyebrow" style="color:var(--green);">Inside the LEO</div>
-    <h2>What fits inside 90,000 sq ft.</h2>
+    <h2>What 90,000 sq ft makes possible.</h2>
     <div class="grid-3" style="margin-top:var(--sp-3);">
-      <div class="card card-accent"><h3>Workforce Training Wing</h3><p>Construction trades, tech skills, OSHA certification, and direct-hire employer partners — where real careers begin.</p></div>
+      <div class="card card-accent"><h3>Workforce Training Wing</h3><p>Construction trades, tech skills, OSHA certification, and direct-hire employer partners — where real careers begin. Average starting wage: $19/hr.</p></div>
       <div class="card card-accent" style="border-top-color:var(--blue);"><h3>Youth Enrichment Hub</h3><p>Entrepreneurship training, after-school programs, tutoring, mentorship, and college and career readiness — all under one roof.</p></div>
-      <div class="card card-accent" style="border-top-color:var(--purple);"><h3>Health &amp; Wellness Center</h3><p>Access to care for the whole community — counseling suites, senior services, recovery navigation, and crisis response.</p></div>
-      <div class="card card-accent" style="border-top-color:#8a6d00;"><h3>Business Incubator</h3><p>Co-working space for Woodlawn entrepreneurs, grant writing support, and legal/financial clinic.</p></div>
-      <div class="card card-accent" style="border-top-color:var(--green);"><h3>Community Kitchen</h3><p>Food distribution, community dinners, culinary training, and event catering — the table is always set.</p></div>
-      <div class="card card-accent" style="border-top-color:var(--black);"><h3>Outreach HQ</h3><p>24/7 response team base, de-escalation rooms, and family-support space — always on call for the neighborhood.</p></div>
+      <div class="card card-accent" style="border-top-color:var(--purple);"><h3>Health &amp; Wellness Center</h3><p>Access to care for the whole community — counseling suites, senior services, recovery navigation, and crisis response. No insurance required.</p></div>
+      <div class="card card-accent" style="border-top-color:#8a6d00;"><h3>Business Incubator</h3><p>Co-working space for Woodlawn entrepreneurs, grant writing support, and legal and financial clinic — growing local ownership.</p></div>
+      <div class="card card-accent" style="border-top-color:var(--green);"><h3>Community Kitchen</h3><p>Food distribution, community dinners, culinary training, and event catering — the table is always set for the neighborhood.</p></div>
+      <div class="card card-accent" style="border-top-color:var(--black);"><h3>400-Seat Multipurpose Hall</h3><p>Town halls, graduations, community events, concerts — a venue built for Woodlawn, by Woodlawn.</p></div>
     </div>
   </div>
 </section>
 
+<!-- QUOTE -->
 <section class="section bg-black">
   <div class="wrap">
     <div class="testimonial" style="border-left-color:var(--yellow);">
-      <blockquote>"The LEO Center isn't a building. It's a proof that investment belongs here too. When it opens, we stop having to ask for permission."</blockquote>
-      <cite>— Pastor Corey B. Brooks</cite>
+      <blockquote>"The LEO Center isn't a building. It's proof that investment belongs here too. When it opens, we stop having to ask for permission."</blockquote>
+      <cite>— Pastor Corey B. Brooks, Executive Director, Project H.O.O.D.</cite>
     </div>
   </div>
 </section>
 
+<!-- LOCATION / MAP -->
+<section class="section bg-offwhite">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-4);align-items:center;flex-wrap:wrap;">
+      <div>
+        <div class="eyebrow">Where we're building</div>
+        <h2>6620 S. Martin Luther King Dr.</h2>
+        <p style="font-size:var(--fs-lead);">The LEO Center sits at the heart of Woodlawn — on land Project H.O.O.D. owns, on a block we've served for over a decade. This is intentional.</p>
+        <ul style="list-style:none;padding:0;margin:var(--sp-2) 0 0;">
+          <li style="padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;"><strong>Address:</strong> 6620 S. Martin Luther King Dr, Chicago, IL 60637</li>
+          <li style="padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;"><strong>Neighborhood:</strong> Woodlawn, Chicago's South Side</li>
+          <li style="padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;"><strong>Transit:</strong> CTA Green Line — Cottage Grove stop · Multiple bus routes</li>
+          <li style="padding:10px 0;font-size:15px;"><strong>Parking:</strong> On-site and street parking available</li>
+        </ul>
+        <div style="margin-top:var(--sp-2);">
+          <a class="btn btn-outline" href="https://maps.google.com/?q=6620+S+Martin+Luther+King+Dr,+Chicago,+IL+60637" target="_blank" rel="noopener">Get directions →</a>
+        </div>
+      </div>
+      <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.12);min-height:320px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2975.838!2d-87.6157!3d41.7789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e295b2e8f49c9%3A0x5a7b2f3d1e4c8a6b!2s6620%20S%20Martin%20Luther%20King%20Dr%2C%20Chicago%2C%20IL%2060637!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+          width="100%"
+          height="320"
+          style="border:0;display:block;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="LEO Center location — 6620 S. Martin Luther King Dr, Woodlawn, Chicago">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRICK BY BRICK CTA -->
+<section class="section bg-black" style="color:var(--white);">
+  <div class="wrap grid-2" style="align-items:center;gap:var(--sp-4);">
+    <div>
+      <div class="eyebrow" style="color:var(--yellow);">Brick by Brick · 2026 Capital Campaign</div>
+      <h2 style="color:var(--white);">Leave your name in the foundation.</h2>
+      <p style="font-size:var(--fs-lead);opacity:.9;">Every brick in the LEO Center's Walkway of Destiny carries the name of someone who believed in Chicago's South Side — before the rest of the world caught up.</p>
+      <p style="opacity:.85;margin-top:12px;">Long after the ribbon is cut, families will walk across these names. Young people will step into new futures because of the foundation you helped build. This is your chance to leave more than a donation — it's a legacy engraved in stone.</p>
+      <div style="margin-top:var(--sp-3);display:flex;gap:12px;flex-wrap:wrap;">
+        <a class="btn btn-yellow" href="https://projecthood.networkforgood.com/projects/301372-2026-brick-by-brick-campaign" target="_blank" rel="noopener">Claim your brick →</a>
+        <a class="btn btn-outline-light" href="https://projecthood.networkforgood.com/">Any amount</a>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="background:var(--white);color:var(--black);border:none;">
+        <div class="eyebrow" style="color:var(--muted);">Named-gift levels</div>
+        <ul style="list-style:none;padding:0;margin-top:12px;">
+          <li style="padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;"><span><strong>Cornerstone</strong><br><small style="color:var(--muted);">Name a program room</small></span><span style="font-weight:700;font-size:18px;">$100K+</span></li>
+          <li style="padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;"><span><strong>Builder</strong><br><small style="color:var(--muted);">Walkway of Destiny — large brick</small></span><span style="font-weight:700;font-size:18px;">$25K</span></li>
+          <li style="padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;"><span><strong>Foundation</strong><br><small style="color:var(--muted);">Walkway of Destiny — brick</small></span><span style="font-weight:700;font-size:18px;">$5K</span></li>
+          <li style="padding:14px 0;display:flex;justify-content:space-between;align-items:center;"><span><strong>Block by Block</strong><br><small style="color:var(--muted);">Recognition in LEO honor wall</small></span><span style="font-weight:700;font-size:18px;">Any amount</span></li>
+        </ul>
+        <a class="btn btn-primary" href="https://projecthood.networkforgood.com/projects/301372-2026-brick-by-brick-campaign" target="_blank" rel="noopener" style="width:100%;text-align:center;margin-top:8px;">Give now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
 <section class="cta-strip">
   <div class="wrap">
-    <h2>We're <span class="hl-yellow">70% there.</span> Help close the last $10.5M.</h2>
-    <p style="max-width:600px;margin:0 auto var(--sp-3);opacity:.95;">The building is rising. The community is watching. Every gift — at every level — moves the finish line closer. Don't let someone else write this part of the story without you.</p>
+    <h2>Opening <span class="hl-yellow">Fall 2026.</span> Help close the last mile.</h2>
+    <p style="max-width:620px;margin:0 auto var(--sp-3);opacity:.95;">The building is rising. The finish line is in sight. Every gift — at every level — gets us there. Don't let someone else write this part of the story without you.</p>
     <div class="btn-group">
-      <a class="btn btn-yellow" href="https://projecthood.networkforgood.com/">Fund the build</a>
-      <a class="btn btn-outline-light" href="campaigns.html">Walk Across America</a>
+      <a class="btn btn-yellow" href="https://projecthood.networkforgood.com/projects/301372-2026-brick-by-brick-campaign">Brick by Brick →</a>
+      <a class="btn btn-outline-light" href="https://projecthood.networkforgood.com/">Fund the build</a>
       <a class="btn btn-outline-light" href="contact.html">Name a space</a>
     </div>
   </div>
