@@ -362,7 +362,7 @@ home_body = f"""
       <div class="prog-card pg-purple">
         <span class="tag tag-purple">Health &amp; Wellness</span>
         <h3 style="margin-top:10px;">Access to care &amp; community wellness.</h3>
-        <p style="font-family:var(--font-serif);">Free medical access, counseling, senior programming, and crisis response — no insurance required, no barriers.</p>
+        <p style="font-family:var(--font-serif);">Free medical access, counseling, senior programming, recovery navigation, and crisis response — no insurance required, no barriers.</p>
         <a href="programs.html" style="margin-top:auto;">Read more →</a>
       </div>
       <div class="prog-card pg-yellow">
@@ -590,7 +590,7 @@ programs_body = f"""
       <div class="prog-card pg-purple">
         <span class="tag tag-purple">04 · Health &amp; Wellness</span>
         <h3 style="margin-top:12px;">Access to care &amp; community wellness.</h3>
-        <p>Free medical access, counseling, senior programming, and crisis response — because a healthy community is the foundation for everything else.</p>
+        <p>Free medical access, counseling, recovery navigation, senior programming, and crisis response — because a healthy community is the foundation for everything else.</p>
         <ul style="font-size:14px;color:var(--muted);margin:var(--sp-2) 0;">
           <li>Individual therapy</li>
           <li>Group support circles</li>
@@ -867,6 +867,7 @@ health_wellness_body = f"""
         <li>Access to care for uninsured and underinsured residents</li>
         <li>Senior programming, social engagement, and wellness support</li>
         <li>Mental health counseling and therapy</li>
+        <li>Recovery navigation — individualized support for residents in recovery</li>
         <li>Group support circles and crisis response</li>
         <li>Referral network to ongoing care providers</li>
       </ul>
@@ -1329,7 +1330,7 @@ leo_body = f"""
     <div class="grid-3" style="margin-top:var(--sp-3);">
       <div class="card card-accent"><h3>Workforce Training Wing</h3><p>Construction trades, tech skills, OSHA certification, and direct-hire employer partners — where real careers begin.</p></div>
       <div class="card card-accent" style="border-top-color:var(--blue);"><h3>Youth Enrichment Hub</h3><p>Entrepreneurship training, after-school programs, tutoring, mentorship, and college and career readiness — all under one roof.</p></div>
-      <div class="card card-accent" style="border-top-color:var(--purple);"><h3>Health &amp; Wellness Center</h3><p>Access to care for the whole community — counseling suites, health programming, senior services, and crisis response.</p></div>
+      <div class="card card-accent" style="border-top-color:var(--purple);"><h3>Health &amp; Wellness Center</h3><p>Access to care for the whole community — counseling suites, senior services, recovery navigation, and crisis response.</p></div>
       <div class="card card-accent" style="border-top-color:#8a6d00;"><h3>Business Incubator</h3><p>Co-working space for Woodlawn entrepreneurs, grant writing support, and legal/financial clinic.</p></div>
       <div class="card card-accent" style="border-top-color:var(--green);"><h3>Community Kitchen</h3><p>Food distribution, community dinners, culinary training, and event catering — the table is always set.</p></div>
       <div class="card card-accent" style="border-top-color:var(--black);"><h3>Outreach HQ</h3><p>24/7 response team base, de-escalation rooms, and family-support space — always on call for the neighborhood.</p></div>
