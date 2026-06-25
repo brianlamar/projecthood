@@ -422,7 +422,7 @@ home_body = f"""
     <div class="btn-group">
       <a class="btn btn-yellow" href="https://projecthood.networkforgood.com/">Donate</a>
       <a class="btn btn-outline-light" href="get-involved.html">Volunteer</a>
-      <a class="btn btn-outline-light" href="get-involved.html#apply">Apply for services</a>
+      <a class="btn btn-outline-light" href="get-involved.html#apply">Connect with us</a>
     </div>
   </div>
 </section>
@@ -601,9 +601,9 @@ programs_body = f"""
       </div>
       <div class="prog-card">
         <span class="tag tag-black">Participant Intake</span>
-        <h3 style="margin-top:12px;">Apply to a program.</h3>
+        <h3 style="margin-top:12px;">Connect with us.</h3>
         <p>Our case-management system is Social Solutions Apricot. Apply once, and our intake team will route you to the right program and staff member.</p>
-        <a href="https://projecthood.socialsolutionsportal.com/apricot-intake/0eb461e5-38a9-4ad1-9a4e-02bb3ee1414d" class="btn btn-primary" style="align-self:flex-start;margin-top:auto;" target="_blank" rel="noopener">Start an application →</a>
+        <a href="https://projecthood.socialsolutionsportal.com/apricot-intake/0eb461e5-38a9-4ad1-9a4e-02bb3ee1414d" class="btn btn-primary" style="align-self:flex-start;margin-top:auto;" target="_blank" rel="noopener">Connect with us →</a>
         <p style="font-size:12px;color:var(--muted);margin-top:8px;font-style:italic;">Opens Apricot intake portal in a new tab.</p>
       </div>
     </div>
@@ -753,7 +753,7 @@ violence_prevention_body = f"""
     <div class="btn-group">
       <a class="btn btn-yellow" href="https://projecthood.networkforgood.com/">Fund this pillar</a>
       <a class="btn btn-outline-light" href="get-involved.html">Volunteer</a>
-      <a class="btn btn-outline-light" href="https://projecthood.socialsolutionsportal.com/apricot-intake/0eb461e5-38a9-4ad1-9a4e-02bb3ee1414d" target="_blank" rel="noopener">Apply as participant</a>
+      <a class="btn btn-outline-light" href="https://projecthood.socialsolutionsportal.com/apricot-intake/0eb461e5-38a9-4ad1-9a4e-02bb3ee1414d" target="_blank" rel="noopener">Connect with us</a>
     </div>
   </div>
 </section>
@@ -828,7 +828,7 @@ workforce_development_body = f"""
   <div class="wrap">
     <h2>Ready to take the first step?</h2>
     <div class="btn-group">
-      <a class="btn btn-yellow" href="https://projecthood.socialsolutionsportal.com/apricot-intake/0eb461e5-38a9-4ad1-9a4e-02bb3ee1414d" target="_blank" rel="noopener">Apply as participant</a>
+      <a class="btn btn-yellow" href="https://projecthood.socialsolutionsportal.com/apricot-intake/0eb461e5-38a9-4ad1-9a4e-02bb3ee1414d" target="_blank" rel="noopener">Connect with us</a>
       <a class="btn btn-outline-light" href="https://projecthood.networkforgood.com/">Fund this pillar</a>
       <a class="btn btn-outline-light" href="partner.html">Become an employer partner</a>
     </div>
@@ -933,7 +933,7 @@ health_wellness_body = f"""
   <div class="wrap">
     <h2>Ready to take the first step?</h2>
     <div class="btn-group">
-      <a class="btn btn-yellow" href="https://projecthood.socialsolutionsportal.com/apricot-intake/0eb461e5-38a9-4ad1-9a4e-02bb3ee1414d" target="_blank" rel="noopener">Apply as participant</a>
+      <a class="btn btn-yellow" href="https://projecthood.socialsolutionsportal.com/apricot-intake/0eb461e5-38a9-4ad1-9a4e-02bb3ee1414d" target="_blank" rel="noopener">Connect with us</a>
       <a class="btn btn-outline-light" href="tel:3127256648">Call SSFC clinic</a>
       <a class="btn btn-outline-light" href="https://projecthood.networkforgood.com/">Fund this pillar</a>
     </div>
@@ -1007,7 +1007,7 @@ youth_programming_body = f"""
   <div class="wrap">
     <h2>Ready to take the first step?</h2>
     <div class="btn-group">
-      <a class="btn btn-yellow" href="https://projecthood.socialsolutionsportal.com/apricot-intake/0eb461e5-38a9-4ad1-9a4e-02bb3ee1414d" target="_blank" rel="noopener">Apply as participant</a>
+      <a class="btn btn-yellow" href="https://projecthood.socialsolutionsportal.com/apricot-intake/0eb461e5-38a9-4ad1-9a4e-02bb3ee1414d" target="_blank" rel="noopener">Connect with us</a>
       <a class="btn btn-outline-light" href="https://projecthood.networkforgood.com/">Fund this pillar</a>
       <a class="btn btn-outline-light" href="get-involved.html">Volunteer</a>
     </div>
@@ -1180,6 +1180,78 @@ impact_body = f"""
 </section>
 """
 
+# -------- SHARE THE FIRST LOOK (reusable) --------
+social_share_section = """
+<section class="section bg-black" id="share">
+  <div class="wrap" style="max-width:820px;margin:0 auto;">
+    <div class="eyebrow" style="color:var(--yellow);text-align:center;">The First Look</div>
+    <h2 style="color:var(--white);text-align:center;margin-bottom:8px;">Spread the word.</h2>
+    <p style="color:rgba(255,255,255,.8);text-align:center;font-size:var(--fs-lead);margin-bottom:var(--sp-4);">Got a photo from your tour? Post it. A moment with Pastor Brooks? Share it. Copy a caption below &mdash; it&rsquo;s ready to paste.</p>
+    <div class="grid-2" style="gap:var(--sp-3);margin-bottom:var(--sp-4);">
+
+      <div style="background:#1a1a1a;border:1px solid #333;border-radius:10px;padding:20px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.261 5.635L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <span style="color:var(--white);font-family:var(--font-display);font-size:12px;letter-spacing:.1em;text-transform:uppercase;">X &middot; Twitter</span>
+        </div>
+        <p style="color:rgba(255,255,255,.8);font-size:13px;line-height:1.75;font-family:var(--font-serif);margin-bottom:14px;" id="cap-x">Just got my First Look at the LEO Center in Woodlawn &mdash; 22,000 sq ft of opportunity going up on the South Side. So proud to support @ProjectHOOD &#x1F49B; #FirstLook #Woodlawn</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button onclick="copyCaption('cap-x',this)" class="share-copy-btn">Copy caption</button>
+          <a href="https://twitter.com/intent/tweet?text=Just%20got%20my%20First%20Look%20at%20the%20LEO%20Center%20in%20Woodlawn%20%E2%80%94%2022%2C000%20sq%20ft%20of%20opportunity%20going%20up%20on%20the%20South%20Side.%20So%20proud%20to%20support%20%40ProjectHOOD%20%F0%9F%92%9B%20%23FirstLook%20%23Woodlawn&url=https%3A//projecthood.org/first-look.html" target="_blank" rel="noopener" class="share-link-btn" style="color:var(--white);border-color:rgba(255,255,255,.4);">Post on X &rarr;</a>
+        </div>
+      </div>
+
+      <div style="background:#1a1a1a;border:1px solid #333;border-radius:10px;padding:20px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <span style="color:var(--white);font-family:var(--font-display);font-size:12px;letter-spacing:.1em;text-transform:uppercase;">Facebook</span>
+        </div>
+        <p style="color:rgba(255,255,255,.8);font-size:13px;line-height:1.75;font-family:var(--font-serif);margin-bottom:14px;" id="cap-fb">I just got a First Look at the Leadership &amp; Economic Opportunity Center in Woodlawn, and I had to share it. Project H.O.O.D. is building 22,000 sq ft of workforce training, reentry support, youth programs, and health services &mdash; right on the block where they&rsquo;ve always shown up. I donated today. Every dollar stays in Woodlawn. &#x1F49B; #FirstLook #ProjectHOOD</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button onclick="copyCaption('cap-fb',this)" class="share-copy-btn">Copy caption</button>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//projecthood.org/first-look.html" target="_blank" rel="noopener" class="share-link-btn" style="color:#1877F2;border-color:#1877F2;">Share on Facebook &rarr;</a>
+        </div>
+      </div>
+
+      <div style="background:#1a1a1a;border:1px solid #333;border-radius:10px;padding:20px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24"><defs><linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path fill="url(#ig)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          <span style="color:var(--white);font-family:var(--font-display);font-size:12px;letter-spacing:.1em;text-transform:uppercase;">Instagram</span>
+        </div>
+        <p style="color:rgba(255,255,255,.8);font-size:13px;line-height:1.75;font-family:var(--font-serif);margin-bottom:14px;" id="cap-ig">Woodlawn&rsquo;s future is going up. &#x1F49B; Got a First Look at the LEO Center today &mdash; 22,000 sq ft for the community, right on the South Side. @projecthood has been here for years. Now they&rsquo;re building a home for it. Link in bio to give. #FirstLook #ProjectHOOD #Woodlawn #ChicagoSouthSide</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button onclick="copyCaption('cap-ig',this)" class="share-copy-btn">Copy caption</button>
+        </div>
+        <p style="color:rgba(255,255,255,.4);font-size:11px;margin-top:8px;font-style:italic;">Copy, then open Instagram, start a new post, add your photo, and paste.</p>
+      </div>
+
+      <div style="background:#1a1a1a;border:1px solid #333;border-radius:10px;padding:20px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span style="color:var(--white);font-family:var(--font-display);font-size:12px;letter-spacing:.1em;text-transform:uppercase;">LinkedIn</span>
+        </div>
+        <p style="color:rgba(255,255,255,.8);font-size:13px;line-height:1.75;font-family:var(--font-serif);margin-bottom:14px;" id="cap-li">Had the privilege of touring the Leadership &amp; Economic Opportunity Center in Woodlawn today. Project H.O.O.D. &mdash; led by Pastor Corey Brooks &mdash; is building 22,000 sq ft of workforce development, reentry support, youth programming, and health services for one of Chicago&rsquo;s most resilient communities. I&rsquo;m proud to be a donor. If you&rsquo;re looking for an organization where your support makes a real local difference, I&rsquo;d encourage you to take a look. EIN: 45-3964886 | projecthood.networkforgood.com #FirstLook #ProjectHOOD #Woodlawn</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button onclick="copyCaption('cap-li',this)" class="share-copy-btn">Copy caption</button>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//projecthood.org/first-look.html" target="_blank" rel="noopener" class="share-link-btn" style="color:#0A66C2;border-color:#0A66C2;">Share on LinkedIn &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="background:rgba(245,183,0,.07);border:1px solid rgba(245,183,0,.2);border-radius:10px;padding:20px 24px;text-align:center;">
+      <p style="color:var(--yellow);font-family:var(--font-display);font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;">&#x1F4F8; Got a photo from your tour?</p>
+      <p style="color:rgba(255,255,255,.8);font-size:14.5px;font-family:var(--font-serif);margin:0;">A shot with Pastor Brooks, the construction site, or the community carries this story further. Copy a caption, add your photo, and post. Tag <strong style="color:var(--yellow);">@ProjectHOOD</strong> and <strong style="color:var(--yellow);">#FirstLook</strong> so we can reshare.</p>
+    </div>
+  </div>
+</section>
+<script>
+function copyCaption(id,btn){var el=document.getElementById(id);var text=el?el.innerText:'';var done=function(){var o=btn.textContent;btn.textContent='Copied!';btn.style.background='#1A7A4A';btn.style.color='#fff';setTimeout(function(){btn.textContent=o;btn.style.background='';btn.style.color='';},2200);};if(navigator.clipboard){navigator.clipboard.writeText(text).then(done).catch(function(){var t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);done();});}else{var t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);done();}}
+</script>
+<style>.share-copy-btn{background:var(--yellow);color:#111;border:none;padding:9px 16px;border-radius:6px;font-family:var(--font-display);font-size:12px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;font-weight:700;}.share-link-btn{background:transparent;padding:9px 16px;border-radius:6px;border:1px solid;font-family:var(--font-display);font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;display:inline-block;}</style>
+"""
+
+
 # -------- LEO CENTER --------
 leo_body = f"""
 <section class="hero bg-black">
@@ -1274,6 +1346,7 @@ leo_body = f"""
     </div>
   </div>
 </section>
+{social_share_section}
 """
 
 # -------- CAMPAIGNS (WAA) --------
@@ -1417,11 +1490,11 @@ gi_body = f"""
 <!-- PARTICIPANT INTAKE — prominent standalone section -->
 <section class="section bg-black" id="apply">
   <div class="wrap" style="max-width:720px;margin:0 auto;text-align:center;">
-    <div class="eyebrow" style="color:var(--yellow);">Need our services?</div>
-    <h2 style="color:var(--white);">Apply as a participant.</h2>
+    <div class="eyebrow" style="color:var(--yellow);">Here when you're ready.</div>
+    <h2 style="color:var(--white);">Connect with us.</h2>
     <p style="color:rgba(255,255,255,.9);font-size:var(--fs-lead);margin-bottom:var(--sp-3);">One application puts you in the system — our intake team routes you to the right program (workforce, violence prevention, health &amp; wellness, youth, re-entry) and follows up within 2 business days. Free, confidential, no judgment.</p>
-    <a class="btn btn-yellow" style="font-size:15px;padding:16px 36px;" href="https://projecthood.socialsolutionsportal.com/apricot-intake/0eb461e5-38a9-4ad1-9a4e-02bb3ee1414d" target="_blank" rel="noopener">Start your application →</a>
-    <p style="color:rgba(255,255,255,.5);font-size:13px;margin-top:16px;font-style:italic;">Opens our secure Apricot intake portal · takes about 10 minutes · free</p>
+    <a class="btn btn-yellow" style="font-size:15px;padding:16px 36px;" href="https://projecthood.socialsolutionsportal.com/apricot-intake/0eb461e5-38a9-4ad1-9a4e-02bb3ee1414d" target="_blank" rel="noopener">Connect with us →</a>
+    <p style="color:rgba(255,255,255,.5);font-size:13px;margin-top:16px;font-style:italic;">Secure, confidential, free · we follow up within 2 business days</p>
     <div style="margin-top:var(--sp-4);padding-top:var(--sp-3);border-top:1px solid #333;display:flex;flex-wrap:wrap;justify-content:center;gap:var(--sp-3);">
       <div style="text-align:center;">
         <div style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--yellow);">2 days</div>
@@ -1523,6 +1596,7 @@ donate_body = f"""
   </div>
 </section>
 
+{social_share_section}
 <section class="section bg-offwhite">
   <div class="wrap grid-2" style="align-items:center;">
     <div>
@@ -1534,6 +1608,99 @@ donate_body = f"""
       <div class="eyebrow" style="color:var(--muted);margin-bottom:10px;font-size:10.5px;">NFG Newsletter embed</div>
       <input type="email" placeholder="you@email.com" style="width:100%;padding:12px;border:1px solid var(--line);font-family:var(--font-serif);font-size:14px;margin-bottom:8px;">
       <button class="btn btn-primary" style="width:100%;padding:12px;">Subscribe</button>
+    </div>
+  </div>
+</section>
+"""
+
+
+# -------- FIRST LOOK --------
+first_look_body = f"""
+<section class="hero bg-black">
+  <div class="wrap" style="text-align:center;max-width:760px;margin:0 auto;">
+    <div class="eyebrow" style="color:var(--yellow);">Donor Day</div>
+    <h1 style="color:var(--white);">The <span class="hl-yellow">First Look.</span></h1>
+    <p class="lead" style="color:rgba(255,255,255,.9);">One day. One community. One building that changes everything. Join Project H.O.O.D. for an exclusive first look at the Leadership &amp; Economic Opportunity Center &mdash; and help us fund its future.</p>
+    <div style="margin-top:var(--sp-4);display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a class="btn btn-yellow" style="font-size:16px;padding:16px 32px;" href="https://projecthood.networkforgood.com/" target="_blank" rel="noopener">Give today &rarr;</a>
+      <a class="btn btn-outline-light" href="#share">Share the moment</a>
+    </div>
+    <p style="color:rgba(255,255,255,.5);font-size:12px;margin-top:14px;">Tax-deductible &middot; EIN 45-3964886 &middot; Every dollar stays in Woodlawn</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--green);">The impact</div>
+    <h2>What your gift builds.</h2>
+    <div class="grid-4" style="margin-top:var(--sp-3);">
+      <div class="stat"><div class="v">$50</div><div class="l">feeds a family for a week</div></div>
+      <div class="stat"><div class="v">$250</div><div class="l">sponsors a training cohort seat</div></div>
+      <div class="stat"><div class="v">$1,000</div><div class="l">funds an outreach worker&rsquo;s week</div></div>
+      <div class="stat"><div class="v">$5,000+</div><div class="l">names a LEO Center space</div></div>
+    </div>
+    <div style="margin-top:var(--sp-4);text-align:center;">
+      <a class="btn btn-primary" style="font-size:15px;padding:14px 32px;" href="https://projecthood.networkforgood.com/" target="_blank" rel="noopener">Donate now &rarr;</a>
+      <p style="font-size:12px;color:var(--muted);margin-top:8px;">Opens projecthood.networkforgood.com &middot; secure &middot; takes under 2 minutes</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-offwhite">
+  <div class="wrap grid-2" style="align-items:center;gap:var(--sp-6);">
+    <div>
+      <div class="eyebrow" style="color:var(--red);">About the LEO Center</div>
+      <h2>22,000 sq ft of opportunity.</h2>
+      <p>The Leadership &amp; Economic Opportunity Center is a 90,000 sq ft community hub going up on S. King Drive in Woodlawn. It will be the permanent home of every Project H.O.O.D. program &mdash; workforce development, reentry services, youth programming, and health &amp; wellness &mdash; plus community space for the entire neighborhood.</p>
+      <p style="font-size:14px;color:var(--muted);">Currently 70% funded. Your First Look gift brings us closer to opening day.</p>
+      <a class="btn btn-outline" href="leo-center.html" style="margin-top:var(--sp-2);">Learn more about the LEO Center &rarr;</a>
+    </div>
+    <div style="background:var(--black);padding:28px;border-radius:4px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div style="text-align:center;padding:16px;border:1px solid #333;border-radius:6px;"><div style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--yellow);">90K</div><div style="color:rgba(255,255,255,.7);font-size:12px;margin-top:4px;">sq ft total</div></div>
+        <div style="text-align:center;padding:16px;border:1px solid #333;border-radius:6px;"><div style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--yellow);">70%</div><div style="color:rgba(255,255,255,.7);font-size:12px;margin-top:4px;">funded</div></div>
+        <div style="text-align:center;padding:16px;border:1px solid #333;border-radius:6px;"><div style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--yellow);">5</div><div style="color:rgba(255,255,255,.7);font-size:12px;margin-top:4px;">programs housed</div></div>
+        <div style="text-align:center;padding:16px;border:1px solid #333;border-radius:6px;"><div style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--yellow);">1</div><div style="color:rgba(255,255,255,.7);font-size:12px;margin-top:4px;">community</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{social_share_section}
+
+<section class="section">
+  <div class="wrap" style="max-width:680px;margin:0 auto;">
+    <div class="eyebrow" style="color:var(--green);text-align:center;">FAQ</div>
+    <h2 style="text-align:center;">Common questions.</h2>
+    <div style="margin-top:var(--sp-3);">
+      <div style="border-bottom:1px solid var(--line);padding:16px 0;">
+        <h4 style="margin:0 0 8px;">Is my donation tax-deductible?</h4>
+        <p style="margin:0;font-size:14px;color:var(--muted);">Yes. Project H.O.O.D. is a 501(c)(3) nonprofit. EIN 45-3964886. You will receive an emailed receipt immediately after your gift.</p>
+      </div>
+      <div style="border-bottom:1px solid var(--line);padding:16px 0;">
+        <h4 style="margin:0 0 8px;">Where does my money go?</h4>
+        <p style="margin:0;font-size:14px;color:var(--muted);">Every dollar stays in Woodlawn. Gifts made through NetworkForGood go directly to Project H.O.O.D. program operations and the LEO Center construction fund.</p>
+      </div>
+      <div style="border-bottom:1px solid var(--line);padding:16px 0;">
+        <h4 style="margin:0 0 8px;">Can I give stock or through my DAF?</h4>
+        <p style="margin:0;font-size:14px;color:var(--muted);">Absolutely. See our <a href="ways-to-give.html" style="color:var(--green);">Ways to Give page</a> for stock transfer instructions, DAF links, and planned giving options.</p>
+      </div>
+      <div style="padding:16px 0;">
+        <h4 style="margin:0 0 8px;">I have more questions.</h4>
+        <p style="margin:0;font-size:14px;color:var(--muted);">Email <a href="mailto:development@projecthood.org" style="color:var(--green);">development@projecthood.org</a> &mdash; our team responds within one business day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="wrap" style="text-align:center;">
+    <h2>This is the moment.</h2>
+    <p style="max-width:540px;margin:0 auto var(--sp-3);opacity:.95;">22,000 sq ft. One community. Your gift makes it real.</p>
+    <div class="btn-group" style="justify-content:center;">
+      <a class="btn btn-yellow" href="https://projecthood.networkforgood.com/" target="_blank" rel="noopener">Give now &rarr;</a>
+      <a class="btn btn-outline-light" href="#share">Share the moment</a>
+      <a class="btn btn-outline-light" href="ways-to-give.html">All giving options</a>
     </div>
   </div>
 </section>
@@ -1702,6 +1869,25 @@ ways_to_give_body = f"""
         <p style="font-size:12.5px;color:var(--muted);">To discuss planned giving options, contact <a href="mailto:development@projecthood.org">development@projecthood.org</a> — we're honored to talk through your legacy goals.</p>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- DONOR RESOURCES -->
+<section class="section-sm" style="border-top:1px solid var(--line);background:var(--offwhite);">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--green);margin-bottom:var(--sp-2);">Donor Resources</div>
+    <div class="grid-2" style="gap:var(--sp-3);">
+      <div class="card" style="border-top:4px solid var(--yellow);">
+        <h4 style="margin-top:0;">&#x1F4C4; Donor Toolkit</h4>
+        <p style="font-size:13.5px;">Sample social posts, impact stats, and everything you need to champion Project H.O.O.D. in your network.</p>
+        <a href="[DONOR_TOOLKIT_DROPBOX_LINK]" target="_blank" rel="noopener" style="font-size:13px;color:var(--green);font-weight:600;">Download toolkit (PDF) &rarr;</a>
+      </div>
+      <div class="card" style="border-top:4px solid var(--blue);">
+        <h4 style="margin-top:0;">&#x1F4F0; Media Kit</h4>
+        <p style="font-size:13.5px;">Organization overview, LEO Center facts, leadership bios, logos, and press contact for media use.</p>
+        <a href="[MEDIA_KIT_DROPBOX_LINK]" target="_blank" rel="noopener" style="font-size:13px;color:var(--blue);font-weight:600;">Download media kit (PDF) &rarr;</a>
+      </div>
     </div>
   </div>
 </section>
@@ -2274,6 +2460,7 @@ pages = [
     ("youth-programming.html",     "Youth Programming",      "After-school programs, esports, mentorship, and enrichment — 380 youth enrolled, 94% attendance, 42 summer internships in 2025.", "a_programs",     youth_programming_body),
     ("reentry-services.html",      "Re-Entry Services",      "Second chances, real support — job readiness, housing, counseling, and mentorship for individuals returning from incarceration.",  "a_programs",     reentry_services_body),
     ("impact.html",      "Impact",                       "2025 impact — 15,000+ served, 1,048 job placements, 2M+ lbs of food distributed, 70% LEO Center funded.",                             "a_impact",       impact_body),
+    ("first-look.html",   "The First Look",               "The First Look \u2014 Project H.O.O.D. donor day. Give, share, and be part of this moment.",                                              "a_gi",           first_look_body),
     ("leo-center.html",  "LEO Center",                   "The Leadership and Economic Opportunity Center — 70% funded, a 90,000 sq ft community hub on S. King Drive.",                        "a_leo",          leo_body),
     ("campaigns.html",   "Walk With Us!",                "Walk With Us! — a nationwide movement to raise $25M for youth, families, and the LEO Center. Give, walk, or start a team on Tiltify.",  "a_campaigns",    campaigns_body),
     ("get-involved.html","Get Involved",                 "Three ways to move the work forward — give, volunteer, or partner.",                                                                   "a_gi",           gi_body),
