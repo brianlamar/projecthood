@@ -2203,15 +2203,12 @@ volunteer_body = f"""
 # Hardcoded event cards — used when EVENTBRITE_TOKEN is not set
 _hardcoded_cards = """
       <div class="card" style="padding:0;overflow:hidden;">
-        <div style="min-height:260px;background:var(--green) url('img/events/community-day-2026.jpg') center/cover no-repeat;display:flex;flex-direction:column;justify-content:flex-end;padding:20px 22px;position:relative;">
-          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,rgba(0,0,0,.1) 60%);"></div>
-          <div style="position:relative;z-index:1;">
-            <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.85);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;">Sun, Jun 28 · 10 AM – 3 PM</div>
-            <div style="font-size:20px;font-weight:800;color:#fff;font-family:var(--font-display);line-height:1.15;">Community Day 2026</div>
-            <div style="font-size:13px;color:rgba(255,255,255,.8);margin-top:4px;">6620 S. King Dr. · Free</div>
-          </div>
-        </div>
+        <img src="img/events/community-day-2026.jpg" alt="Community Day 2026 flyer"
+             style="width:100%;height:240px;object-fit:cover;display:block;">
         <div style="padding:14px 18px 16px;">
+          <div style="font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;">Sun, Jun 28 · 10 AM – 3 PM</div>
+          <div style="font-size:17px;font-weight:800;color:var(--dark);font-family:var(--font-display);line-height:1.2;margin-bottom:3px;">Community Day 2026</div>
+          <div style="font-size:13px;color:var(--muted);margin-bottom:12px;">6620 S. King Dr. · Free</div>
           <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
             <a class="btn btn-primary" href="https://www.eventbrite.com/e/community-day-2026-tickets-1992501020188" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
             <button class="ph-share-btn" data-title="Community Day 2026" data-url="https://www.eventbrite.com/e/community-day-2026-tickets-1992501020188" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
@@ -2220,15 +2217,12 @@ _hardcoded_cards = """
       </div>
 
       <div class="card" style="padding:0;overflow:hidden;">
-        <div style="min-height:260px;background:var(--red) url('img/events/christmas-in-july.jpg') center/cover no-repeat;display:flex;flex-direction:column;justify-content:flex-end;padding:20px 22px;position:relative;">
-          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,rgba(0,0,0,.1) 60%);"></div>
-          <div style="position:relative;z-index:1;">
-            <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.85);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;">Wed, Jul 1 · 4 – 7 PM</div>
-            <div style="font-size:20px;font-weight:800;color:#fff;font-family:var(--font-display);line-height:1.15;">Christmas in July</div>
-            <div style="font-size:13px;color:rgba(255,255,255,.8);margin-top:4px;">West 66th Street · Free</div>
-          </div>
-        </div>
+        <img src="img/events/christmas-in-july.jpg" alt="Christmas in July flyer"
+             style="width:100%;height:240px;object-fit:cover;display:block;">
         <div style="padding:14px 18px 16px;">
+          <div style="font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;">Wed, Jul 1 · 4 – 7 PM</div>
+          <div style="font-size:17px;font-weight:800;color:var(--dark);font-family:var(--font-display);line-height:1.2;margin-bottom:3px;">Christmas in July</div>
+          <div style="font-size:13px;color:var(--muted);margin-bottom:12px;">West 66th Street · Free</div>
           <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
             <a class="btn btn-primary" href="https://www.eventbrite.com/e/christmas-in-july-tickets-1992501767423" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
             <button class="ph-share-btn" data-title="Christmas in July" data-url="https://www.eventbrite.com/e/christmas-in-july-tickets-1992501767423" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
@@ -2237,15 +2231,12 @@ _hardcoded_cards = """
       </div>
 
       <div class="card" style="padding:0;overflow:hidden;">
-        <div style="min-height:260px;background:#5B2D8E url('img/events/trunk-party-2026.jpg') center/cover no-repeat;display:flex;flex-direction:column;justify-content:flex-end;padding:20px 22px;position:relative;">
-          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,rgba(0,0,0,.1) 60%);"></div>
-          <div style="position:relative;z-index:1;">
-            <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.85);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;">Fri, Aug 7 · 4 – 7 PM</div>
-            <div style="font-size:20px;font-weight:800;color:#fff;font-family:var(--font-display);line-height:1.15;">Trunk Party 2026</div>
-            <div style="font-size:13px;color:rgba(255,255,255,.8);margin-top:4px;">6620 S. King Dr. · Free</div>
-          </div>
-        </div>
+        <img src="img/events/trunk-party-2026.jpg" alt="Trunk Party 2026 flyer"
+             style="width:100%;height:240px;object-fit:cover;display:block;">
         <div style="padding:14px 18px 16px;">
+          <div style="font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;">Fri, Aug 7 · 4 – 7 PM</div>
+          <div style="font-size:17px;font-weight:800;color:var(--dark);font-family:var(--font-display);line-height:1.2;margin-bottom:3px;">Trunk Party 2026</div>
+          <div style="font-size:13px;color:var(--muted);margin-bottom:12px;">6620 S. King Dr. · Free</div>
           <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
             <a class="btn btn-primary" href="https://www.eventbrite.com/e/trunk-party-2026-tickets-1992502132515" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
             <button class="ph-share-btn" data-title="Trunk Party 2026" data-url="https://www.eventbrite.com/e/trunk-party-2026-tickets-1992502132515" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
