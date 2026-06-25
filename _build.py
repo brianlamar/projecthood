@@ -1699,7 +1699,7 @@ first_look_body = f"""
       </div>
       <div style="padding:16px 0;">
         <h4 style="margin:0 0 8px;">I have more questions.</h4>
-        <p style="margin:0;font-size:14px;color:var(--muted);">Email <a href="mailto:development@projecthood.org" style="color:var(--green);">development@projecthood.org</a> &mdash; our team responds within one business day.</p>
+        <p style="margin:0;font-size:14px;color:var(--muted);">Email <a href="mailto:info@projecthood.org" style="color:var(--green);">info@projecthood.org</a> &mdash; our team responds within one business day.</p>
       </div>
     </div>
   </div>
@@ -1802,7 +1802,7 @@ ways_to_give_body = f"""
           <tr style="border-bottom:1px solid var(--line);"><td style="padding:7px 4px;font-weight:700;color:var(--muted);">Account name</td><td style="padding:7px 4px;">Project H.O.O.D.</td></tr>
           <tr><td style="padding:7px 4px;font-weight:700;color:var(--muted);">For credit to</td><td style="padding:7px 4px;">Project H.O.O.D. — EIN 45-3964886</td></tr>
         </table>
-        <p style="font-size:13px;padding:10px 12px;background:var(--offwhite);border-left:3px solid var(--blue);margin:0;"><strong>Important:</strong> Please notify us when you initiate the transfer so we can credit your gift. Email <a href="mailto:development@projecthood.org">development@projecthood.org</a> with your name, stock name, and share count.</p>
+        <p style="font-size:13px;padding:10px 12px;background:var(--offwhite);border-left:3px solid var(--blue);margin:0;"><strong>Important:</strong> Please notify us when you initiate the transfer so we can credit your gift. Email <a href="mailto:info@projecthood.org">info@projecthood.org</a> with your name, stock name, and share count.</p>
       </div>
     </div>
   </div>
@@ -1821,7 +1821,7 @@ ways_to_give_body = f"""
           <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 4px;font-weight:700;color:var(--muted);width:40%;">Legal name</td><td style="padding:8px 4px;">Project H.O.O.D.</td></tr>
           <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 4px;font-weight:700;color:var(--muted);">EIN</td><td style="padding:8px 4px;font-weight:700;">45-3964886</td></tr>
           <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 4px;font-weight:700;color:var(--muted);">Address</td><td style="padding:8px 4px;">6620 S. King Drive<br>Chicago, IL 60637</td></tr>
-          <tr><td style="padding:8px 4px;font-weight:700;color:var(--muted);">Contact</td><td style="padding:8px 4px;"><a href="mailto:development@projecthood.org">development@projecthood.org</a></td></tr>
+          <tr><td style="padding:8px 4px;font-weight:700;color:var(--muted);">Contact</td><td style="padding:8px 4px;"><a href="mailto:info@projecthood.org">info@projecthood.org</a></td></tr>
         </table>
       </div>
     </div>
@@ -1836,7 +1836,7 @@ ways_to_give_body = f"""
       </div>
       <div class="card" style="margin-top:16px;">
         <h4>Can't find us in your DAF portal?</h4>
-        <p style="font-size:13.5px;">Search by EIN <strong>45-3964886</strong> or email <a href="mailto:development@projecthood.org">development@projecthood.org</a> — we can provide any additional documentation your sponsor needs.</p>
+        <p style="font-size:13.5px;">Search by EIN <strong>45-3964886</strong> or email <a href="mailto:info@projecthood.org">info@projecthood.org</a> — we can provide any additional documentation your sponsor needs.</p>
       </div>
     </div>
   </div>
@@ -1866,7 +1866,7 @@ ways_to_give_body = f"""
           <li>Submit your donation receipt through your company's matching portal</li>
           <li>Your employer sends a matching gift to Project H.O.O.D.</li>
         </ol>
-        <p style="font-size:12.5px;color:var(--muted);">Need our EIN or W-9? Email <a href="mailto:development@projecthood.org">development@projecthood.org</a></p>
+        <p style="font-size:12.5px;color:var(--muted);">Need our EIN or W-9? Email <a href="mailto:info@projecthood.org">info@projecthood.org</a></p>
       </div>
 
       <div class="card card-accent" id="planned" style="border-top-color:var(--red);">
@@ -1878,7 +1878,7 @@ ways_to_give_body = f"""
           <li>Life insurance beneficiary</li>
           <li>Charitable remainder trust</li>
         </ul>
-        <p style="font-size:12.5px;color:var(--muted);">To discuss planned giving options, contact <a href="mailto:development@projecthood.org">development@projecthood.org</a> — we're honored to talk through your legacy goals.</p>
+        <p style="font-size:12.5px;color:var(--muted);">To discuss planned giving options, contact <a href="mailto:info@projecthood.org">info@projecthood.org</a> — we're honored to talk through your legacy goals.</p>
       </div>
 
     </div>
@@ -1909,7 +1909,7 @@ ways_to_give_body = f"""
   <div class="wrap" style="max-width:600px;margin:0 auto;">
     <h2 style="color:var(--white);">Questions about giving?</h2>
     <p style="color:var(--white);opacity:.95;font-size:15.5px;">Our development team is here to help. Whether you're planning a major gift, want to visit in person, or need a W-9 or 990 — reach out.</p>
-    <a class="btn btn-yellow" style="margin-top:10px;font-size:15px;padding:14px 26px;" href="mailto:development@projecthood.org">development@projecthood.org</a>
+    <a class="btn btn-yellow" style="margin-top:10px;font-size:15px;padding:14px 26px;" href="mailto:info@projecthood.org">info@projecthood.org</a>
     <p style="color:var(--white);font-size:12px;opacity:.75;margin-top:14px;">Project H.O.O.D. is a 501(c)(3) nonprofit · EIN 45-3964886 · All gifts are tax-deductible to the extent allowed by law.</p>
   </div>
 </section>
@@ -2223,33 +2223,36 @@ contact_body = f"""
 <section class="section">
   <div class="wrap grid-2">
     <div>
-      <div class="eyebrow">Direct lines</div>
-      <h2>By topic.</h2>
-      <ul style="list-style:none;padding:0;font-family:var(--font-serif);">
-        <li style="padding:12px 0;border-bottom:1px solid var(--line);"><strong>General:</strong> info@projecthood.org</li>
-        <li style="padding:12px 0;border-bottom:1px solid var(--line);"><strong>Development / donations:</strong> development@projecthood.org</li>
-        <li style="padding:12px 0;border-bottom:1px solid var(--line);"><strong>Volunteer coordinator:</strong> volunteer@projecthood.org</li>
-        <li style="padding:12px 0;border-bottom:1px solid var(--line);"><strong>Press / media:</strong> press@projecthood.org</li>
-        <li style="padding:12px 0;border-bottom:1px solid var(--line);"><strong>Events:</strong> events@projecthood.org</li>
-        <li style="padding:12px 0;"><strong>Participant intake:</strong> intake@projecthood.org</li>
-      </ul>
-      <div style="margin-top:var(--sp-3);">
-        <strong>Office:</strong><br>
-        Project H.O.O.D.<br>
-        6620 S. King Drive<br>
-        Chicago, IL 60637<br>
-        <br>
-        <strong>Phone:</strong> (773) XXX-XXXX
+      <div class="eyebrow">Reach us</div>
+      <h2>One inbox.<br>We'll get it to the right person.</h2>
+      <p style="font-size:var(--fs-lead);margin-top:12px;">Use the form to tell us what you're reaching out about — donations, volunteering, press, events, or participant services. We route every message to the right person and respond within one business day.</p>
+      <div style="margin-top:var(--sp-3);display:flex;flex-direction:column;gap:14px;">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span style="font-size:18px;flex-shrink:0;">✉</span>
+          <div><strong>Email</strong><br><a href="mailto:info@projecthood.org" style="color:var(--green);">info@projecthood.org</a></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span style="font-size:18px;flex-shrink:0;">📞</span>
+          <div><strong>Phone</strong><br><a href="tel:3127256648">312-725-6648</a></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span style="font-size:18px;flex-shrink:0;">📍</span>
+          <div><strong>Office</strong><br>Project H.O.O.D.<br>6620 S. King Drive<br>Chicago, IL 60637</div>
+        </div>
       </div>
     </div>
     <div>
       <div class="eyebrow" style="color:var(--red);">Send a message</div>
-      <div style="background:var(--offwhite);padding:var(--sp-4);border:2px dashed var(--line);">
-        <p style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:var(--muted);">Google Form embed · on real site</p>
-        <h3 style="margin:10px 0;">Contact form</h3>
-        <p style="font-size:14px;">Name, email, topic dropdown, message. Routes to the right inbox based on topic.</p>
-        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSezt7dj_hycF7Y45m-Dcls6-52SCGS2sd-NkMDogWDhh_dIkQ/viewform" style="margin-top:12px;">Contact form →</a>
+      <h3 style="margin-bottom:12px;">What are you reaching out about?</h3>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:var(--sp-3);">Select your interest in the form — donations, volunteering, press &amp; media, events, or connecting with our programs. Every submission goes directly to the team member who can help.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:var(--sp-3);">
+        <div style="padding:10px 14px;background:var(--offwhite);border-left:3px solid var(--green);border-radius:0 4px 4px 0;font-size:14px;">💚 <strong>Donations &amp; development</strong></div>
+        <div style="padding:10px 14px;background:var(--offwhite);border-left:3px solid var(--blue);border-radius:0 4px 4px 0;font-size:14px;">💙 <strong>Volunteer with us</strong></div>
+        <div style="padding:10px 14px;background:var(--offwhite);border-left:3px solid var(--red);border-radius:0 4px 4px 0;font-size:14px;">❤️ <strong>Press &amp; media</strong><span style="display:block;color:var(--muted);font-size:12px;margin-top:3px;">Direct line: <a href="tel:7733548483" style="color:var(--red);">773.354.8483</a></span></div>
+        <div style="padding:10px 14px;background:var(--offwhite);border-left:3px solid var(--yellow);border-radius:0 4px 4px 0;font-size:14px;">💛 <strong>Events &amp; partnerships</strong></div>
+        <div style="padding:10px 14px;background:var(--offwhite);border-left:3px solid var(--purple);border-radius:0 4px 4px 0;font-size:14px;">💜 <strong>Connect with our programs</strong></div>
       </div>
+      <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSezt7dj_hycF7Y45m-Dcls6-52SCGS2sd-NkMDogWDhh_dIkQ/viewform" style="width:100%;text-align:center;">Send a message →</a>
     </div>
   </div>
 </section>
