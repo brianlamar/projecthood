@@ -1,15 +1,109 @@
 #!/usr/bin/env python3
 """
-Project H.O.O.D. site prototype generator.
+Project H.O.O.D. site generator.
 
-Renders a clickable local HTML prototype the team can review before we
-commit to the GitHub Pages + Decap CMS + Google Calendar implementation.
+To rebuild manually: python3 _build.py
+Automated rebuilds: GitHub Actions runs this daily at 6 AM CT,
+pulling live events from the Eventbrite API automatically.
 
-To rebuild after tweaks, run: python3 _build.py
-Output: all .html pages at the site/ root.
+Output: all .html pages written to the same directory as this script.
+
+Eventbrite auto-update:
+  Set the EVENTBRITE_TOKEN environment variable (or GitHub secret) to a
+  private token from eventbrite.com → Account Settings → Developer Links → API Keys.
+  When present, the events page renders live events from your Eventbrite
+  organizer profile (ID 41178041593) instead of the hardcoded cards.
 """
 from pathlib import Path
 import re
+import os
+import json
+try:
+    import urllib.request as urlreq
+    import urllib.error as urlerr
+except ImportError:
+    urlreq = None
+
+# ---------------------------------------------------------------------------
+# Eventbrite live event fetcher
+# ---------------------------------------------------------------------------
+EVENTBRITE_ORG_ID = "41178041593"
+EVENTBRITE_ORG_URL = "https://www.eventbrite.com/o/project-hood-41178041593"
+
+def _eb_fetch_events():
+    """
+    Fetch upcoming events from Eventbrite API.
+    Returns a list of dicts with keys: title, date_str, location, url
+    Returns None if token is missing or request fails.
+    """
+    token = os.environ.get("EVENTBRITE_TOKEN", "").strip()
+    if not token:
+        return None
+    try:
+        url = (
+            f"https://www.eventbriteapi.com/v3/organizers/{EVENTBRITE_ORG_ID}/events/"
+            f"?status=live&order_by=start_asc&expand=venue&time_filter=current_future"
+        )
+        req = urlreq.Request(url, headers={"Authorization": f"Bearer {token}"})
+        with urlreq.urlopen(req, timeout=10) as resp:
+            data = json.loads(resp.read())
+        events = []
+        for ev in data.get("events", []):
+            start = ev.get("start", {})
+            # Format date string e.g. "Sat, Jun 28 · 10:00 AM"
+            from datetime import datetime, timezone
+            try:
+                dt = datetime.fromisoformat(start.get("local", ""))
+                day_str = dt.strftime("%a, %b %-d · %-I:%M %p")
+            except Exception:
+                day_str = start.get("local", "")
+            venue = ev.get("venue") or {}
+            location = venue.get("name") or venue.get("address", {}).get("city") or "Woodlawn"
+            events.append({
+                "title": ev.get("name", {}).get("text", "Untitled Event"),
+                "date_str": day_str,
+                "location": location,
+                "url": ev.get("url", EVENTBRITE_ORG_URL),
+            })
+        return events if events else None
+    except Exception as exc:
+        print(f"  [Eventbrite] Could not fetch events: {exc}")
+        return None
+
+# BG colors cycle for event cards
+_EB_COLORS = ["var(--green)", "var(--blue)", "var(--red)", "var(--purple)", "var(--yellow)"]
+
+def _build_event_cards_html(events):
+    """Render a grid of event cards from a list of event dicts."""
+    cards = []
+    for i, ev in enumerate(events):
+        color = _EB_COLORS[i % len(_EB_COLORS)]
+        safe_title = ev["title"].replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        safe_loc   = ev["location"].replace("&", "&amp;")
+        url = ev["url"]
+        cards.append(f"""
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div class="img-ph" style="min-height:220px;background:{color};">FLYER · save to img/events/</div>
+        <div style="padding:16px 18px 18px;">
+          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">{ev["date_str"]}</div>
+          <h4 style="margin:0 0 6px;">{safe_title}</h4>
+          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">{safe_loc} · Free</p>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+            <a class="btn btn-primary" href="{url}" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
+            <button class="ph-share-btn" data-title="{safe_title}" data-url="{url}" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
+          </div>
+        </div>
+      </div>""")
+    return "\n".join(cards)
+
+# Try fetching live events now; fall back to hardcoded cards if unavailable
+_live_events = _eb_fetch_events()
+if _live_events:
+    print(f"  [Eventbrite] Loaded {len(_live_events)} live events from API ✓")
+    _event_cards_html = _build_event_cards_html(_live_events)
+else:
+    print("  [Eventbrite] No token — using hardcoded event cards")
+    _event_cards_html = None   # filled in below with the hardcoded block
 
 SITE_DIR = Path(__file__).parent
 
@@ -22,7 +116,7 @@ HEAD = """<!DOCTYPE html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
+  <meta name="robots" content="index,follow">
   <title>{title} · Project H.O.O.D.</title>
   <meta name="description" content="{meta}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,14 +128,18 @@ HEAD = """<!DOCTYPE html>
   <meta property="og:description" content="{meta}">
   <meta property="og:image" content="img/social-icon.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFBL61B4BN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', 'G-NFBL61B4BN');
+  </script>
 </head>
 <body>
 
 <a class="skip-link" href="#main">Skip to main content</a>
-
-<div class="preview-banner">
-  <strong>PREVIEW BUILD</strong> &nbsp;·&nbsp; clickable prototype · brand + IA · content placeholders pending review
-</div>
 
 <header class="site-header">
   <div class="nav">
@@ -113,7 +211,7 @@ FOOTER = """
 
     <div class="footer-bottom">
       <div>
-        © 2026 Project H.O.O.D. · 6620 S. King Drive, Chicago IL 60637 · EIN 46-1449998<br>
+        © 2026 Project H.O.O.D. · 6620 S. King Drive, Chicago IL 60637 · EIN 45-3964886<br>
         <a href="privacy.html">Privacy</a> · <a href="about.html">Financials &amp; 990s</a> · <a href="contact.html">Contact</a>
       </div>
       <div class="social-row">
@@ -216,7 +314,7 @@ home_body = f"""
         <a class="btn btn-outline-light" href="about.html">About us</a>
       </div>
     </div>
-    <div class="img-ph" style="min-height:300px;">PHOTO · neighborhood / staff / programs</div>
+    <div class="img-ph" style="min-height:300px;background-image:url('img/home-community.jpg');background-size:cover;background-position:center top;">PHOTO · neighborhood / staff / programs<br><span style="font-size:11px;opacity:.5;">→ img/home-community.jpg</span></div>
   </div>
 </section>
 
@@ -287,7 +385,7 @@ home_body = f"""
 <section class="section bg-black">
   <div class="wrap">
     <div class="grid-2">
-      <div class="img-ph dark" style="min-height:300px;">LEO CENTER RENDERING</div>
+      <div class="img-ph dark" style="min-height:300px;background-image:url('img/leo-center-rendering.jpg');background-size:cover;background-position:center top;">LEO CENTER RENDERING<br><span style="font-size:11px;opacity:.5;">→ img/leo-center-rendering.jpg</span></div>
       <div>
         <div class="eyebrow" style="color:var(--yellow);">Capital Campaign</div>
         <h2>A home for everything we do.</h2>
@@ -350,7 +448,7 @@ about_body = f"""
       <p>Project H.O.O.D. (Helping Others Obtain Destiny) exists to create sustainable change in Woodlawn and the broader South Side of Chicago. We operate across five interconnected pillars — violence prevention, workforce development, health &amp; wellness, youth programming, and re-entry services — because no one of these alone is enough.</p>
       <p>We believe that the people closest to the problems are closest to the solutions. Everything we do is built with the neighborhood, not for it.</p>
     </div>
-    <div class="img-ph" style="min-height:340px;">MISSION PHOTO · community or founder</div>
+    <div class="img-ph" style="min-height:340px;background-image:url('img/about-mission.jpg');background-size:cover;background-position:center top;">MISSION PHOTO · community or founder<br><span style="font-size:11px;opacity:.5;">→ img/about-mission.jpg</span></div>
   </div>
 </section>
 
@@ -381,7 +479,7 @@ about_body = f"""
 
 <section class="section bg-black">
   <div class="wrap grid-2">
-    <div class="img-ph dark" style="min-height:320px;">FOUNDER PORTRAIT · Pastor Brooks</div>
+    <div class="img-ph dark" style="min-height:320px;background-image:url('img/about-pastor-brooks.jpg');background-size:cover;background-position:center top;">FOUNDER PORTRAIT · Pastor Brooks<br><span style="font-size:11px;opacity:.5;">→ img/about-pastor-brooks.jpg</span></div>
     <div>
       <div class="eyebrow" style="color:var(--yellow);">Founder</div>
       <h2 style="color:var(--white);">Pastor Corey B. Brooks</h2>
@@ -396,9 +494,9 @@ about_body = f"""
 
 <section class="section bg-offwhite">
   <div class="wrap grid-2" style="align-items:center;gap:var(--sp-4);">
-    <div class="img-ph" style="min-height:340px;font-size:13px;">
+    <div class="img-ph" style="min-height:340px;font-size:13px;background-image:url('img/desmond-marshall.jpg');background-size:cover;background-position:center top;">
       PHOTO · Desmond "Dez" Marshall<br>
-      <span style="opacity:.6;">Save to img/desmond-marshall.jpg</span>
+      <span style="font-size:11px;opacity:.5;">→ img/desmond-marshall.jpg</span>
     </div>
     <div>
       <div class="eyebrow">Executive Director</div>
@@ -599,7 +697,16 @@ violence_prevention_body = f"""
         <li>Community events promoting unity and connection</li>
       </ul>
     </div>
-    <div class="img-ph" style="min-height:380px;">PHOTO · outreach team / community event</div>
+    <div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.15);">
+      <iframe
+        src="https://www.youtube.com/embed/lcz6K_F53Fo"
+        title="Project H.O.O.D. Summer Camp — Youth Programming"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:8px;">
+      </iframe>
+    </div>
   </div>
 </section>
 
@@ -680,7 +787,7 @@ workforce_development_body = f"""
         <a class="btn btn-primary" href="https://www.projecthood.org/construction-cohort" target="_blank" rel="noopener">Pre-Apprenticeship Construction cohort →</a>
       </div>
     </div>
-    <div class="img-ph" style="min-height:380px;">PHOTO · job training / construction cohort</div>
+    <div class="img-ph" style="min-height:380px;background-image:url('img/programs-workforce.jpg');background-size:cover;background-position:center top;">PHOTO · job training / construction cohort<br><span style="font-size:11px;opacity:.5;">→ img/programs-workforce.jpg</span></div>
   </div>
 </section>
 
@@ -754,7 +861,7 @@ health_wellness_body = f"""
         <li>Referral network to ongoing care providers</li>
       </ul>
     </div>
-    <div class="img-ph" style="min-height:380px;">PHOTO · health clinic / wellness event</div>
+    <div class="img-ph" style="min-height:380px;background-image:url('img/programs-health-wellness.jpg');background-size:cover;background-position:center top;">PHOTO · health clinic / wellness event<br><span style="font-size:11px;opacity:.5;">→ img/programs-health-wellness.jpg</span></div>
   </div>
 </section>
 
@@ -859,7 +966,7 @@ youth_programming_body = f"""
         <li>Summer internship placement</li>
       </ul>
     </div>
-    <div class="img-ph" style="min-height:380px;">PHOTO · esports arena / youth programming</div>
+    <div class="img-ph" style="min-height:380px;background-image:url('img/programs-youth.jpg');background-size:cover;background-position:center top;">PHOTO · esports arena / youth programming<br><span style="font-size:11px;opacity:.5;">→ img/programs-youth.jpg</span></div>
   </div>
 </section>
 
@@ -933,7 +1040,7 @@ reentry_services_body = f"""
         <li>Connection to community resources and referrals</li>
       </ul>
     </div>
-    <div class="img-ph" style="min-height:380px;">PHOTO · re-entry services / staff</div>
+    <div class="img-ph" style="min-height:380px;background-image:url('img/programs-reentry.jpg');background-size:cover;background-position:center top;">PHOTO · re-entry services / staff<br><span style="font-size:11px;opacity:.5;">→ img/programs-reentry.jpg</span></div>
   </div>
 </section>
 
@@ -1087,7 +1194,7 @@ leo_body = f"""
           <a class="btn btn-outline-light" href="campaigns.html">Walk Across America</a>
         </div>
       </div>
-      <div class="img-ph dark" style="min-height:340px;">LEO CENTER RENDERING / SITE PHOTO</div>
+      <div class="img-ph dark" style="min-height:340px;background-image:url('img/leo-center-rendering.jpg');background-size:cover;background-position:center top;">LEO CENTER RENDERING / SITE PHOTO<br><span style="font-size:11px;opacity:.5;">→ img/leo-center-rendering.jpg</span></div>
     </div>
   </div>
 </section>
@@ -1129,7 +1236,7 @@ leo_body = f"""
       <p>The LEO Center brings every Project H.O.O.D. pillar under one roof: workforce training classrooms, health &amp; wellness counseling suites, esports arena, re-entry services hub, outreach team offices, community kitchen, and a 400-seat multipurpose hall.</p>
       <p>It's being built on land owned by Project H.O.O.D., directly on S. King Drive — a deliberate statement that serious investment belongs on the South Side.</p>
     </div>
-    <div class="img-ph" style="min-height:360px;">FLOOR PLAN OR RENDERING</div>
+    <div class="img-ph" style="min-height:360px;background-image:url('img/leo-center-floorplan.jpg');background-size:cover;background-position:center top;">FLOOR PLAN OR RENDERING<br><span style="font-size:11px;opacity:.5;">→ img/leo-center-floorplan.jpg</span></div>
   </div>
 </section>
 
@@ -1206,7 +1313,16 @@ campaigns_body = f"""
       <p>In 2025, Pastor Brooks walked from Chicago to New York — 900+ miles — to put the South Side on the map and raise the final dollars for the LEO Center. That walk is over. The movement isn't.</p>
       <p>Walk With Us! invites communities across America to keep carrying the mission forward: walks, church activations, volunteer days, and prayer gatherings — everywhere people are ready to step up.</p>
     </div>
-    <div class="img-ph" style="min-height:340px;">ROUTE MAP · Chicago → NYC</div>
+    <div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.15);">
+      <iframe
+        src="https://www.youtube.com/embed/IgEwyLIYv7g"
+        title="WALK WITH US! | Official Trailer — Project H.O.O.D."
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:8px;">
+      </iframe>
+    </div>
   </div>
 </section>
 
@@ -1342,7 +1458,7 @@ donate_body = f"""
         <a class="btn btn-yellow" style="font-size:16px;padding:16px 28px;" href="https://projecthood.networkforgood.com/">Give now →</a>
         <span style="font-family:var(--font-serif);font-style:italic;font-size:13px;opacity:.85;">opens projecthood.networkforgood.com in a new tab</span>
       </div>
-      <p style="font-size:12px;opacity:.8;margin-top:12px;">Tax-deductible · EIN 46-1449998 · takes under 2 minutes</p>
+      <p style="font-size:12px;opacity:.8;margin-top:12px;">Tax-deductible · EIN 45-3964886 · takes under 2 minutes</p>
     </div>
     <div style="background:rgba(255,255,255,.12);padding:22px;border-left:4px solid var(--yellow);">
       <div class="eyebrow" style="color:var(--yellow);margin-bottom:8px;">How your gift is used</div>
@@ -1374,10 +1490,10 @@ donate_body = f"""
   <div class="wrap">
     <div class="eyebrow" style="color:var(--green);">Other ways to give</div>
     <div class="grid-4" style="margin-top:var(--sp-3);">
-      <div class="card"><h4>Stock &amp; DAF</h4><p style="font-size:13.5px;">Donor-advised funds, appreciated securities. Contact development@projecthood.org.</p></div>
-      <div class="card"><h4>Planned giving</h4><p style="font-size:13.5px;">Bequests, beneficiary designations. Let's schedule a call.</p></div>
+      <div class="card"><h4>Stock &amp; Securities</h4><p style="font-size:13.5px;">Donate appreciated stock directly — avoid capital gains, maximize your impact.</p><a href="ways-to-give.html#stock" style="font-size:13px;color:var(--green);font-weight:600;">How it works →</a></div>
+      <div class="card"><h4>Donor-Advised Fund</h4><p style="font-size:13.5px;">Grant from your Fidelity Charitable, Schwab, or Vanguard DAF using EIN 45-3964886.</p><a href="ways-to-give.html#daf" style="font-size:13px;color:var(--green);font-weight:600;">DAF details →</a></div>
       <div class="card"><h4>Check by mail</h4><p style="font-size:13.5px;">Project H.O.O.D.<br>6620 S. King Drive<br>Chicago IL 60637</p></div>
-      <div class="card"><h4>Corporate match</h4><p style="font-size:13.5px;">Ask your HR team — or submit via our Google Form lookup.</p></div>
+      <div class="card"><h4>Planned &amp; corporate</h4><p style="font-size:13.5px;">Bequests, beneficiary designations, or employer matching.</p><a href="ways-to-give.html" style="font-size:13px;color:var(--green);font-weight:600;">All options →</a></div>
     </div>
   </div>
 </section>
@@ -1394,6 +1510,184 @@ donate_body = f"""
       <input type="email" placeholder="you@email.com" style="width:100%;padding:12px;border:1px solid var(--line);font-family:var(--font-serif);font-size:14px;margin-bottom:8px;">
       <button class="btn btn-primary" style="width:100%;padding:12px;">Subscribe</button>
     </div>
+  </div>
+</section>
+"""
+
+# -------- WAYS TO GIVE --------
+ways_to_give_body = f"""
+<section class="hero bg-green">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--yellow);">Ways to Give</div>
+    <h1>Every dollar <span class="hl-yellow">stays</span> in Woodlawn.</h1>
+    <p class="lead">Give online, by stock, through your donor-advised fund, or by mail. Every method is tax-deductible. EIN 45-3964886.</p>
+  </div>
+</section>
+
+<!-- NAV ANCHORS -->
+<section class="section-sm" style="border-bottom:1px solid var(--line);background:var(--white);">
+  <div class="wrap" style="display:flex;gap:24px;font-family:var(--font-display);text-transform:uppercase;font-size:12px;letter-spacing:.12em;flex-wrap:wrap;">
+    <a href="#online" style="color:var(--ink);text-decoration:none;">Online</a>
+    <a href="#stock" style="color:var(--ink);text-decoration:none;">Stock &amp; Securities</a>
+    <a href="#daf" style="color:var(--ink);text-decoration:none;">Donor-Advised Fund</a>
+    <a href="#check" style="color:var(--ink);text-decoration:none;">Check / Mail</a>
+    <a href="#match" style="color:var(--ink);text-decoration:none;">Corporate Match</a>
+    <a href="#planned" style="color:var(--ink);text-decoration:none;">Planned Giving</a>
+  </div>
+</section>
+
+<!-- ONLINE -->
+<section class="section" id="online">
+  <div class="wrap grid-2" style="align-items:center;gap:var(--sp-6);">
+    <div>
+      <div class="eyebrow" style="color:var(--green);">Fastest · Most flexible</div>
+      <h2>Give online</h2>
+      <p>Credit card, debit, or bank transfer via NetworkForGood — our secure partner platform. Choose a one-time or recurring gift and designate your fund.</p>
+      <ul style="margin:12px 0 20px;padding-left:18px;font-size:14.5px;line-height:2;">
+        <li>One-time or monthly recurring</li>
+        <li>Designate to a specific program</li>
+        <li>Receipt emailed instantly</li>
+        <li>Processing fee optional to cover</li>
+      </ul>
+      <a class="btn btn-primary" style="font-size:15px;padding:14px 26px;" href="https://projecthood.networkforgood.com/" target="_blank" rel="noopener">Donate now →</a>
+      <p style="font-size:11.5px;color:var(--muted);margin-top:8px;">Opens projecthood.networkforgood.com</p>
+    </div>
+    <div style="background:var(--offwhite);padding:24px;border-left:4px solid var(--green);">
+      <div class="eyebrow" style="color:var(--muted);margin-bottom:10px;">What your gift funds</div>
+      <ul style="list-style:none;padding:0;margin:0;font-family:var(--font-serif);font-size:15px;line-height:2.1;">
+        <li><strong>$50</strong> · feeds a family for a week</li>
+        <li><strong>$250</strong> · sponsors a training cohort seat</li>
+        <li><strong>$1,000</strong> · funds an outreach worker's week</li>
+        <li><strong>$5,000+</strong> · names a LEO Center space</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- STOCK -->
+<section class="section bg-offwhite" id="stock">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--green);">Tax-smart giving</div>
+    <h2>Donate stock or securities</h2>
+    <p style="max-width:640px;font-size:15.5px;line-height:1.75;">Donating appreciated stock lets you avoid capital gains tax <em>and</em> deduct the full market value — often worth 20–37% more than selling and donating cash. Ideal for stocks, mutual funds, or ETFs held more than one year.</p>
+
+    <div class="grid-2" style="margin-top:var(--sp-4);gap:var(--sp-4);">
+      <div class="card" style="border-top:4px solid var(--green);">
+        <h4 style="margin-top:0;">Option A — DonateStock (recommended)</h4>
+        <p style="font-size:13.5px;">DonateStock is a free platform that handles the full transfer for you — no paperwork, no faxing. Your broker initiates the transfer and DonateStock converts it and sends the proceeds directly to Project H.O.O.D.</p>
+        <ol style="font-size:13.5px;padding-left:18px;line-height:1.85;margin-bottom:16px;">
+          <li>Click the button below</li>
+          <li>Select your brokerage</li>
+          <li>Choose your stock and share count</li>
+          <li>DonateStock handles the rest</li>
+        </ol>
+        <!-- DonateStock embed — register free at donatestock.com → add Project H.O.O.D. → copy your widget code here -->
+        <div style="background:var(--offwhite);border:2px dashed var(--line);padding:18px;text-align:center;border-radius:8px;margin-bottom:4px;">
+          <p style="font-size:12px;color:var(--muted);margin:0 0 10px;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.08em;">DonateStock widget · activate at donatestock.com</p>
+          <a class="btn btn-primary" href="https://www.donatestock.com" target="_blank" rel="noopener" style="font-size:14px;">Donate Stock →</a>
+        </div>
+        <p style="font-size:11.5px;color:var(--muted);font-style:italic;">Once your DonateStock account is set up, replace the button above with your personalized widget code.</p>
+      </div>
+      <div class="card" style="border-top:4px solid var(--blue);">
+        <h4 style="margin-top:0;">Option B — Direct broker transfer</h4>
+        <p style="font-size:13.5px;">Contact your broker and instruct them to transfer shares directly. You will need the following information:</p>
+        <table style="font-size:13.5px;width:100%;border-collapse:collapse;margin:8px 0 16px;">
+          <tr style="border-bottom:1px solid var(--line);"><td style="padding:7px 4px;font-weight:700;width:38%;color:var(--muted);">Brokerage</td><td style="padding:7px 4px;">[Add brokerage name]</td></tr>
+          <tr style="border-bottom:1px solid var(--line);"><td style="padding:7px 4px;font-weight:700;color:var(--muted);">DTC number</td><td style="padding:7px 4px;">[Add DTC #]</td></tr>
+          <tr style="border-bottom:1px solid var(--line);"><td style="padding:7px 4px;font-weight:700;color:var(--muted);">Account #</td><td style="padding:7px 4px;">[Add account #]</td></tr>
+          <tr style="border-bottom:1px solid var(--line);"><td style="padding:7px 4px;font-weight:700;color:var(--muted);">Account name</td><td style="padding:7px 4px;">Project H.O.O.D.</td></tr>
+          <tr><td style="padding:7px 4px;font-weight:700;color:var(--muted);">For credit to</td><td style="padding:7px 4px;">Project H.O.O.D. — EIN 45-3964886</td></tr>
+        </table>
+        <p style="font-size:13px;padding:10px 12px;background:var(--offwhite);border-left:3px solid var(--blue);margin:0;"><strong>Important:</strong> Please notify us when you initiate the transfer so we can credit your gift. Email <a href="mailto:development@projecthood.org">development@projecthood.org</a> with your name, stock name, and share count.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAF -->
+<section class="section" id="daf">
+  <div class="wrap grid-2" style="align-items:start;gap:var(--sp-6);">
+    <div>
+      <div class="eyebrow" style="color:var(--blue);">Fidelity · Schwab · Vanguard · any DAF</div>
+      <h2>Donor-Advised Fund</h2>
+      <p>Already have a donor-advised fund? Recommend a grant to Project H.O.O.D. from Fidelity Charitable, Schwab Charitable, Vanguard Charitable, or any community foundation DAF.</p>
+      <div style="background:var(--offwhite);padding:20px;border-left:4px solid var(--blue);margin-top:16px;">
+        <p style="font-family:var(--font-display);text-transform:uppercase;font-size:11px;letter-spacing:.1em;color:var(--muted);margin:0 0 10px;">Use this information with your DAF sponsor</p>
+        <table style="font-size:14px;width:100%;border-collapse:collapse;">
+          <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 4px;font-weight:700;color:var(--muted);width:40%;">Legal name</td><td style="padding:8px 4px;">Project H.O.O.D.</td></tr>
+          <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 4px;font-weight:700;color:var(--muted);">EIN</td><td style="padding:8px 4px;font-weight:700;">45-3964886</td></tr>
+          <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 4px;font-weight:700;color:var(--muted);">Address</td><td style="padding:8px 4px;">6620 S. King Drive<br>Chicago, IL 60637</td></tr>
+          <tr><td style="padding:8px 4px;font-weight:700;color:var(--muted);">Contact</td><td style="padding:8px 4px;"><a href="mailto:development@projecthood.org">development@projecthood.org</a></td></tr>
+        </table>
+      </div>
+    </div>
+    <div style="margin-top:8px;">
+      <div class="card card-accent" style="border-top-color:var(--blue);">
+        <h4>Quick links by platform</h4>
+        <ul style="list-style:none;padding:0;margin:0;font-size:14px;line-height:2.4;">
+          <li><a href="https://www.fidelitycharitable.org/giving-account/grant.html" target="_blank" rel="noopener" style="color:var(--green);">Fidelity Charitable → Grant now ↗</a></li>
+          <li><a href="https://www.schwabcharitable.org/nonprofit-search" target="_blank" rel="noopener" style="color:var(--green);">Schwab Charitable → Search nonprofits ↗</a></li>
+          <li><a href="https://vanguardcharitable.org/grantmaking" target="_blank" rel="noopener" style="color:var(--green);">Vanguard Charitable → Recommend a grant ↗</a></li>
+        </ul>
+      </div>
+      <div class="card" style="margin-top:16px;">
+        <h4>Can't find us in your DAF portal?</h4>
+        <p style="font-size:13.5px;">Search by EIN <strong>45-3964886</strong> or email <a href="mailto:development@projecthood.org">development@projecthood.org</a> — we can provide any additional documentation your sponsor needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHECK + MATCH + PLANNED -->
+<section class="section bg-offwhite" id="check">
+  <div class="wrap">
+    <div class="grid-3" style="gap:var(--sp-4);">
+
+      <div class="card card-accent" style="border-top-color:var(--green);">
+        <h4>Check or money order</h4>
+        <p style="font-size:13.5px;">Make checks payable to <strong>Project H.O.O.D.</strong> and mail to:</p>
+        <address style="font-style:normal;font-size:14px;line-height:1.85;padding:12px;background:var(--offwhite);margin:12px 0;">
+          Project H.O.O.D.<br>
+          6620 S. King Drive<br>
+          Chicago, IL 60637
+        </address>
+        <p style="font-size:12.5px;color:var(--muted);">Include your name and email address on the memo line to receive a tax receipt.</p>
+      </div>
+
+      <div class="card card-accent" id="match" style="border-top-color:var(--blue);">
+        <h4>Corporate matching</h4>
+        <p style="font-size:13.5px;">Many employers match charitable gifts dollar-for-dollar — doubling or tripling your impact at no extra cost to you.</p>
+        <ol style="font-size:13.5px;padding-left:18px;line-height:1.85;margin-bottom:12px;">
+          <li>Check with your HR or benefits team</li>
+          <li>Submit your donation receipt through your company's matching portal</li>
+          <li>Your employer sends a matching gift to Project H.O.O.D.</li>
+        </ol>
+        <p style="font-size:12.5px;color:var(--muted);">Need our EIN or W-9? Email <a href="mailto:development@projecthood.org">development@projecthood.org</a></p>
+      </div>
+
+      <div class="card card-accent" id="planned" style="border-top-color:var(--red);">
+        <h4>Planned giving</h4>
+        <p style="font-size:13.5px;">Leave a legacy in Woodlawn. Common planned gift types include:</p>
+        <ul style="font-size:13.5px;padding-left:18px;line-height:1.85;margin-bottom:12px;">
+          <li>Bequest in your will</li>
+          <li>IRA or retirement account beneficiary designation</li>
+          <li>Life insurance beneficiary</li>
+          <li>Charitable remainder trust</li>
+        </ul>
+        <p style="font-size:12.5px;color:var(--muted);">To discuss planned giving options, contact <a href="mailto:development@projecthood.org">development@projecthood.org</a> — we're honored to talk through your legacy goals.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="section bg-red" style="text-align:center;">
+  <div class="wrap" style="max-width:600px;margin:0 auto;">
+    <h2 style="color:var(--white);">Questions about giving?</h2>
+    <p style="color:var(--white);opacity:.95;font-size:15.5px;">Our development team is here to help. Whether you're planning a major gift, want to visit in person, or need a W-9 or 990 — reach out.</p>
+    <a class="btn btn-yellow" style="margin-top:10px;font-size:15px;padding:14px 26px;" href="mailto:development@projecthood.org">development@projecthood.org</a>
+    <p style="color:var(--white);font-size:12px;opacity:.75;margin-top:14px;">Project H.O.O.D. is a 501(c)(3) nonprofit · EIN 45-3964886 · All gifts are tax-deductible to the extent allowed by law.</p>
   </div>
 </section>
 """
@@ -1443,6 +1737,64 @@ volunteer_body = f"""
 """
 
 # -------- EVENTS --------
+# Hardcoded event cards — used when EVENTBRITE_TOKEN is not set
+_hardcoded_cards = """
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div class="img-ph" style="min-height:220px;background:var(--green);">FLYER · save to img/events/</div>
+        <div style="padding:16px 18px 18px;">
+          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Thu, Jun 25 · 10:00 AM – 1:00 PM</div>
+          <h4 style="margin:0 0 6px;">Community Job Fair &amp; Resource Fair</h4>
+          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">Woodlawn · Free</p>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+            <a class="btn btn-primary" href="https://www.eventbrite.com/o/project-hood-41178041593" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
+            <button class="ph-share-btn" data-title="Community Job Fair &amp; Resource Fair" data-url="https://www.eventbrite.com/o/project-hood-41178041593" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div class="img-ph" style="min-height:220px;background:var(--blue);">FLYER · save to img/events/</div>
+        <div style="padding:16px 18px 18px;">
+          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Sun, Jun 28 · 10:00 AM – 3:00 PM</div>
+          <h4 style="margin:0 0 6px;">Community Day 2026</h4>
+          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">6620 S King Dr · Free</p>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+            <a class="btn btn-primary" href="https://www.eventbrite.com/e/community-day-2026-tickets-1992501020188" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
+            <button class="ph-share-btn" data-title="Community Day 2026" data-url="https://www.eventbrite.com/e/community-day-2026-tickets-1992501020188" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div class="img-ph" style="min-height:220px;background:var(--red);">FLYER · save to img/events/</div>
+        <div style="padding:16px 18px 18px;">
+          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Wed, Jul 1 · 4:00 PM – 7:00 PM</div>
+          <h4 style="margin:0 0 6px;">Christmas in July</h4>
+          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">West 66th Street · Free</p>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+            <a class="btn btn-primary" href="https://www.eventbrite.com/e/christmas-in-july-tickets-1992501767423" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
+            <button class="ph-share-btn" data-title="Christmas in July" data-url="https://www.eventbrite.com/e/christmas-in-july-tickets-1992501767423" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div class="img-ph" style="min-height:220px;background:var(--purple);">FLYER · save to img/events/</div>
+        <div style="padding:16px 18px 18px;">
+          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Fri, Aug 7 · 4:00 PM</div>
+          <h4 style="margin:0 0 6px;">Trunk Party 2026</h4>
+          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">6620 S King Dr · Free</p>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+            <a class="btn btn-primary" href="https://www.eventbrite.com/e/trunk-party-2026-tickets-1992502132515" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
+            <button class="ph-share-btn" data-title="Trunk Party 2026" data-url="https://www.eventbrite.com/e/trunk-party-2026-tickets-1992502132515" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
+          </div>
+        </div>
+      </div>
+"""
+
+# Pick live API cards if available, otherwise hardcoded fallback
+_eb_cards = _event_cards_html if _event_cards_html else _hardcoded_cards
+
 events_body = f"""
 <section class="hero bg-yellow" style="color:var(--black);">
   <div class="wrap">
@@ -1458,61 +1810,18 @@ events_body = f"""
     <span style="color:var(--red);border-bottom:2px solid var(--red);padding-bottom:4px;">Upcoming</span>
     <span style="color:var(--muted);">Past events</span>
     <div style="margin-left:auto;">
-      <a href="https://www.eventbrite.com/o/project-hood" target="_blank" rel="noopener" style="font-family:var(--font-serif);text-transform:none;letter-spacing:0;font-size:12.5px;color:var(--muted);font-style:italic;">View all on Eventbrite →</a>
+      <a href="https://www.eventbrite.com/o/project-hood-41178041593" target="_blank" rel="noopener" style="font-family:var(--font-serif);text-transform:none;letter-spacing:0;font-size:12.5px;color:var(--muted);font-style:italic;">View all on Eventbrite →</a>
     </div>
   </div>
 </section>
 
-<!-- EVENT CARDS — one block per event; copy/paste to add more -->
+<!-- EVENT CARDS — auto-populated from Eventbrite API when EVENTBRITE_TOKEN is set;
+     otherwise uses the hardcoded cards below. See _build.py header for setup. -->
 <section class="section">
   <div class="wrap">
 
-    <!-- ═══ EVENT CARD — copy this entire block to add an event ═══
-         Update: date text, title, location, RSVP href (Eventbrite event URL),
-         share data-url (same Eventbrite URL), and replace img-ph with:
-           <img src="img/events/YOUR-FLYER.jpg" alt="[Event name] flyer">
-         ═══ -->
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;">
-
-      <div class="card" style="padding:0;overflow:hidden;">
-        <div class="img-ph" style="min-height:220px;background:var(--blue);">FLYER · save to img/events/</div>
-        <div style="padding:16px 18px 18px;">
-          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Sat, Jun 28 · 10:00 AM</div>
-          <h4 style="margin:0 0 6px;">Youth Employment Workshop</h4>
-          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">6622 S. Cottage Grove Ave · Free</p>
-          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
-            <a class="btn btn-primary" href="https://www.eventbrite.com" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
-            <button class="ph-share-btn" data-title="Youth Employment Workshop" data-url="https://www.eventbrite.com" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" style="padding:0;overflow:hidden;">
-        <div class="img-ph" style="min-height:220px;background:var(--purple);">FLYER · save to img/events/</div>
-        <div style="padding:16px 18px 18px;">
-          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Sun, Jul 6 · 12:00 PM</div>
-          <h4 style="margin:0 0 6px;">Community Health Fair</h4>
-          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">6620 S. King Dr. · Free</p>
-          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
-            <a class="btn btn-primary" href="https://www.eventbrite.com" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
-            <button class="ph-share-btn" data-title="Community Health Fair" data-url="https://www.eventbrite.com" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" style="padding:0;overflow:hidden;">
-        <div class="img-ph" style="min-height:220px;background:var(--red);">FLYER · save to img/events/</div>
-        <div style="padding:16px 18px 18px;">
-          <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Sat, Jul 12 · 1:00 PM</div>
-          <h4 style="margin:0 0 6px;">Peace in the Park</h4>
-          <p style="font-size:13.5px;margin:0 0 12px;color:var(--muted);">Bessemer Park · Free</p>
-          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
-            <a class="btn btn-primary" href="https://www.eventbrite.com" target="_blank" rel="noopener" style="font-size:13px;padding:8px 16px;">RSVP →</a>
-            <button class="ph-share-btn" data-title="Peace in the Park" data-url="https://www.eventbrite.com" style="background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font-body);color:var(--ink);">Share</button>
-          </div>
-        </div>
-      </div>
-
+{_eb_cards}
     </div>
     <!-- ═══ END EVENT CARDS ═══ -->
 
@@ -1744,7 +2053,7 @@ privacy_body = """
   <div class="wrap" style="max-width:var(--w-read);">
 
     <h2>Who we are</h2>
-    <p>Project H.O.O.D. (Helping Others Obtain Destiny) is a 501(c)(3) nonprofit organization located at 6620 S. King Drive, Chicago, IL 60637. EIN 46-1449998. You can reach us at <a href="mailto:info@projecthood.org">info@projecthood.org</a>.</p>
+    <p>Project H.O.O.D. (Helping Others Obtain Destiny) is a 501(c)(3) nonprofit organization located at 6620 S. King Drive, Chicago, IL 60637. EIN 45-3964886. You can reach us at <a href="mailto:info@projecthood.org">info@projecthood.org</a>.</p>
 
     <h2 style="margin-top:var(--sp-3);">What information we collect</h2>
     <p>We only collect information you choose to give us. Depending on how you interact with this site, that may include:</p>
@@ -1812,9 +2121,9 @@ exec_director_body = f"""
       <div>
         <!-- TODO: Save Dez's photo to img/desmond-marshall.jpg
              Source: https://www.projecthood.org/desmondmarshall -->
-        <div class="img-ph" style="min-height:480px;font-size:13px;line-height:1.6;">
+        <div class="img-ph" style="min-height:480px;font-size:13px;line-height:1.6;background-image:url('img/desmond-marshall.jpg');background-size:cover;background-position:center top;">
           PHOTO · Desmond "Dez" Marshall<br>
-          <span style="opacity:.6;">Save to img/desmond-marshall.jpg</span>
+          <span style="font-size:11px;opacity:.5;">→ img/desmond-marshall.jpg</span>
         </div>
       </div>
       <div>
@@ -1879,6 +2188,38 @@ exec_director_body = f"""
 
 # -------- 404 --------
 notfound_body = f"""
+<!-- Squarespace → new URL redirect map
+     When someone hits an old Squarespace URL, redirect them to the correct new page.
+     To add a redirect: add a new entry to the redirects object below. -->
+<script>
+(function() {{
+  var redirects = {{
+    '/about-us':          'about.html',
+    '/about-us/':         'about.html',
+    '/our-programs':      'programs.html',
+    '/our-programs/':     'programs.html',
+    '/violence-prevention': 'violence-prevention.html',
+    '/the-leo-center':    'leo-center.html',
+    '/the-leo-center/':   'leo-center.html',
+    '/walk-across-america': 'campaigns.html',
+    '/get-involved-1':    'get-involved.html',
+    '/donate-now':        'donate.html',
+    '/donate-now/':       'donate.html',
+    '/volunteer-1':       'volunteer.html',
+    '/events-1':          'events.html',
+    '/partner-with-us':   'partner.html',
+    '/partner-with-us/':  'partner.html',
+    '/news-1':            'news.html',
+    '/news-1/':           'news.html',
+    '/contact-us':        'contact.html',
+    '/contact-us/':       'contact.html'
+  }};
+  var path = window.location.pathname.replace(/\\/+$/, '') || '/';
+  var dest = redirects[path];
+  if (dest) {{ window.location.replace(dest); }}
+}})();
+</script>
+
 <section class="hero bg-yellow" style="color:var(--black);text-align:center;padding:var(--sp-6) 0;">
   <div class="wrap">
     <div class="eyebrow">404</div>
@@ -1912,6 +2253,7 @@ pages = [
     ("campaigns.html",   "Walk With Us!",                "Walk With Us! — a nationwide movement to raise $25M for youth, families, and the LEO Center. Give, walk, or start a team on Tiltify.",  "a_campaigns",    campaigns_body),
     ("get-involved.html","Get Involved",                 "Three ways to move the work forward — give, volunteer, or partner.",                                                                   "a_gi",           gi_body),
     ("donate.html",      "Donate",                       "Donate securely through NetworkForGood. Your gift stays in Woodlawn.",                                                                 "a_gi",           donate_body),
+    ("ways-to-give.html","Ways to Give",                 "Every way to give to Project H.O.O.D. — online, stock, DAF, check, corporate match, and planned giving. EIN 45-3964886.",              "a_gi",           ways_to_give_body),
     ("volunteer.html",   "Volunteer",                    "Volunteer with Project H.O.O.D. — sign up and we'll match you to an opportunity.",                                                      "a_gi",           volunteer_body),
     ("events.html",      "Events",                       "Upcoming events in Woodlawn — workshops, health fairs, youth programs, and community gatherings. RSVP powered by Eventbrite.",        "a_gi",           events_body),
     ("partner.html",     "Partner with us",              "Partner with Project H.O.O.D. — corporate, employer, foundation, church partnerships.",                                                 "a_gi",           partner_body),

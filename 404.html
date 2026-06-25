@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
+  <meta name="robots" content="index,follow">
   <title>Page not found · Project H.O.O.D.</title>
   <meta name="description" content="This page moved or never existed — here's where to go next.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,14 +15,18 @@
   <meta property="og:description" content="This page moved or never existed — here's where to go next.">
   <meta property="og:image" content="img/social-icon.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFBL61B4BN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NFBL61B4BN');
+  </script>
 </head>
 <body>
 
 <a class="skip-link" href="#main">Skip to main content</a>
-
-<div class="preview-banner">
-  <strong>PREVIEW BUILD</strong> &nbsp;·&nbsp; clickable prototype · brand + IA · content placeholders pending review
-</div>
 
 <header class="site-header">
   <div class="nav">
@@ -45,6 +49,38 @@
 </header>
 
 <main id="main">
+
+<!-- Squarespace → new URL redirect map
+     When someone hits an old Squarespace URL, redirect them to the correct new page.
+     To add a redirect: add a new entry to the redirects object below. -->
+<script>
+(function() {
+  var redirects = {
+    '/about-us':          'about.html',
+    '/about-us/':         'about.html',
+    '/our-programs':      'programs.html',
+    '/our-programs/':     'programs.html',
+    '/violence-prevention': 'violence-prevention.html',
+    '/the-leo-center':    'leo-center.html',
+    '/the-leo-center/':   'leo-center.html',
+    '/walk-across-america': 'campaigns.html',
+    '/get-involved-1':    'get-involved.html',
+    '/donate-now':        'donate.html',
+    '/donate-now/':       'donate.html',
+    '/volunteer-1':       'volunteer.html',
+    '/events-1':          'events.html',
+    '/partner-with-us':   'partner.html',
+    '/partner-with-us/':  'partner.html',
+    '/news-1':            'news.html',
+    '/news-1/':           'news.html',
+    '/contact-us':        'contact.html',
+    '/contact-us/':       'contact.html'
+  };
+  var path = window.location.pathname.replace(/\/+$/, '') || '/';
+  var dest = redirects[path];
+  if (dest) { window.location.replace(dest); }
+})();
+</script>
 
 <section class="hero bg-yellow" style="color:var(--black);text-align:center;padding:var(--sp-6) 0;">
   <div class="wrap">
@@ -106,7 +142,7 @@
 
     <div class="footer-bottom">
       <div>
-        © 2026 Project H.O.O.D. · 6620 S. King Drive, Chicago IL 60637 · EIN 46-1449998<br>
+        © 2026 Project H.O.O.D. · 6620 S. King Drive, Chicago IL 60637 · EIN 45-3964886<br>
         <a href="privacy.html">Privacy</a> · <a href="about.html">Financials &amp; 990s</a> · <a href="contact.html">Contact</a>
       </div>
       <div class="social-row">

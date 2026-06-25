@@ -1,0 +1,37 @@
+name: Rebuild site
+
+on:
+  push:
+    branches: [main, staging]
+  schedule:
+    # 6 AM Central Time daily (11 AM UTC)
+    - cron: '0 11 * * *'
+  workflow_dispatch:   # lets you trigger a manual rebuild from GitHub.com
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Rebuild HTML
+        env:
+          EVENTBRITE_TOKEN: ${{ secrets.EVENTBRITE_TOKEN }}
+        run: python3 _build.py
+
+      - name: Commit rebuilt pages
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "chore: auto-rebuild [skip ci]"
+          git push
