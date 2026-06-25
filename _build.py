@@ -1423,6 +1423,68 @@ campaigns_body = f"""
   </div>
 </section>
 
+<section class="section">
+  <div class="wrap">
+    <div style="max-width:680px;margin:0 auto;text-align:center;">
+      <div class="eyebrow" style="color:var(--red);">Join the movement</div>
+      <h2>Sign up to Walk With Us!</h2>
+      <p style="font-size:var(--fs-lead);color:var(--muted);">Tell us you're in — and we'll get you your Walk With Us! gear and keep you connected to the campaign.</p>
+    </div>
+    <form name="walk-with-us" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="max-width:640px;margin:var(--sp-3) auto 0;display:flex;flex-direction:column;gap:16px;">
+      <input type="hidden" name="form-name" value="walk-with-us">
+      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">First Name <span style="color:var(--red);">*</span></label>
+          <input type="text" name="first_name" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Last Name <span style="color:var(--red);">*</span></label>
+          <input type="text" name="last_name" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+        </div>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Organization / Job Title</label>
+        <input type="text" name="job_title" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Address <span style="color:var(--red);">*</span></label>
+        <input type="text" name="address" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Phone</label>
+          <input type="tel" name="phone" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Email</label>
+          <input type="email" name="email" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">Walk Amount Commitment <span style="color:var(--red);">*</span></label>
+          <input type="text" name="walk_commitment" placeholder="e.g. $250" required style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;">
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px;">T-Shirt Size</label>
+          <select name="tshirt_size" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-family:var(--font-body);font-size:15px;box-sizing:border-box;background:var(--white);">
+            <option value="">Select a size</option>
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+            <option>XL</option>
+            <option>XXL</option>
+            <option>XXXL</option>
+            <option>XXXXL</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-yellow" style="font-size:16px;padding:14px 28px;width:100%;margin-top:4px;">Count me in →</button>
+    </form>
+  </div>
+</section>
+
 <section class="section bg-black">
   <div class="wrap testimonial" style="border-left-color:var(--yellow);">
     <blockquote>"They told me I was crazy to walk from Chicago to New York. I told them I was crazy to watch another kid get buried."</blockquote>
@@ -2233,7 +2295,7 @@ contact_body = f"""
         </div>
         <div style="display:flex;gap:12px;align-items:flex-start;">
           <span style="font-size:18px;flex-shrink:0;">📞</span>
-          <div><strong>Phone</strong><br><a href="tel:3127256648">312-725-6648</a></div>
+          <div><strong>Phone</strong><br><a href="tel:7739238270">773-923-8270</a></div>
         </div>
         <div style="display:flex;gap:12px;align-items:flex-start;">
           <span style="font-size:18px;flex-shrink:0;">📍</span>
