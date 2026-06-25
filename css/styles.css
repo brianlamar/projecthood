@@ -519,3 +519,46 @@ p  { margin: 0 0 var(--sp-3); }
   .site-header, .site-footer, .preview-banner, .nav-toggle { display: none; }
   body { background: var(--white); }
 }
+
+/* ---- 21. Mobile refinements (≤560px) -------------------------- */
+@media (max-width: 560px) {
+  /* Tighter side padding — gives more content room on 390px phones */
+  .wrap { padding: 0 20px; }
+
+  /* Reduce hero vertical space */
+  .hero { padding: 48px 0; }
+
+  /* Reduce section spacing */
+  .section { padding: 40px 0; }
+  .section-sm { padding: 28px 0; }
+  .section-lg { padding: 56px 0; }
+
+  /* Stat numbers: 44px is too wide for 2-col grid on 390px screens */
+  .stat .v { font-size: 32px; }
+  .stat { padding: 20px 14px; }
+
+  /* Hide wordmark tagline — logo + name is enough in hamburger context */
+  .nav-logo .wordmark small { display: none; }
+
+  /* Acronym tape: tighten spacing */
+  .acronym-tape .inner { gap: 18px; font-size: 18px; }
+  .acronym-tape .dot { font-size: 22px; }
+
+  /* Buttons: slightly smaller on tiny screens */
+  .btn { padding: 12px 20px; font-size: 13px; }
+
+  /* Footer bottom: stack on very small screens */
+  .footer-bottom { flex-direction: column; gap: 14px; }
+
+  /* Progress bar text */
+  .progress-fill { font-size: 14px; padding-left: 10px; }
+
+  /* Testimonial */
+  .testimonial { padding: var(--sp-4) 20px; }
+
+  /* Card padding */
+  .card, .prog-card { padding: var(--sp-3); }
+
+  /* Ensure images in grid-2 don't overflow */
+  .grid-2 img, .hero-split img { max-width: 100%; }
+}

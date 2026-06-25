@@ -147,7 +147,7 @@ HEAD = """<!DOCTYPE html>
       <img src="img/logo-red.png" alt="Project H.O.O.D. stamp logo">
       <span class="wordmark">Project H.O.O.D.<small>Helping Others Obtain Destiny</small></span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav-links" aria-label="Primary">
       <a href="about.html"{a_about}>About</a>
       <a href="programs.html"{a_programs}>Programs</a>
@@ -422,7 +422,7 @@ home_body = f"""
     <div class="btn-group">
       <a class="btn btn-yellow" href="https://projecthood.networkforgood.com/">Donate</a>
       <a class="btn btn-outline-light" href="get-involved.html">Volunteer</a>
-      <a class="btn btn-outline-light" href="events.html">Upcoming events</a>
+      <a class="btn btn-outline-light" href="get-involved.html#apply">Apply for services</a>
     </div>
   </div>
 </section>
@@ -1410,6 +1410,31 @@ gi_body = f"""
       <h3 style="margin-top:12px;">Build with us.</h3>
       <p>Corporate partnerships, church collaborations, employer pipelines, grant partners. Let's find the fit.</p>
       <a class="btn btn-outline" href="partner.html" style="align-self:flex-start;margin-top:auto;">Partner →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PARTICIPANT INTAKE — prominent standalone section -->
+<section class="section bg-black" id="apply">
+  <div class="wrap" style="max-width:720px;margin:0 auto;text-align:center;">
+    <div class="eyebrow" style="color:var(--yellow);">Need our services?</div>
+    <h2 style="color:var(--white);">Apply as a participant.</h2>
+    <p style="color:rgba(255,255,255,.9);font-size:var(--fs-lead);margin-bottom:var(--sp-3);">One application puts you in the system — our intake team routes you to the right program (workforce, violence prevention, health &amp; wellness, youth, re-entry) and follows up within 2 business days. Free, confidential, no judgment.</p>
+    <a class="btn btn-yellow" style="font-size:15px;padding:16px 36px;" href="https://projecthood.socialsolutionsportal.com/apricot-intake/0eb461e5-38a9-4ad1-9a4e-02bb3ee1414d" target="_blank" rel="noopener">Start your application →</a>
+    <p style="color:rgba(255,255,255,.5);font-size:13px;margin-top:16px;font-style:italic;">Opens our secure Apricot intake portal · takes about 10 minutes · free</p>
+    <div style="margin-top:var(--sp-4);padding-top:var(--sp-3);border-top:1px solid #333;display:flex;flex-wrap:wrap;justify-content:center;gap:var(--sp-3);">
+      <div style="text-align:center;">
+        <div style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--yellow);">2 days</div>
+        <div style="font-family:var(--font-serif);font-size:13px;color:rgba(255,255,255,.6);">avg. response time</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--yellow);">5 programs</div>
+        <div style="font-family:var(--font-serif);font-size:13px;color:rgba(255,255,255,.6);">one application covers all</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--yellow);">$0 cost</div>
+        <div style="font-family:var(--font-serif);font-size:13px;color:rgba(255,255,255,.6);">always free to participants</div>
+      </div>
     </div>
   </div>
 </section>

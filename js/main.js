@@ -2,12 +2,37 @@
    Mobile nav toggle + external link safety + active nav highlighting.
 */
 (function(){
-  // Mobile nav toggle
+  // Mobile nav toggle — with aria-expanded support
   document.addEventListener('click', function(e){
     var t = e.target.closest('.nav-toggle');
     if (!t) return;
     var links = document.querySelector('.nav-links');
-    if (links) links.classList.toggle('open');
+    if (!links) return;
+    var isOpen = links.classList.toggle('open');
+    t.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  // Close nav when clicking outside of it
+  document.addEventListener('click', function(e){
+    if (e.target.closest('.nav-toggle') || e.target.closest('.nav-links')) return;
+    var links = document.querySelector('.nav-links');
+    if (links && links.classList.contains('open')) {
+      links.classList.remove('open');
+      var toggle = document.querySelector('.nav-toggle');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Close nav on Escape key
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      var links = document.querySelector('.nav-links');
+      if (links && links.classList.contains('open')) {
+        links.classList.remove('open');
+        var toggle = document.querySelector('.nav-toggle');
+        if (toggle) { toggle.setAttribute('aria-expanded', 'false'); toggle.focus(); }
+      }
+    }
   });
 
   // Add rel="noopener" and target="_blank" safety to external links
