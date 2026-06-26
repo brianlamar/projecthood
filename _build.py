@@ -202,10 +202,10 @@ FOOTER = """
         <h5>Get updates monthly</h5>
         <p style="font-size:13.5px;opacity:.9;">LEO Center progress, program milestones, upcoming events — delivered once a month.</p>
         <div class="nl-input">
-          <input type="email" placeholder="you@email.com" aria-label="Email">
-          <button type="button">Subscribe</button>
+          <input type="email" id="nl-email" placeholder="you@email.com" aria-label="Email">
+          <button type="button" onclick="var e=document.getElementById('nl-email').value;window.open('https://projecthood.networkforgood.com/'+(e?('?email='+encodeURIComponent(e)):''),'_blank','noopener');">Subscribe</button>
         </div>
-        <p style="font-size:11.5px;opacity:.6;margin-top:8px;font-style:italic;">NetworkForGood newsletter embed</p>
+        <p style="font-size:11.5px;opacity:.6;margin-top:8px;">You'll be added to our list through our secure NetworkForGood page.</p>
       </div>
     </div>
 
@@ -1908,9 +1908,9 @@ donate_body = f"""
       <p>LEO Center progress, program milestones, upcoming events — delivered via NetworkForGood.</p>
     </div>
     <div style="background:var(--white);padding:20px;border:1px solid var(--line);">
-      <div class="eyebrow" style="color:var(--muted);margin-bottom:10px;font-size:10.5px;">NFG Newsletter embed</div>
-      <input type="email" placeholder="you@email.com" style="width:100%;padding:12px;border:1px solid var(--line);font-family:var(--font-serif);font-size:14px;margin-bottom:8px;">
-      <button class="btn btn-primary" style="width:100%;padding:12px;">Subscribe</button>
+      <input type="email" id="nl-email-wtg" placeholder="you@email.com" aria-label="Email" style="width:100%;padding:12px;border:1px solid var(--line);font-family:var(--font-serif);font-size:14px;margin-bottom:8px;">
+      <button type="button" class="btn btn-primary" style="width:100%;padding:12px;" onclick="var e=document.getElementById('nl-email-wtg').value;window.open('https://projecthood.networkforgood.com/'+(e?('?email='+encodeURIComponent(e)):''),'_blank','noopener');">Subscribe</button>
+      <p style="font-size:11.5px;color:var(--muted);margin-top:8px;">You'll be added to our list through our secure NetworkForGood page.</p>
     </div>
   </div>
 </section>
