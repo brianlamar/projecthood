@@ -30,11 +30,9 @@ except ImportError:
 EVENTBRITE_ORG_ID = "41178041593"
 EVENTBRITE_ORG_URL = "https://www.eventbrite.com/o/project-hood-41178041593"
 
-# Newsletter signup Google Form.
-# TODO: run createNewsletterFormOnly() in create_ph_forms.gs, then paste the
-# published form URL here (replaces the placeholder below). Until then the
-# Subscribe buttons point at this placeholder — do NOT merge to main until set.
-NEWSLETTER_FORM_URL = "https://docs.google.com/forms/d/e/NEWSLETTER_FORM_ID/viewform"
+# Newsletter signup Google Form (created via createNewsletterFormOnly() in create_ph_forms.gs).
+# Responses land on the "Newsletter" tab of the Site Form Responses workbook.
+NEWSLETTER_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSel7-YfFSxXgX-L6xExCCyMU45e8URnxAxrS-PFTes2TkLbrA/viewform"
 
 def _eb_fetch_events():
     """
