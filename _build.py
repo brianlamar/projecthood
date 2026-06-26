@@ -30,6 +30,12 @@ except ImportError:
 EVENTBRITE_ORG_ID = "41178041593"
 EVENTBRITE_ORG_URL = "https://www.eventbrite.com/o/project-hood-41178041593"
 
+# Newsletter signup Google Form.
+# TODO: run createNewsletterFormOnly() in create_ph_forms.gs, then paste the
+# published form URL here (replaces the placeholder below). Until then the
+# Subscribe buttons point at this placeholder — do NOT merge to main until set.
+NEWSLETTER_FORM_URL = "https://docs.google.com/forms/d/e/NEWSLETTER_FORM_ID/viewform"
+
 def _eb_fetch_events():
     """
     Fetch upcoming events from Eventbrite API.
@@ -164,7 +170,7 @@ HEAD = """<!DOCTYPE html>
 <main id="main">
 """
 
-FOOTER = """
+FOOTER = f"""
 </main>
 
 <footer class="site-footer">
@@ -201,11 +207,7 @@ FOOTER = """
       <div>
         <h5>Get updates monthly</h5>
         <p style="font-size:13.5px;opacity:.9;">LEO Center progress, program milestones, upcoming events — delivered once a month.</p>
-        <div class="nl-input">
-          <input type="email" id="nl-email" placeholder="you@email.com" aria-label="Email">
-          <button type="button" onclick="var e=document.getElementById('nl-email').value;window.open('https://projecthood.networkforgood.com/'+(e?('?email='+encodeURIComponent(e)):''),'_blank','noopener');">Subscribe</button>
-        </div>
-        <p style="font-size:11.5px;opacity:.6;margin-top:8px;">You'll be added to our list through our secure NetworkForGood page.</p>
+        <a class="btn btn-yellow" href="{NEWSLETTER_FORM_URL}" target="_blank" rel="noopener" style="margin-top:6px;display:inline-block;">Subscribe &rarr;</a>
       </div>
     </div>
 
@@ -1908,9 +1910,8 @@ donate_body = f"""
       <p>LEO Center progress, program milestones, upcoming events — delivered via NetworkForGood.</p>
     </div>
     <div style="background:var(--white);padding:20px;border:1px solid var(--line);">
-      <input type="email" id="nl-email-wtg" placeholder="you@email.com" aria-label="Email" style="width:100%;padding:12px;border:1px solid var(--line);font-family:var(--font-serif);font-size:14px;margin-bottom:8px;">
-      <button type="button" class="btn btn-primary" style="width:100%;padding:12px;" onclick="var e=document.getElementById('nl-email-wtg').value;window.open('https://projecthood.networkforgood.com/'+(e?('?email='+encodeURIComponent(e)):''),'_blank','noopener');">Subscribe</button>
-      <p style="font-size:11.5px;color:var(--muted);margin-top:8px;">You'll be added to our list through our secure NetworkForGood page.</p>
+      <p style="font-size:14px;margin-top:0;">Join our monthly email list for LEO Center progress, program milestones, and upcoming events.</p>
+      <a class="btn btn-primary" href="{NEWSLETTER_FORM_URL}" target="_blank" rel="noopener" style="width:100%;padding:12px;text-align:center;box-sizing:border-box;">Subscribe &rarr;</a>
     </div>
   </div>
 </section>
