@@ -246,13 +246,26 @@ ACRONYM_TAPE = """
 # Page builder
 # ---------------------------------------------------------------------------
 
+def _clean_internal_urls(html):
+    """Strip .html from internal page links so URLs read cleanly
+    (e.g. href="about.html" -> href="about", "index.html" -> "/").
+    Output files stay named *.html; GitHub Pages + Netlify both serve
+    /about from about.html. External links (http...) are untouched."""
+    def repl(m):
+        name = m.group(1)
+        frag = m.group(2) or ''
+        if name == 'index':
+            return 'href="/' + frag + '"' if frag else 'href="/"'
+        return 'href="' + name + frag + '"'
+    return re.sub(r'href="([a-zA-Z0-9\-]+)\.html(#[^"]*)?"', repl, html)
+
 def render(title, meta, active, body):
     active_flags = dict.fromkeys(
         ['a_about','a_programs','a_impact','a_leo','a_campaigns','a_gi','a_news'], '')
     if active:
         active_flags[active] = ' class="active"'
     head = HEAD.format(title=title, meta=meta, **active_flags)
-    return head + body + FOOTER
+    return _clean_internal_urls(head + body + FOOTER)
 
 def write_page(filename, title, meta, active, body):
     path = SITE_DIR / filename
