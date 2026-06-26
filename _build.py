@@ -375,7 +375,7 @@ home_body = f"""
       <div class="stat accent-green"><div class="v">15,000+</div><div class="l">neighbors served — not cases, people</div></div>
       <div class="stat"><div class="v">2M+ lbs</div><div class="l">food on the table</div></div>
       <div class="stat accent-red"><div class="v">$19/hr</div><div class="l">average starting wage for job placements</div></div>
-      <div class="stat"><div class="v">70%</div><div class="l">of the LEO Center funded — $10.5M to go</div></div>
+      <div class="stat"><div class="v">84%</div><div class="l">of the LEO Center funded — $7M to go</div></div>
     </div>
     <p style="margin-top:var(--sp-3);font-size:14px;color:var(--muted);"><a href="impact.html">See the full impact report →</a></p>
   </div>
@@ -447,7 +447,7 @@ home_body = f"""
         <p style="font-size:var(--fs-lead);opacity:.9;">The Robert R. McCormick Leadership &amp; Economic Opportunity Center — 90,000 sq ft on S. King Drive, opening Fall 2026. The physical home of Project H.O.O.D. and a signal that investment belongs on the South Side.</p>
         <div style="margin-top:24px;">
           <div class="progress" style="background:#1a1718;border-color:var(--yellow);">
-            <div class="progress-fill" style="width:70%;">70% Funded · $31.5M of $45M</div>
+            <div class="progress-fill" style="width:84%;">84% Funded · $38M of $45M</div>
           </div>
         </div>
         <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
@@ -522,11 +522,11 @@ about_body = f"""
       </div>
       <div>
         <h3>2022–2024 · LEO breaks ground</h3>
-        <p>Capital campaign launches for the Leadership and Economic Opportunity Center — a 90,000 sq ft community hub on S. King Drive. Groundbreaking in 2022, 70% funded by 2025.</p>
+        <p>Capital campaign launches for the Leadership and Economic Opportunity Center — a 90,000 sq ft community hub on S. King Drive. Groundbreaking in 2022, 84% funded by 2025.</p>
       </div>
       <div>
         <h3>2025 · Walk Across America</h3>
-        <p>Pastor Brooks walks 900+ miles from Chicago to New York to raise the final $35M and spotlight what's possible. 15,000+ served this year. 2M+ lbs of food distributed. $19/hr average starting wage for job placements.</p>
+        <p>Pastor Brooks walks 900+ miles from Chicago to New York to raise the final $45M and spotlight what's possible. 15,000+ served this year. 2M+ lbs of food distributed. $19/hr average starting wage for job placements.</p>
       </div>
     </div>
   </div>
@@ -1298,7 +1298,7 @@ impact_body = f"""
       <div class="stat accent-green"><div class="v">15,000+</div><div class="l">community members served</div></div>
       <div class="stat"><div class="v">2,000,000+ lbs</div><div class="l">food distributed</div></div>
       <div class="stat accent-red"><div class="v">$19/hr</div><div class="l">average starting wage for placements</div></div>
-      <div class="stat"><div class="v">70%</div><div class="l">LEO Center capital campaign funded</div></div>
+      <div class="stat"><div class="v">84%</div><div class="l">LEO Center capital campaign funded</div></div>
       <div class="stat accent-blue"><div class="v">140+</div><div class="l">violence incidents mediated</div></div>
       <div class="stat"><div class="v">380</div><div class="l">youth in education programs</div></div>
       <div class="stat"><div class="v">520</div><div class="l">mental health sessions delivered</div></div>
@@ -1342,7 +1342,7 @@ impact_body = f"""
     <h2>The building goes up with the dollars.</h2>
     <div style="margin-top:var(--sp-3);">
       <div class="progress" style="height:54px;">
-        <div class="progress-fill" style="width:70%;font-size:18px;">$24.5M raised · 70% of $35M</div>
+        <div class="progress-fill" style="width:84%;font-size:18px;">$38M raised · 84% of $45M</div>
       </div>
     </div>
     <p style="margin-top:var(--sp-3);max-width:var(--w-read);">Groundbreaking was 2022. Target completion is 2027. Every dollar of the capital campaign goes directly to the build — no operating overhead, fully audited.</p>
@@ -1482,7 +1482,7 @@ leo_body = f"""
     <h2>$45M goal. <span style="background:var(--black);color:var(--yellow);padding:2px 12px;border-radius:2px;">Almost there.</span></h2>
     <div style="max-width:760px;margin:var(--sp-3) auto 0;">
       <div class="progress" style="height:56px;border-radius:4px;">
-        <div class="progress-fill" style="width:70%;font-size:17px;border-radius:4px 0 0 4px;">$31.5M raised · 70%</div>
+        <div class="progress-fill" style="width:84%;font-size:17px;border-radius:4px 0 0 4px;">$38M raised · 84%</div>
       </div>
       <p style="font-size:14px;color:var(--muted);margin-top:10px;">$13.5M remaining · Every dollar goes directly to the build</p>
     </div>
@@ -1946,13 +1946,13 @@ first_look_body = f"""
       <div class="eyebrow" style="color:var(--red);">About the LEO Center</div>
       <h2>22,000 sq ft of opportunity.</h2>
       <p>The Leadership &amp; Economic Opportunity Center is a 90,000 sq ft community hub going up on S. King Drive in Woodlawn. It will be the permanent home of every Project H.O.O.D. program &mdash; workforce development, reentry services, youth programming, and health &amp; wellness &mdash; plus community space for the entire neighborhood.</p>
-      <p style="font-size:14px;color:var(--muted);">Currently 70% funded. Your First Look gift brings us closer to opening day.</p>
+      <p style="font-size:14px;color:var(--muted);">Currently 84% funded. Your First Look gift brings us closer to opening day.</p>
       <a class="btn btn-outline" href="leo-center.html" style="margin-top:var(--sp-2);">Learn more about the LEO Center &rarr;</a>
     </div>
     <div style="background:var(--black);padding:28px;border-radius:4px;">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
         <div style="text-align:center;padding:16px;border:1px solid #333;border-radius:6px;"><div style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--yellow);">90K</div><div style="color:rgba(255,255,255,.7);font-size:12px;margin-top:4px;">sq ft total</div></div>
-        <div style="text-align:center;padding:16px;border:1px solid #333;border-radius:6px;"><div style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--yellow);">70%</div><div style="color:rgba(255,255,255,.7);font-size:12px;margin-top:4px;">funded</div></div>
+        <div style="text-align:center;padding:16px;border:1px solid #333;border-radius:6px;"><div style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--yellow);">84%</div><div style="color:rgba(255,255,255,.7);font-size:12px;margin-top:4px;">funded</div></div>
         <div style="text-align:center;padding:16px;border:1px solid #333;border-radius:6px;"><div style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--yellow);">5</div><div style="color:rgba(255,255,255,.7);font-size:12px;margin-top:4px;">programs housed</div></div>
         <div style="text-align:center;padding:16px;border:1px solid #333;border-radius:6px;"><div style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--yellow);">1</div><div style="color:rgba(255,255,255,.7);font-size:12px;margin-top:4px;">community</div></div>
       </div>
@@ -2804,9 +2804,9 @@ pages = [
     ("health-wellness.html",       "Health & Wellness",      "Free medical care, counseling, and wellness programs for South Side residents — including the Southside Free Clinic (SSFC).",     "a_programs",     health_wellness_body),
     ("youth-programming.html",     "Youth Programming",      "Entrepreneurship training, mentorship, and after-school enrichment — 380 youth enrolled, 94% attendance, 42 summer internships in 2025.", "a_programs",     youth_programming_body),
     ("reentry-services.html",      "Re-Entry Services",      "Second chances, real support — job readiness, housing, counseling, and mentorship for individuals returning from incarceration.",  "a_programs",     reentry_services_body),
-    ("impact.html",      "Impact",                       "2025 impact — 15,000+ served, 2M+ lbs of food distributed, $19/hr average starting wage, 70% LEO Center funded.",                             "a_impact",       impact_body),
+    ("impact.html",      "Impact",                       "2025 impact — 15,000+ served, 2M+ lbs of food distributed, $19/hr average starting wage, 84% LEO Center funded.",                             "a_impact",       impact_body),
     ("first-look.html",   "The First Look",               "The First Look \u2014 Project H.O.O.D. donor day. Give, share, and be part of this moment.",                                              "a_gi",           first_look_body),
-    ("leo-center.html",  "LEO Center",                   "The Leadership and Economic Opportunity Center — 70% funded, a 90,000 sq ft community hub on S. King Drive.",                        "a_leo",          leo_body),
+    ("leo-center.html",  "LEO Center",                   "The Leadership and Economic Opportunity Center — 84% funded, a 90,000 sq ft community hub on S. King Drive.",                        "a_leo",          leo_body),
     ("campaigns.html",   "Walk With Us!",                "Walk With Us! — a nationwide movement to raise $25M for youth, families, and the LEO Center. Give, walk, or start a team on Tiltify.",  "a_campaigns",    campaigns_body),
     ("get-involved.html","Get Involved",                 "Three ways to move the work forward — give, volunteer, or partner.",                                                                   "a_gi",           gi_body),
     ("donate.html",      "Donate",                       "Donate securely through NetworkForGood. Your gift stays in Woodlawn.",                                                                 "a_gi",           donate_body),
