@@ -838,6 +838,15 @@ violence_prevention_body = f"""
   </div>
 </section>
 
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--green);">Real Stories</div>
+    <h2>A weekend with no shootings in Woodlawn.</h2>
+    <p class="lead" style="max-width:760px;">This year, our team marked something that once felt impossible: an entire weekend in Woodlawn with no shootings. One weekend doesn&rsquo;t end the work &mdash; but it proves what sustained, daily investment in people can do.</p>
+    <p style="max-width:760px;">Moments like these don&rsquo;t come from a single event or program. They&rsquo;re the product of credible messengers on the block every night, mentors who pull young people aside before a conflict escalates, and a community that refuses to accept violence as normal.</p>
+  </div>
+</section>
+
 <section class="cta-strip">
   <div class="wrap">
     <h2>Support the outreach team.</h2>
@@ -912,6 +921,24 @@ workforce_development_body = f"""
       <div class="stat"><div class="v">72%</div><div class="l">retained at 6 months</div></div>
       <div class="stat"><div class="v">Multiple</div><div class="l">trades + industries served</div></div>
     </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--red);">Real Stories</div>
+    <h2>When determination meets opportunity.</h2>
+    <div class="card" style="margin-top:var(--sp-3);padding:0;overflow:hidden;">
+      <div style="background:var(--red);padding:28px 32px;">
+        <p style="color:var(--white);font-family:var(--font-display);font-size:1.6rem;line-height:1.3;margin:0;">&ldquo;Terrance didn&rsquo;t just walk through our doors looking for a job. He was searching for a new beginning.&rdquo;</p>
+      </div>
+      <div style="padding:28px 32px;">
+        <p>A father determined to build a better life for his young son, <strong>Terrance H.</strong> enrolled in our Construction Training Program &mdash; and stood out from day one. His eagerness to learn, his consistency, and his commitment to growth made a lasting impression. Whether mastering new technical concepts or getting hands-on experience in the field, he approached every challenge with humility, focus, and drive.</p>
+        <p>By graduation, Terrance had developed strong construction skills &mdash; and discovered a new sense of purpose and pride. That dedication led to a position with M. Cannon Roofing Company, and today he is a proud member of the <strong>Chicago Roofers Union</strong>, providing for his family and setting an example for others in the community.</p>
+        <p style="margin-bottom:0;">His story has come full circle: Terrance is now using his skills to help build the roof of the Leadership &amp; Economic Opportunity Center &mdash; rising right here in Woodlawn.</p>
+      </div>
+    </div>
+    <p style="margin-top:18px;color:var(--muted);font-size:14px;">More wins from this year: over <strong>100 neighbors hired on the spot</strong> at our UPS hiring event, a Construction Cohort tour of IBEW Local 130, and a pop-up build challenge at the Chicago Furniture Bank.</p>
   </div>
 </section>
 
@@ -1021,6 +1048,16 @@ health_wellness_body = f"""
   </div>
 </section>
 
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--purple);">Real Stories</div>
+    <h2>Healing happens in community.</h2>
+    <p class="lead" style="max-width:760px;">&ldquo;Recovery is not a destination &mdash; it&rsquo;s a journey best traveled together.&rdquo;</p>
+    <p style="max-width:760px;">Every week, our Recovery in the Hood meetings bring neighbors together to support one another, share their experiences, and find strength in community &mdash; a safe space for healing, accountability, and hope. No one has to walk the journey alone.</p>
+    <p style="max-width:760px;">Wellness here isn&rsquo;t only about appointments. It&rsquo;s also our seniors gathering for Bingo Saturdays &mdash; fellowship, laughter, and connection that keep our elders rooted in the community they helped build.</p>
+  </div>
+</section>
+
 <section class="cta-strip">
   <div class="wrap">
     <h2>Ready to take the first step?</h2>
@@ -1095,6 +1132,15 @@ youth_programming_body = f"""
   </div>
 </section>
 
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--blue);">Real Stories</div>
+    <h2>Preparing the next generation.</h2>
+    <p class="lead" style="max-width:760px;">This year, Project H.O.O.D. welcomed more than <strong>300 graduating high school seniors and their families</strong> at our annual Trunk Party &mdash; sending students into their next chapter with the dorm and college essentials they needed to succeed.</p>
+    <p style="max-width:760px;">Throughout the year, our summer interns gained hands-on leadership experience in our offices and programs, and our Military Fair opened doors to careers, scholarships, and leadership training &mdash; reminding every young person that their future is bigger than their circumstances.</p>
+  </div>
+</section>
+
 <section class="cta-strip">
   <div class="wrap">
     <h2>Ready to take the first step?</h2>
@@ -1153,6 +1199,15 @@ reentry_services_body = f"""
         <li style="padding:8px 0;">New Beginnings Church of Chicago</li>
       </ul>
     </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--red);">Real Stories</div>
+    <h2>The Rebirth Project: second chances, built two weeks at a time.</h2>
+    <p class="lead" style="max-width:760px;">More than <strong>60% of formerly incarcerated people are still unemployed a year after release.</strong> Our graduates are beating those odds.</p>
+    <p style="max-width:760px;">This year we celebrated our 3rd Re-Entry Cohort completing the Rebirth Project &mdash; a two-week immersive covering job skills, r&eacute;sum&eacute; building, workplace ethics, financial literacy, conflict resolution, emotional intelligence, and communication. At the finish, we hosted a job fair connecting graduates directly with employers eager to offer a real second chance.</p>
   </div>
 </section>
 
