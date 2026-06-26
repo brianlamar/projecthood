@@ -157,9 +157,9 @@ HEAD = """<!DOCTYPE html>
       <a href="programs.html"{a_programs}>Programs</a>
       <a href="impact.html"{a_impact}>Impact</a>
       <a href="leo-center.html"{a_leo}>LEO Center</a>
-      <a href="campaigns.html"{a_campaigns}>Campaigns</a>
       <a href="get-involved.html"{a_gi}>Get Involved</a>
       <a href="news.html"{a_news}>News</a>
+      <a href="ways-to-give.html"{a_ways}>Ways to Give</a>
       <a href="https://projecthood.networkforgood.com/" class="donate">Donate</a>
     </nav>
   </div>
@@ -261,7 +261,7 @@ def _clean_internal_urls(html):
 
 def render(title, meta, active, body):
     active_flags = dict.fromkeys(
-        ['a_about','a_programs','a_impact','a_leo','a_campaigns','a_gi','a_news'], '')
+        ['a_about','a_programs','a_impact','a_leo','a_campaigns','a_gi','a_ways','a_news'], '')
     if active:
         active_flags[active] = ' class="active"'
     head = HEAD.format(title=title, meta=meta, **active_flags)
@@ -2810,7 +2810,7 @@ pages = [
     ("campaigns.html",   "Walk With Us!",                "Walk With Us! — a nationwide movement to raise $25M for youth, families, and the LEO Center. Give, walk, or start a team on Tiltify.",  "a_campaigns",    campaigns_body),
     ("get-involved.html","Get Involved",                 "Three ways to move the work forward — give, volunteer, or partner.",                                                                   "a_gi",           gi_body),
     ("donate.html",      "Donate",                       "Donate securely through NetworkForGood. Your gift stays in Woodlawn.",                                                                 "a_gi",           donate_body),
-    ("ways-to-give.html","Ways to Give",                 "Every way to give to Project H.O.O.D. — give online, name a brick in the LEO Center, donate stock or from your DAF, give by check, corporate match, or planned giving. EIN 45-3964886.",              "a_gi",           ways_to_give_body),
+    ("ways-to-give.html","Ways to Give",                 "Every way to give to Project H.O.O.D. — give online, name a brick in the LEO Center, donate stock or from your DAF, give by check, corporate match, or planned giving. EIN 45-3964886.",              "a_ways",          ways_to_give_body),
     ("volunteer.html",   "Volunteer",                    "Volunteer with Project H.O.O.D. — sign up and we'll match you to an opportunity.",                                                      "a_gi",           volunteer_body),
     ("events.html",      "Events",                       "Upcoming events in Woodlawn — workshops, health fairs, youth programs, and community gatherings. RSVP powered by Eventbrite.",        "a_gi",           events_body),
     ("partner.html",     "Partner with us",              "Partner with Project H.O.O.D. — corporate, employer, foundation, church partnerships.",                                                 "a_gi",           partner_body),
