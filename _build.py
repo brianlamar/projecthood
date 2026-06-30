@@ -1592,7 +1592,7 @@ leo_body = f"""
       <div class="card card-accent" style="border-top-color:var(--purple);"><h3>Health &amp; Wellness Center</h3><p>Primary care delivered by Friend Health (FQHC) and the South Side Free Clinic, in partnership with the University of Chicago&rsquo;s Pritzker School of Medicine — plus counseling suites, senior services, recovery navigation, and crisis response. No insurance required.</p></div>
       <div class="card card-accent" style="border-top-color:#8a6d00;"><h3>Business Incubator</h3><p>Co-working space for Woodlawn entrepreneurs, grant writing support, and legal and financial clinic — growing local ownership.</p></div>
       <div class="card card-accent" style="border-top-color:var(--green);"><h3>Cafe &amp; Teaching Kitchen</h3><p>A community cafe, a hands-on teaching kitchen for culinary training, and a ghost kitchen supporting food entrepreneurs — the table is always set for the neighborhood.</p></div>
-      <div class="card card-accent" style="border-top-color:var(--black);"><h3>400-Seat Multipurpose Hall</h3><p>Town halls, graduations, community events, concerts — a venue built for Woodlawn, by Woodlawn.</p></div>
+      <div class="card card-accent" style="border-top-color:var(--black);"><h3>400-Seat Multipurpose Hall</h3><p>A full-fledged, state-of-the-art performing arts theatre — town halls, graduations, concerts, and community events, in a venue built for Woodlawn, by Woodlawn.</p></div>
     </div>
   </div>
 </section>
